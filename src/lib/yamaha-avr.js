@@ -10,7 +10,7 @@ var errorTimeout;
 var address;
 
 var PORT = 50000;
-var KEEP_ALIVE = 30;
+var KEEP_ALIVE = 5;
 
 var YamahaAvr = assign({}, EventEmitter.prototype, {
     "connect": function (addr) {
@@ -40,6 +40,7 @@ function init() {
     avrConnection.on('connect', function () {
         console.log('yamaha connected');
         this.emit('connected');
+        avrConnection.write("@MAIN:PWR=?\r\n");
         keepAliveInterval = setInterval(function () {
             avrConnection.write("@MAIN:PWR=?\r\n");
         }, KEEP_ALIVE * 1000);
