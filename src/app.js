@@ -1,7 +1,7 @@
 var mqtt   = require('mqtt');
 var moment = require('moment-timezone');
 
-var YamahaAvr = require('YamahaAvr');
+var YamahaAvr = require('./lib/yamaha-avr');
 
 
 var timeout;

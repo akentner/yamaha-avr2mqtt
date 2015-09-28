@@ -2,14 +2,15 @@
 
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
+var net = require('net');
 
 var avrConnection;
 var keepAliveInterval;
 var errorTimeout;
 var address;
 
-const PORT = 50000;
-const KEEP_ALIVE = 30;
+var PORT = 50000;
+var KEEP_ALIVE = 30;
 
 
 var YamahaAvr = assign({}, EventEmitter.prototype, {
