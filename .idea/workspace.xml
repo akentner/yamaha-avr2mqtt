@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d059aef-98e6-4905-b697-124d9b8922bb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/yamaha-avr.js" afterPath="$PROJECT_DIR$/src/lib/yamaha-avr.js" />
     </list>
@@ -31,8 +32,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1147">
-              <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1147">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -41,8 +42,8 @@
       <file leaf-file-name="yamaha-avr.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/yamaha-avr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4347826" vertical-offset="675" max-vertical-offset="1434">
-              <caret line="57" column="67" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
+            <state vertical-scroll-proportion="-0.28985506" vertical-offset="720" max-vertical-offset="1419">
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -78,8 +79,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/lib/yamaha-avr.js" />
+        <option value="$PROJECT_DIR$/src/app.js" />
       </list>
     </option>
   </component>
@@ -263,7 +264,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443479396759</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="next">
+      <created>1443480016284</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1443480016284</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -364,16 +371,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1147">
-          <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1147">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/yamaha-avr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4347826" vertical-offset="675" max-vertical-offset="1434">
-          <caret line="57" column="67" selection-start-line="57" selection-start-column="67" selection-end-line="57" selection-end-column="67" />
+        <state vertical-scroll-proportion="-0.28985506" vertical-offset="720" max-vertical-offset="1419">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding />
         </state>
       </provider>

@@ -21,7 +21,7 @@ mqttConnection.on('connect', function (data) {
     console.log('MQTT connect');
 
     YamahaAvr.on('connect', function() {
-        console.log('Yamaha connected');
+        console.log('Yamaha AVR connected');
     });
 
     YamahaAvr.connect('192.168.178.12');

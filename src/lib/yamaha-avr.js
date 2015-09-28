@@ -38,8 +38,7 @@ function init() {
     });
 
     avrConnection.on('connect', function () {
-        console.log('yamaha connected');
-        this.emit('connected');
+        this.emit('connect');
         avrConnection.write("@MAIN:PWR=?\r\n");
         keepAliveInterval = setInterval(function () {
             avrConnection.write("@MAIN:PWR=?\r\n");
