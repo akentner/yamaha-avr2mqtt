@@ -55,7 +55,7 @@ function init() {
 
         console.log('err', err);
 
-        if (err.code === 'EHOSTUNREACH') {
+        if (err.code === 'EHOSTUNREACH' || err.code === 'ECONNRESET') {
             console.log('retry in 30 seconds');
 
             errorTimeout = setTimeout(function() {
