@@ -43,7 +43,7 @@ function init() {
         this.emit('connected');
         keepAliveInterval = setInterval(function () {
             avrConnection.write("@MAIN:PWR=?\r\n");
-        }, KEEP_ALIVE);
+        }, KEEP_ALIVE * 1000);
     });
 
     avrConnection.on('end', function () {
@@ -58,7 +58,7 @@ function init() {
 
             errorTimeout = setTimeout(function() {
                 this.connect(address);
-            }, 30);
+            }, 30000);
         }
     });
 
