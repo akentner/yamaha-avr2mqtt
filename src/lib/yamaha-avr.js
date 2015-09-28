@@ -51,7 +51,9 @@ function init() {
     });
 
     avrConnection.on('error', function (err) {
-        this.emit('error');
+        //this.emit('error');
+
+        console.log('err', err);
 
         if (err.code === 'EHOSTUNREACH') {
             console.log('retry in 30 seconds');

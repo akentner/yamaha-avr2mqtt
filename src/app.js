@@ -18,10 +18,9 @@ function connectAvr() {
 }
 
 mqttConnection.on('connect', function (data) {
-    console.log('connect', data);
+    console.log('MQTT connect');
 
-
-    YamahaAvr.on('connected', function() {
+    YamahaAvr.on('connect', function() {
         console.log('Yamaha connected');
     });
 
