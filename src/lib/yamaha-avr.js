@@ -33,24 +33,22 @@ function init() {
     avrConnection.on('data', function (data) {
         console.log('DATA: ' + data);
 
-        // @todo do parse
+        var regex = /^@(\b[A-Z]):(\b[A-Z]+[0-9]+[_])=(.+)\r\n$/g;
+        var parsed = regex.exec(data)
+
+        console.log('DATA parsed:', parsed);
+
 
     });
 
     avrConnection.on('connect', function () {
-        this.emit('connect');
         avrConnection.write("@MAIN:PWR=?\r\n");
         keepAliveInterval = setInterval(function () {
             avrConnection.write("@MAIN:PWR=?\r\n");
         }, KEEP_ALIVE * 1000);
     });
 
-    avrConnection.on('end', function () {
-        this.emit('end');
-    });
-
     avrConnection.on('error', function (err) {
-        //this.emit('error');
 
         console.log('err', err);
 
