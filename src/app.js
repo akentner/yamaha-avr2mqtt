@@ -24,6 +24,11 @@ mqttConnection.on('connect', function (data) {
         console.log('Yamaha AVR connected');
     });
 
+    YamahaAvr.on('getValue', function(section, key, value) {
+       console.log('getValue', section, key, value);
+    });
+
+
     YamahaAvr.connect('192.168.178.12');
 
 });

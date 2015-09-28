@@ -31,14 +31,11 @@ function init() {
     avrConnection = new net.Socket();
 
     avrConnection.on('data', function (data) {
-        console.log('DATA: ' + data);
+        var parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)\r\n$/.exec(data);
 
-        var regex = /^@(\b[A-Z]):(\b[A-Z]+[0-9]+[_])=(.+)\r\n$/g;
-        var parsed = regex.exec(data)
-
-        console.log('DATA parsed:', parsed);
-
-
+        if (parsed) {
+            this.emit('getValue', parsed[0], parsed[1], parsed[2]);
+        }
     });
 
     avrConnection.on('connect', function () {
