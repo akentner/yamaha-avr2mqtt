@@ -13,10 +13,6 @@ var mqttConnection = mqtt.connect('tcp://localhost:1883', {
 });
 
 
-function connectAvr() {
-    console.log('connect AVR');
-}
-
 mqttConnection.on('connect', function (data) {
     console.log('MQTT connect');
 
@@ -25,7 +21,7 @@ mqttConnection.on('connect', function (data) {
     });
 
     YamahaAvr.on('getValue', function(section, key, value) {
-       console.log('getValue', section, key, value);
+       console.log(' - getValue', section, key, value);
     });
 
 

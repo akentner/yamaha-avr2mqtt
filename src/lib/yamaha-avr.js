@@ -18,7 +18,8 @@ var YamahaAvr = assign({}, EventEmitter.prototype, {
         init();
         avrConnection = avrConnection.connect(PORT, address, function () {
             //client.write('I am Chuck Norris!');
-        });
+            this.emit('connect');
+        }.bind(this));
     }
 });
 
@@ -34,7 +35,9 @@ function init() {
         var parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)\r\n$/.exec(data);
 
         if (parsed) {
-            this.emit('getValue', parsed[0], parsed[1], parsed[2]);
+            console.log('getValue', parsed[1], parsed[2], parsed[3]);
+
+            avrConnection.emit('getValue', [parsed[1], parsed[2], parsed[3]]);
         }
     });
 
@@ -53,7 +56,7 @@ function init() {
             console.log('retry in 30 seconds');
 
             errorTimeout = setTimeout(function() {
-                this.connect(address);
+                YamahaAvr.connect(address);
             }, 30000);
         }
     });
