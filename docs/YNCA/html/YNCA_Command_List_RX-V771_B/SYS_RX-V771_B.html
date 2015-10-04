@@ -1,0 +1,966 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../css/ss.css">
+<title>YNCA Command List Ver. 1.10 for RX-V771_B</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+<div class="toptitle">Sub Unit : SYS</div>
+<div class="version">Function Tree version: 1.10</div>
+<div class="version">Firmware version: 1.03-</div>
+<div class="version">Model: RX-V771</div>
+<div class="version">Product Region: UK / Ireland</div>
+<div class="version">$Date::                           $</div>
+<div class="version">$Revision: $</div>
+<hr>
+<div class ="title">Command Index</div>
+<ol type="1" start="1">
+    <li class="title">Power</li>
+        <div class="norm"><a href="#PWR" name="CatIdxPWR">PWR</a></div>
+        <div class="norm"><a href="#PARTY" name="CatIdxPARTY">PARTY</a></div>
+    <li class="title">Volume</li>
+        <div class="norm"><a href="#PARTYVOL" name="CatIdxPARTYVOL">PARTYVOL</a></div>
+        <div class="norm"><a href="#PARTYMUTE" name="CatIdxPARTYMUTE">PARTYMUTE</a></div>
+    <li class="title">Input</li>
+        <div class="norm"><a href="#INPNAME" name="CatIdxINPNAME">INPNAME</a></div>
+        <div class="norm"><a href="#INPNAMEPHONO" name="CatIdxINPNAMEPHONO">INPNAMEPHONO</a></div>
+        <div class="norm"><a href="#INPNAMEHDMI1" name="CatIdxINPNAMEHDMI1">INPNAMEHDMI1</a></div>
+        <div class="norm"><a href="#INPNAMEHDMI2" name="CatIdxINPNAMEHDMI2">INPNAMEHDMI2</a></div>
+        <div class="norm"><a href="#INPNAMEHDMI3" name="CatIdxINPNAMEHDMI3">INPNAMEHDMI3</a></div>
+        <div class="norm"><a href="#INPNAMEHDMI4" name="CatIdxINPNAMEHDMI4">INPNAMEHDMI4</a></div>
+        <div class="norm"><a href="#INPNAMEHDMI5" name="CatIdxINPNAMEHDMI5">INPNAMEHDMI5</a></div>
+        <div class="norm"><a href="#INPNAMEAV1" name="CatIdxINPNAMEAV1">INPNAMEAV1</a></div>
+        <div class="norm"><a href="#INPNAMEAV2" name="CatIdxINPNAMEAV2">INPNAMEAV2</a></div>
+        <div class="norm"><a href="#INPNAMEAV3" name="CatIdxINPNAMEAV3">INPNAMEAV3</a></div>
+        <div class="norm"><a href="#INPNAMEAV4" name="CatIdxINPNAMEAV4">INPNAMEAV4</a></div>
+        <div class="norm"><a href="#INPNAMEAV5" name="CatIdxINPNAMEAV5">INPNAMEAV5</a></div>
+        <div class="norm"><a href="#INPNAMEAV6" name="CatIdxINPNAMEAV6">INPNAMEAV6</a></div>
+        <div class="norm"><a href="#INPNAMEVAUX" name="CatIdxINPNAMEVAUX">INPNAMEVAUX</a></div>
+        <div class="norm"><a href="#INPNAMEAUDIO1" name="CatIdxINPNAMEAUDIO1">INPNAMEAUDIO1</a></div>
+        <div class="norm"><a href="#INPNAMEAUDIO2" name="CatIdxINPNAMEAUDIO2">INPNAMEAUDIO2</a></div>
+        <div class="norm"><a href="#INPNAMEDOCK" name="CatIdxINPNAMEDOCK">INPNAMEDOCK</a></div>
+        <div class="norm"><a href="#INPNAMEUSB" name="CatIdxINPNAMEUSB">INPNAMEUSB</a></div>
+        <div class="norm"><a href="#TRIG1INPTUNER" name="CatIdxTRIG1INPTUNER">TRIG1INPTUNER</a></div>
+        <div class="norm"><a href="#TRIG1INPPHONO" name="CatIdxTRIG1INPPHONO">TRIG1INPPHONO</a></div>
+        <div class="norm"><a href="#TRIG1INPHDMI1" name="CatIdxTRIG1INPHDMI1">TRIG1INPHDMI1</a></div>
+        <div class="norm"><a href="#TRIG1INPHDMI2" name="CatIdxTRIG1INPHDMI2">TRIG1INPHDMI2</a></div>
+        <div class="norm"><a href="#TRIG1INPHDMI3" name="CatIdxTRIG1INPHDMI3">TRIG1INPHDMI3</a></div>
+        <div class="norm"><a href="#TRIG1INPHDMI4" name="CatIdxTRIG1INPHDMI4">TRIG1INPHDMI4</a></div>
+        <div class="norm"><a href="#TRIG1INPHDMI5" name="CatIdxTRIG1INPHDMI5">TRIG1INPHDMI5</a></div>
+        <div class="norm"><a href="#TRIG1INPAV1" name="CatIdxTRIG1INPAV1">TRIG1INPAV1</a></div>
+        <div class="norm"><a href="#TRIG1INPAV2" name="CatIdxTRIG1INPAV2">TRIG1INPAV2</a></div>
+        <div class="norm"><a href="#TRIG1INPAV3" name="CatIdxTRIG1INPAV3">TRIG1INPAV3</a></div>
+        <div class="norm"><a href="#TRIG1INPAV4" name="CatIdxTRIG1INPAV4">TRIG1INPAV4</a></div>
+        <div class="norm"><a href="#TRIG1INPAV5" name="CatIdxTRIG1INPAV5">TRIG1INPAV5</a></div>
+        <div class="norm"><a href="#TRIG1INPAV6" name="CatIdxTRIG1INPAV6">TRIG1INPAV6</a></div>
+        <div class="norm"><a href="#TRIG1INPVAUX" name="CatIdxTRIG1INPVAUX">TRIG1INPVAUX</a></div>
+        <div class="norm"><a href="#TRIG1INPAUDIO1" name="CatIdxTRIG1INPAUDIO1">TRIG1INPAUDIO1</a></div>
+        <div class="norm"><a href="#TRIG1INPAUDIO2" name="CatIdxTRIG1INPAUDIO2">TRIG1INPAUDIO2</a></div>
+        <div class="norm"><a href="#TRIG1INPDOCK" name="CatIdxTRIG1INPDOCK">TRIG1INPDOCK</a></div>
+        <div class="norm"><a href="#TRIG1INPIPOD" name="CatIdxTRIG1INPIPOD">TRIG1INPIPOD</a></div>
+        <div class="norm"><a href="#TRIG1INPBT" name="CatIdxTRIG1INPBT">TRIG1INPBT</a></div>
+        <div class="norm"><a href="#TRIG1INPUAW" name="CatIdxTRIG1INPUAW">TRIG1INPUAW</a></div>
+        <div class="norm"><a href="#TRIG1INPNET" name="CatIdxTRIG1INPNET">TRIG1INPNET</a></div>
+        <div class="norm"><a href="#TRIG1INPNAPSTER" name="CatIdxTRIG1INPNAPSTER">TRIG1INPNAPSTER</a></div>
+        <div class="norm"><a href="#TRIG1INPPC" name="CatIdxTRIG1INPPC">TRIG1INPPC</a></div>
+        <div class="norm"><a href="#TRIG1INPNETRADIO" name="CatIdxTRIG1INPNETRADIO">TRIG1INPNETRADIO</a></div>
+        <div class="norm"><a href="#TRIG1INPUSB" name="CatIdxTRIG1INPUSB">TRIG1INPUSB</a></div>
+        <div class="norm"><a href="#TRIG1INPIPODUSB" name="CatIdxTRIG1INPIPODUSB">TRIG1INPIPODUSB</a></div>
+    <li class="title">Others</li>
+        <div class="norm"><a href="#MODELNAME" name="CatIdxMODELNAME">MODELNAME</a></div>
+        <div class="norm"><a href="#VERSION" name="CatIdxVERSION">VERSION</a></div>
+        <div class="norm"><a href="#VIDANLGCONV" name="CatIdxVIDANLGCONV">VIDANLGCONV</a></div>
+        <div class="norm"><a href="#SPPATTERN1AMP" name="CatIdxSPPATTERN1AMP">SPPATTERN1AMP</a></div>
+        <div class="norm"><a href="#SPPATTERN1FRNTCNFG" name="CatIdxSPPATTERN1FRNTCNFG">SPPATTERN1FRNTCNFG</a></div>
+        <div class="norm"><a href="#SPPATTERN1CENTCNFG" name="CatIdxSPPATTERN1CENTCNFG">SPPATTERN1CENTCNFG</a></div>
+        <div class="norm"><a href="#SPPATTERN1SURCNFG" name="CatIdxSPPATTERN1SURCNFG">SPPATTERN1SURCNFG</a></div>
+        <div class="norm"><a href="#SPPATTERN1SURBCNFG" name="CatIdxSPPATTERN1SURBCNFG">SPPATTERN1SURBCNFG</a></div>
+        <div class="norm"><a href="#SPPATTERN1FRNTPRES" name="CatIdxSPPATTERN1FRNTPRES">SPPATTERN1FRNTPRES</a></div>
+        <div class="norm"><a href="#SPPATTERN1SWFR1CNFG" name="CatIdxSPPATTERN1SWFR1CNFG">SPPATTERN1SWFR1CNFG</a></div>
+        <div class="norm"><a href="#SPPATTERN1SWFR1PHASE" name="CatIdxSPPATTERN1SWFR1PHASE">SPPATTERN1SWFR1PHASE</a></div>
+        <div class="norm"><a href="#SPPATTERN1EXBASS" name="CatIdxSPPATTERN1EXBASS">SPPATTERN1EXBASS</a></div>
+        <div class="norm"><a href="#SPPATTERN1SWFRCRSOVR" name="CatIdxSPPATTERN1SWFRCRSOVR">SPPATTERN1SWFRCRSOVR</a></div>
+        <div class="norm"><a href="#DMCCONTROL" name="CatIdxDMCCONTROL">DMCCONTROL</a></div>
+        <div class="norm"><a href="#YNCAPORT" name="CatIdxYNCAPORT">YNCAPORT</a></div>
+        <div class="norm"><a href="#TRIG1MANUAL" name="CatIdxTRIG1MANUAL">TRIG1MANUAL</a></div>
+        <div class="norm"><a href="#TRIG1TYPE" name="CatIdxTRIG1TYPE">TRIG1TYPE</a></div>
+        <div class="norm"><a href="#TRIG1ZONE" name="CatIdxTRIG1ZONE">TRIG1ZONE</a></div>
+        <div class="norm"><a href="#MEMGRD" name="CatIdxMEMGRD">MEMGRD</a></div>
+        <div class="norm"><a href="#REMOTECODE" name="CatIdxREMOTECODE">REMOTECODE</a></div>
+</ol><hr>
+<div class="title">Command Details of SubUnit: SYS</div>
+<ul type="disc">
+<li>
+<div class="itemtitle"><a name="MODELNAME">MODELNAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:MODELNAME=?</div></dd>
+<dd><div class="description">Retrieving Model Name</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Ascii, Variable Length (1 to 16 characters)</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxMODELNAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="VERSION">VERSION</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:VERSION=?</div></dd>
+<dd><div class="description">Retrieving the version of software.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Ascii, Fixed 9 characters</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<dd><div class="notes">Value string is in a format of "x.xx/y.yy"; x.xx = System Version, y.yy = Command Protocol Version.</div></dd>
+<div class="backlink"><a href="#CatIdxVERSION">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAME">INPNAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAME=?</div></dd>
+<dd><div class="description">Retrieving each input's renamed info at a time.</div></dd>
+<dd><div class="notes">Each response command forms like @SYS:INPNAMExxxx=XXXX (xxxx: Default Input Name, XXXX: Renamed Info)</div></dd>
+<div class="backlink"><a href="#CatIdxINPNAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEPHONO">INPNAMEPHONO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEPHONO=?</div></dd>
+<dd><div class="description">Retrieving renamed info of PHONO</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEPHONO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEHDMI1">INPNAMEHDMI1</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEHDMI1=?</div></dd>
+<dd><div class="description">Retrieving renamed info of HDMI1</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEHDMI1">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEHDMI2">INPNAMEHDMI2</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEHDMI2=?</div></dd>
+<dd><div class="description">Retrieving renamed info of HDMI2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEHDMI2">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEHDMI3">INPNAMEHDMI3</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEHDMI3=?</div></dd>
+<dd><div class="description">Retrieving renamed info of HDMI3</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEHDMI3">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEHDMI4">INPNAMEHDMI4</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEHDMI4=?</div></dd>
+<dd><div class="description">Retrieving renamed info of HDMI4</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEHDMI4">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEHDMI5">INPNAMEHDMI5</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEHDMI5=?</div></dd>
+<dd><div class="description">Retrieving renamed info of HDMI5</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEHDMI5">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAV1">INPNAMEAV1</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAV1=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AV1</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAV1">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAV2">INPNAMEAV2</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAV2=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AV2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAV2">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAV3">INPNAMEAV3</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAV3=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AV3</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAV3">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAV4">INPNAMEAV4</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAV4=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AV4</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAV4">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAV5">INPNAMEAV5</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAV5=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AV5</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAV5">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAV6">INPNAMEAV6</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAV6=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AV6</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAV6">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEVAUX">INPNAMEVAUX</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEVAUX=?</div></dd>
+<dd><div class="description">Retrieving renamed info of VAUX</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEVAUX">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAUDIO1">INPNAMEAUDIO1</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAUDIO1=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AUDIO1</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAUDIO1">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEAUDIO2">INPNAMEAUDIO2</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEAUDIO2=?</div></dd>
+<dd><div class="description">Retrieving renamed info of AUDIO2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEAUDIO2">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEDOCK">INPNAMEDOCK</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEDOCK=?</div></dd>
+<dd><div class="description">Retrieving renamed info of DOCK</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEDOCK">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INPNAMEUSB">INPNAMEUSB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:INPNAMEUSB=?</div></dd>
+<dd><div class="description">Retrieving renamed info of USB</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#INPNAMEMULTICH">INPNAMEMULTICH</a></div></dd>
+<div class="backlink"><a href="#CatIdxINPNAMEUSB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PWR">PWR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:PWR=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:PWR=?</div></dd>
+<dd><div class="description">Operating & retrieving All Zones power state.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Standby</div></dd>
+<dd><div class="description">PUT: turining its state to Standby / GET: indicating Standby status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: turining its state to On / GET: indicating On status.</div></dd>
+<div class="backlink"><a href="#CatIdxPWR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PARTY">PARTY</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:PARTY=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:PARTY=?</div></dd>
+<dd><div class="description">Operating & retrieving Party Mode state</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: turining its state to Off / GET: indicating Off status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: turining its state to On / GET: indicating On status.</div></dd>
+<div class="backlink"><a href="#CatIdxPARTY">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PARTYVOL">PARTYVOL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:PARTYVOL=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating Party Mode Volume</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: decrementing the volume by 1 step</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: incrementing the volume by 1 step</div></dd>
+<div class="backlink"><a href="#CatIdxPARTYVOL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PARTYMUTE">PARTYMUTE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:PARTYMUTE=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating Party Mode Muting state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT Only: un-muting Party Mode</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT Only: muting Party Mode</div></dd>
+<div class="backlink"><a href="#CatIdxPARTYMUTE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="VIDANLGCONV">VIDANLGCONV</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:VIDANLGCONV=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:VIDANLGCONV=?</div></dd>
+<dd><div class="description">Operating & retrieving Analog Video Conversion setting state.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: setting to Off / GET: indicating Off status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: setting to On / GET: indicating On status.</div></dd>
+<div class="backlink"><a href="#CatIdxVIDANLGCONV">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1AMP">SPPATTERN1AMP</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1AMP=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1AMP=?</div></dd>
+<dd><div class="description">Operating & retrieving Amp Assign setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Basic</div></dd>
+<dd><div class="description">PUT: setting to Basic / GET: indicating its setting at Basic.</div></dd>
+<dd><div class="param">7ch +1ZONE</div></dd>
+<dd><div class="description">PUT: setting to 7ch +1ZONE / GET: indicating its setting at 7ch +1ZONE.</div></dd>
+<dd><div class="param">5ch BI-AMP</div></dd>
+<dd><div class="description">PUT: setting to 5ch BI-AMP / GET: indicating its setting at 5ch BI-AMP.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1AMP">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1FRNTCNFG">SPPATTERN1FRNTCNFG</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1FRNTCNFG=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1FRNTCNFG=?</div></dd>
+<dd><div class="description">Operating & retrieving Front Ch Configuration setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Small</div></dd>
+<dd><div class="description">PUT: setting to Small / GET: indicating its setting at Small.</div></dd>
+<dd><div class="param">Large</div></dd>
+<dd><div class="description">PUT: setting to Large / GET: indicating its setting at Large.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1FRNTCNFG">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1CENTCNFG">SPPATTERN1CENTCNFG</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1CENTCNFG=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1CENTCNFG=?</div></dd>
+<dd><div class="description">Operating & retrieving Center Ch Configuration setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">None</div></dd>
+<dd><div class="description">PUT: setting to None / GET: indicating its setting at None.</div></dd>
+<dd><div class="param">Small</div></dd>
+<dd><div class="description">PUT: setting to Small / GET: indicating its setting at Small.</div></dd>
+<dd><div class="param">Large</div></dd>
+<dd><div class="description">PUT: setting to Large / GET: indicating its setting at Large.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1CENTCNFG">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1SURCNFG">SPPATTERN1SURCNFG</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SURCNFG=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SURCNFG=?</div></dd>
+<dd><div class="description">Operating & retrieving Surround Ch Configuration setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">None</div></dd>
+<dd><div class="description">PUT: setting to None / GET: indicating its setting at None.</div></dd>
+<dd><div class="param">Small</div></dd>
+<dd><div class="description">PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.</div></dd>
+<dd><div class="param">Large</div></dd>
+<dd><div class="description">PUT: setting to Large / GET: indicating its setting at Large.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1SURCNFG">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1SURBCNFG">SPPATTERN1SURBCNFG</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SURBCNFG=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SURBCNFG=?</div></dd>
+<dd><div class="description">Operating & retrieving Surround Back Ch Configuration setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">None</div></dd>
+<dd><div class="description">PUT: setting to None / GET: indicating its setting at None.</div></dd>
+<dd><div class="param">Small x1</div></dd>
+<dd><div class="description">PUT: setting to Small x1 / GET: indicating its setting at Small x1.</div></dd>
+<dd><div class="param">Large x1</div></dd>
+<dd><div class="description">PUT: setting to Large x1 / GET: indicating its setting at Large x1.</div></dd>
+<dd><div class="param">Small x2</div></dd>
+<dd><div class="description">PUT: setting to Small x2 / GET: indicating its setting at Small x2.</div></dd>
+<dd><div class="param">Large x2</div></dd>
+<dd><div class="description">PUT: setting to Large x2 / GET: indicating its setting at Large x2.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1SURBCNFG">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1FRNTPRES">SPPATTERN1FRNTPRES</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1FRNTPRES=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1FRNTPRES=?</div></dd>
+<dd><div class="description">Operating & retrieving Front Presence Ch setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">None</div></dd>
+<dd><div class="description">PUT: setting to None / GET: indicating its setting at None.</div></dd>
+<dd><div class="param">Use</div></dd>
+<dd><div class="description">PUT: setting to Use / GET: indicating its setting at Use.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1FRNTPRES">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1SWFR1CNFG">SPPATTERN1SWFR1CNFG</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SWFR1CNFG=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SWFR1CNFG=?</div></dd>
+<dd><div class="description">Operating & retrieving Subwoofer1 Configuration state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">None</div></dd>
+<dd><div class="description">PUT: setting to None / GET: indicating its setting at None.</div></dd>
+<dd><div class="param">Use</div></dd>
+<dd><div class="description">PUT: setting to Use / GET: indicating its setting at Use.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1SWFR1CNFG">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1SWFR1PHASE">SPPATTERN1SWFR1PHASE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SWFR1PHASE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SWFR1PHASE=?</div></dd>
+<dd><div class="description">Operating & retrieving Subwoofer1 Phase setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Normal</div></dd>
+<dd><div class="description">PUT: setting to Normal / GET: indicating its setting at Normal.</div></dd>
+<dd><div class="param">Reverse</div></dd>
+<dd><div class="description">PUT: setting to Reverse / GET: indicating its setting at Reverse.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1SWFR1PHASE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1EXBASS">SPPATTERN1EXBASS</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1EXBASS=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1EXBASS=?</div></dd>
+<dd><div class="description">Operating & retrieving Extra Bass Setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: setting to Off / GET: indicating its setting at Off.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: setting to On / GET: indicating its setting at On.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1EXBASS">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SPPATTERN1SWFRCRSOVR">SPPATTERN1SWFRCRSOVR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SWFRCRSOVR=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:SPPATTERN1SWFRCRSOVR=?</div></dd>
+<dd><div class="description">Operating & retrieving Subwoofer Crossover Frequency Setting state for Speaker Pattern1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">40 Hz</div></dd>
+<dd><div class="description">PUT: setting to 40 Hz / GET: indicating its setting at 40 Hz.</div></dd>
+<dd><div class="param">60 Hz</div></dd>
+<dd><div class="description">PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.</div></dd>
+<dd><div class="param">80 Hz</div></dd>
+<dd><div class="description">PUT: setting to 80 Hz / GET: indicating its setting at 80 Hz.</div></dd>
+<dd><div class="param">90 Hz</div></dd>
+<dd><div class="description">PUT: setting to 90 Hz / GET: indicating its setting at 90 Hz.</div></dd>
+<dd><div class="param">100 Hz</div></dd>
+<dd><div class="description">PUT: setting to 100 Hz / GET: indicating its setting at 100 Hz.</div></dd>
+<dd><div class="param">110 Hz</div></dd>
+<dd><div class="description">PUT: setting to 110 Hz / GET: indicating its setting at 110 Hz.</div></dd>
+<dd><div class="param">120 Hz</div></dd>
+<dd><div class="description">PUT: setting to 120 Hz / GET: indicating its setting at 120 Hz.</div></dd>
+<dd><div class="param">160 Hz</div></dd>
+<dd><div class="description">PUT: setting to 160 Hz / GET: indicating its setting at 160 Hz.</div></dd>
+<dd><div class="param">200 Hz</div></dd>
+<dd><div class="description">PUT: setting to 200 Hz / GET: indicating its setting at 200 Hz.</div></dd>
+<div class="backlink"><a href="#CatIdxSPPATTERN1SWFRCRSOVR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="DMCCONTROL">DMCCONTROL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:DMCCONTROL=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:DMCCONTROL=?</div></dd>
+<dd><div class="description">Operating & retrieving DMC Control Setting state</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Disable</div></dd>
+<dd><div class="description">PUT: setting to Disable / GET: indicating its setting at Disable.</div></dd>
+<dd><div class="param">Enable</div></dd>
+<dd><div class="description">PUT: setting to Enable / GET: indicating its setting at Enable.</div></dd>
+<div class="backlink"><a href="#CatIdxDMCCONTROL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="YNCAPORT">YNCAPORT</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:YNCAPORT=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:YNCAPORT=?</div></dd>
+<dd><div class="description">Operating & retrieving TCP Port Setting state for YNCA commands.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: 50000 to 65535, Step: 1</div></dd>
+<dd><div class="description">PUT: setting to the specified number. / GET: indicating its setting with the retrieved value. The Default value is 50000.</div></dd>
+<div class="backlink"><a href="#CatIdxYNCAPORT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1MANUAL">TRIG1MANUAL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1MANUAL=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1MANUAL=?</div></dd>
+<dd><div class="description">Operating & retrieving Manual Operating state for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Lo</div></dd>
+<dd><div class="description">PUT: turning its state to Lo / GET: indicating its status at Lo.</div></dd>
+<dd><div class="param">Hi</div></dd>
+<dd><div class="description">PUT: turning its state to Hi / GET: indicating its status at Hi.</div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1MANUAL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1TYPE">TRIG1TYPE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1TYPE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1TYPE=?</div></dd>
+<dd><div class="description">Operating & retrieving Trigger Type Setting state for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Manual</div></dd>
+<dd><div class="description">PUT: setting to Manual / GET: indicating its setting at Manual.</div></dd>
+<dd><div class="param">Power</div></dd>
+<dd><div class="description">PUT: setting to Power / GET: indicating its setting at Power.</div></dd>
+<dd><div class="param">Zone and Input</div></dd>
+<dd><div class="description">PUT: setting to Zone and Input / GET: indicating its setting at Zone and Input.</div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1TYPE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1ZONE">TRIG1ZONE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1ZONE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1ZONE=?</div></dd>
+<dd><div class="description">Operating & retrieving Zone Setting state of Trigger Type "Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Main Zone</div></dd>
+<dd><div class="description">PUT: setting to Main Zone / GET: indicating its setting at Main Zone.</div></dd>
+<dd><div class="param">Zone2</div></dd>
+<dd><div class="description">PUT: setting to Zone2 / GET: indicating its setting at Zone2.</div></dd>
+<dd><div class="param">All</div></dd>
+<dd><div class="description">PUT: setting to All / GET: indicating its setting at All.</div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1ZONE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPTUNER">TRIG1INPTUNER</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPTUNER=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPTUNER=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input TUNER of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPTUNER">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPPHONO">TRIG1INPPHONO</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPPHONO=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPPHONO=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input PHONO of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPPHONO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPHDMI1">TRIG1INPHDMI1</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI1=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI1=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input HDMI1 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPHDMI1">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPHDMI2">TRIG1INPHDMI2</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI2=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI2=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input HDMI2 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPHDMI2">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPHDMI3">TRIG1INPHDMI3</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI3=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI3=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input HDMI3 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPHDMI3">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPHDMI4">TRIG1INPHDMI4</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI4=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI4=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input HDMI4 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPHDMI4">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPHDMI5">TRIG1INPHDMI5</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI5=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPHDMI5=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input HDMI5 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPHDMI5">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAV1">TRIG1INPAV1</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV1=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV1=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AV1 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAV1">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAV2">TRIG1INPAV2</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV2=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV2=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AV2 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAV2">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAV3">TRIG1INPAV3</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV3=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV3=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AV3 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAV3">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAV4">TRIG1INPAV4</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV4=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV4=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AV4 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAV4">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAV5">TRIG1INPAV5</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV5=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV5=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AV5 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAV5">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAV6">TRIG1INPAV6</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV6=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAV6=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AV6 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAV6">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPVAUX">TRIG1INPVAUX</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPVAUX=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPVAUX=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input VAUX of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPVAUX">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAUDIO1">TRIG1INPAUDIO1</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAUDIO1=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAUDIO1=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AUDIO1 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAUDIO1">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPAUDIO2">TRIG1INPAUDIO2</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPAUDIO2=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPAUDIO2=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input AUDIO2 of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPAUDIO2">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPDOCK">TRIG1INPDOCK</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPDOCK=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPDOCK=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input DOCK of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPDOCK">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPIPOD">TRIG1INPIPOD</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPIPOD=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPIPOD=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input IPOD of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPIPOD">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPBT">TRIG1INPBT</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPBT=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPBT=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input BT of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPBT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPUAW">TRIG1INPUAW</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPUAW=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPUAW=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input UAW of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPUAW">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPNET">TRIG1INPNET</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPNET=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPNET=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input NET of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPNET">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPNAPSTER">TRIG1INPNAPSTER</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPNAPSTER=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPNAPSTER=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input NAPSTER of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPNAPSTER">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPPC">TRIG1INPPC</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPPC=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPPC=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input PC of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPPC">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPNETRADIO">TRIG1INPNETRADIO</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPNETRADIO=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPNETRADIO=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input NETRADIO of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPNETRADIO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPUSB">TRIG1INPUSB</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPUSB=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPUSB=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input USB of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPUSB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TRIG1INPIPODUSB">TRIG1INPIPODUSB</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:TRIG1INPIPODUSB=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:TRIG1INPIPODUSB=?</div></dd>
+<dd><div class="description">Operating & retrieving the setting state for Input IPODUSB of Trigger "Type Zone and Input" for Trigger Out 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TRIG1INPSIRIUS">TRIG1INPSIRIUS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTRIG1INPIPODUSB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="MEMGRD">MEMGRD</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:MEMGRD=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@SYS:MEMGRD=?</div></dd>
+<dd><div class="description">Operating & retrieving Memory Guard Setting state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: setting to Off / GET: indicating its setting at Off.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: setting to On / GET: indicating its setting at On.</div></dd>
+<div class="backlink"><a href="#CatIdxMEMGRD">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="REMOTECODE">REMOTECODE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@SYS:REMOTECODE=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operation by specifying IR command codes.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Hex, Fixed 8 characters</div></dd>
+<dd><div class="description">PUT Only: 8-digit ASCII (Hex) IR codes are to be specified for its value. See the IR command chart separately provided.  <a href="../../ircode/IR_RX-V671-3071_rev1.0_Full.xls">[Link To the IR Code File]</a></div></dd>
+<div class="backlink"><a href="#CatIdxREMOTECODE">Back To Index</a></div>
+</dl></li>
+</ul>
+<p>
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+</body>
+</html>

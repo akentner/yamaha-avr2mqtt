@@ -1,0 +1,563 @@
+﻿/* ------ CSS Definition File ------ */
+/* $Date: 2011-03-29 16:58:24 +0900 (火, 29 3 2011) $ */
+/* $Revision: 8450 $ */
+/* (c) 2011 Yamaha Corporation All Rights Reserved. */
+
+      a { text-decoration: none; }
+      a:link { color: #0000ff }
+      a:visited { color: #0000ff; }
+      a:active { color: #00ff00 }
+      a:hover { color: #ff0000; }
+
+      th.irlist {
+      text-align: center;
+      vertival-align: center;
+      }
+      td.irlist {
+      vertival-align: center;
+      }
+
+      .toclist {
+      color: #FFFFFF;
+      font-size: medium;
+      font-weight: normal;
+      font-family: "Arial", sans-serif;
+      }
+      .tocmargin_l {
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .tocmargin {
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .nocontentmargin {
+      font-size: medium;
+      font-family: "Arial", sans-serif;
+      margin-top: 0.5em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .nocontentmargin_s {
+      font-size: x-small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      table.notes {
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      padding: 0.2em;
+      background: #eeeedd;
+      border: hidden;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .verttop {
+      vertical-align: top;
+      }
+      .textcenter {
+      text-align: center;
+      }
+      .exdesc {
+      font-size: small;
+      font-style: normal;
+      }
+      .syntax {
+      text-align: center;
+      font-style: oblique;
+      }
+      .syntaxnum {
+      font-size: small;
+      text-align: center;
+      }
+
+      .index1backlink {
+      color: #000000;
+      font-size: x-small;
+      font-family: "Arial", serif;
+      text-align: right;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .index1title {
+      color: #000000;
+      font-size: large;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 2em;
+      margin-right: 2em;
+      }
+      .index1content {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 4em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+
+      .index2backlink {
+      color: #000000;
+      font-size: x-small;
+      font-family: "Arial", serif;
+      text-align: right;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .index2title {
+      color: #000000;
+      font-size: medium;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      margin-left: 4em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index2content {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 6em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index2list {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0em;
+      margin-left: 6em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      table.index2visible {
+      border: double;
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 6em;
+      margin-right: 2em;
+      padding: 0.2em;
+      word-wrap: break-word;
+      }
+      table.index2invisible {
+      border: hidden;
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 6em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index2extitle {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 8em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index2ex {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 9em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index2notes {
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 8em;
+      margin-right: 2em;
+      padding: 0.5em;
+      background: #eeeedd;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ccc;
+      word-wrap: break-word;
+      }
+      .index2seqex {
+      font-size: small;
+      font-family: "ＭＳ ゴシック", "Courier New", monospace;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 11em;
+      margin-right: 2em;
+      padding: 0.8em;
+      background: #eeeeff;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #aaaaff;
+      word-wrap: break-word;
+      }
+
+      .index3backlink {
+      color: #000000;
+      font-size: x-small;
+      font-family: "Arial", serif;
+      text-align: right;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .index3title {
+      color: #000000;
+      font-size: medium;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      margin-left: 6em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index3content {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 8em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index3list {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0em;
+      margin-left: 8em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      table.index3invisible_afterlist {
+      border: hidden;
+      color: #000000;
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 12em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      table.index3invisible {
+      border: hidden;
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 8em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index3extitle {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 10em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index3ex {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 11em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index3notes {
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 10em;
+      margin-right: 2em;
+      padding: 0.5em;
+      background: #eeeedd;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ccc;
+      word-wrap: break-word;
+      }
+
+      .index4backlink {
+      color: #000000;
+      font-size: x-small;
+      font-family: "Arial", serif;
+      text-align: right;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .index4title {
+      color: #000000;
+      font-size: medium;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      margin-left: 8em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index4content {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+      margin-left: 10em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .index4extitle {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 12em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index4ex {
+      color: #000000;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0em;
+      margin-bottom: 0.2em;
+      margin-left: 13em;
+      margin-right: 2em;
+      word-wrap: break-word;
+      }
+      .index4notes {
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+      margin-left: 12em;
+      margin-right: 2em;
+      padding: 0.5em;
+      background: #eeeedd;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ccc;
+      word-wrap: break-word;
+      }
+
+      .toptitle {
+      color: #000000;
+      font-size: x-large;
+      font-weight: bolder;
+      font-family: "Arial", sans-serif;
+      margin-top: 0.2em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .title {
+      color: #000000;
+      font-size: large;
+      font-weight: bolder;
+      font-family: "Arial", sans-serif;
+      margin-top: 0.5em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .version {
+      color: #000000;
+      font-size: small;
+      font-weight: bolder;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .itemtitle {
+      color: #000000;
+      font-size: medium;
+      font-weight: bolder;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .exparam {
+      color: #808080;
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      }
+      .norm {
+      color: #000000;
+      font-size: medium;
+      font-weight: normal;
+      font-family: "Arial", sans-serif;
+      }
+      .cmd {
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0.2em;
+      margin-bottom: 0.3em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .param {
+      font-size: medium;
+      font-family: "Times New Roman", sans-serif;
+      font-style: oblique;
+      margin-top: 0.2em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }
+      .description {
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 1em;
+      margin-right: 1em;
+      padding: 0.5em;
+      background: #FFFFFF;
+      border-width: 0px;
+      border-style: solid;
+      border-color: #FFFFFF;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .iaf {
+      color: #ff0000;
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 1em;
+      margin-right: 1em;
+      padding: 0.5em;
+      background: #FFFFFF;
+      border-width: 0px;
+      border-style: solid;
+      border-color: #FFFFFF;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .notes {
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 1em;
+      margin-right: 1em;
+      padding: 0.5em;
+      background: #eeeedd;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ccc;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .limitnotes {
+      color: #ff0000;
+      font-size: small;
+      font-family: "Arial", sans-serif;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      margin-left: 1em;
+      margin-right: 1em;
+      padding: 0.5em;
+      background: #ffeeee;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #fcc;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      }
+      .backlink {
+      font-size: small;
+      font-family: "Arial", serif;
+      text-align: right;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 1em;
+      }
+      #copy {
+      color: #C0C0C0;
+      font-size: small;
+      font-family: "Times New Roman", serif;
+      text-align: center; 
+      margin-top: 0em;
+      margin-bottom: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      }

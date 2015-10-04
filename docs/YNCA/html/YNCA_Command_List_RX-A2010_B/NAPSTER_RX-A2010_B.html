@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../css/ss.css">
+<title>YNCA Command List Ver. 1.10 for RX-A2010_B</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+<div class="toptitle">Sub Unit : NAPSTER</div>
+<div class="version">Function Tree version: 1.10</div>
+<div class="version">Firmware version: 1.03-</div>
+<div class="version">Model: RX-A2010</div>
+<div class="version">Product Region: UK / Ireland</div>
+<div class="version">$Date::                           $</div>
+<div class="version">$Revision: $</div>
+<hr>
+<div class ="title">Command Index</div>
+<ol type="1" start="1">
+    <li class="title">Information</li>
+        <div class="norm"><a href="#PLAYBACKINFO" name="CatIdxPLAYBACKINFO">PLAYBACKINFO</a></div>
+        <div class="norm"><a href="#METAINFO" name="CatIdxMETAINFO">METAINFO</a></div>
+        <div class="norm"><a href="#LISTINFO" name="CatIdxLISTINFO">LISTINFO</a></div>
+    <li class="title">Play Control</li>
+        <div class="norm"><a href="#PRESET" name="CatIdxPRESET">PRESET</a></div>
+        <div class="norm"><a href="#MEM" name="CatIdxMEM">MEM</a></div>
+        <div class="norm"><a href="#PLAYBACK" name="CatIdxPLAYBACK">PLAYBACK</a></div>
+    <li class="title">Contents Browse</li>
+        <div class="norm"><a href="#LISTSEL" name="CatIdxLISTSEL">LISTSEL</a></div>
+        <div class="norm"><a href="#LISTCURSOR" name="CatIdxLISTCURSOR">LISTCURSOR</a></div>
+        <div class="norm"><a href="#LISTPAGE" name="CatIdxLISTPAGE">LISTPAGE</a></div>
+        <div class="norm"><a href="#LISTLAYER" name="CatIdxLISTLAYER">LISTLAYER</a></div>
+        <div class="norm"><a href="#LISTLAYERNAME" name="CatIdxLISTLAYERNAME">LISTLAYERNAME</a></div>
+        <div class="norm"><a href="#LINE1TXT" name="CatIdxLINE1TXT">LINE1TXT</a></div>
+        <div class="norm"><a href="#LINE1ATRIB" name="CatIdxLINE1ATRIB">LINE1ATRIB</a></div>
+        <div class="norm"><a href="#LINE2TXT" name="CatIdxLINE2TXT">LINE2TXT</a></div>
+        <div class="norm"><a href="#LINE2ATRIB" name="CatIdxLINE2ATRIB">LINE2ATRIB</a></div>
+        <div class="norm"><a href="#LINE3TXT" name="CatIdxLINE3TXT">LINE3TXT</a></div>
+        <div class="norm"><a href="#LINE3ATRIB" name="CatIdxLINE3ATRIB">LINE3ATRIB</a></div>
+        <div class="norm"><a href="#LINE4TXT" name="CatIdxLINE4TXT">LINE4TXT</a></div>
+        <div class="norm"><a href="#LINE4ATRIB" name="CatIdxLINE4ATRIB">LINE4ATRIB</a></div>
+        <div class="norm"><a href="#LINE5TXT" name="CatIdxLINE5TXT">LINE5TXT</a></div>
+        <div class="norm"><a href="#LINE5ATRIB" name="CatIdxLINE5ATRIB">LINE5ATRIB</a></div>
+        <div class="norm"><a href="#LINE6TXT" name="CatIdxLINE6TXT">LINE6TXT</a></div>
+        <div class="norm"><a href="#LINE6ATRIB" name="CatIdxLINE6ATRIB">LINE6ATRIB</a></div>
+        <div class="norm"><a href="#LINE7TXT" name="CatIdxLINE7TXT">LINE7TXT</a></div>
+        <div class="norm"><a href="#LINE7ATRIB" name="CatIdxLINE7ATRIB">LINE7ATRIB</a></div>
+        <div class="norm"><a href="#LINE8TXT" name="CatIdxLINE8TXT">LINE8TXT</a></div>
+        <div class="norm"><a href="#LINE8ATRIB" name="CatIdxLINE8ATRIB">LINE8ATRIB</a></div>
+        <div class="norm"><a href="#CURRLINE" name="CatIdxCURRLINE">CURRLINE</a></div>
+        <div class="norm"><a href="#MAXLINE" name="CatIdxMAXLINE">MAXLINE</a></div>
+    <li class="title">Others</li>
+        <div class="norm"><a href="#AVAIL" name="CatIdxAVAIL">AVAIL</a></div>
+        <div class="norm"><a href="#REPEAT" name="CatIdxREPEAT">REPEAT</a></div>
+        <div class="norm"><a href="#SHUFFLE" name="CatIdxSHUFFLE">SHUFFLE</a></div>
+        <div class="norm"><a href="#ARTIST" name="CatIdxARTIST">ARTIST</a></div>
+        <div class="norm"><a href="#ALBUM" name="CatIdxALBUM">ALBUM</a></div>
+        <div class="norm"><a href="#SONG" name="CatIdxSONG">SONG</a></div>
+</ol><hr>
+<div class="title">Command Details of SubUnit: NAPSTER</div>
+<ul type="disc">
+<li>
+<div class="itemtitle"><a name="AVAIL">AVAIL</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:AVAIL=?</div></dd>
+<dd><div class="description">Retrieving the state of network link or the validity of Rhapsody operational status</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Not Connected</div></dd>
+<dd><div class="description">GET Only: indicating the network link is down.</div></dd>
+<dd><div class="notes">This status can be reported only via RS-232C connection since the network cable connection is not physically detected.</div></dd>
+<dd><div class="param">Not Ready</div></dd>
+<dd><div class="description">GET Only: indicating invalid state of operation</div></dd>
+<dd><div class="param">Ready</div></dd>
+<dd><div class="description">GET Only: indicating valid state of operation</div></dd>
+<div class="backlink"><a href="#CatIdxAVAIL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="REPEAT">REPEAT</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:REPEAT=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:REPEAT=?</div></dd>
+<dd><div class="description">Operating & retrieving the repeat setting state</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: setting to Off / GET: indicating its state is Off</div></dd>
+<dd><div class="param">Single</div></dd>
+<dd><div class="description">PUT: setting to Single / GET: indicating its state is Single</div></dd>
+<dd><div class="param">All</div></dd>
+<dd><div class="description">PUT: setting to All / GET: indicating its state is All</div></dd>
+<div class="backlink"><a href="#CatIdxREPEAT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SHUFFLE">SHUFFLE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:SHUFFLE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:SHUFFLE=?</div></dd>
+<dd><div class="description">Operating & retrieving the shuffle setting state</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: setting to Off / GET: indicating its state is Off</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: setting to On / GET: indicating its state is On</div></dd>
+<div class="backlink"><a href="#CatIdxSHUFFLE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PRESET">PRESET</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:PRESET=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating Preset Bank (for USB/NET) state.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: 1 to 40, Step: 1</div></dd>
+<dd><div class="description">PUT Only: recalling specified number of preset bank.</div></dd>
+<div class="backlink"><a href="#CatIdxPRESET">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="MEM">MEM</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:MEM=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Registering current playback song or station to a preset bank</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Auto</div></dd>
+<dd><div class="description">PUT Only: registering to a preset bank with automatically specifying the number.</div></dd>
+<dd><div class="param">Numerical Number: 1 to 40, Step: 1</div></dd>
+<dd><div class="description">PUT Only: registering to a preset bank of the number specified.</div></dd>
+<div class="backlink"><a href="#CatIdxMEM">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PLAYBACK">PLAYBACK</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:PLAYBACK=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating the playback state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Stop</div></dd>
+<dd><div class="description">PUT Only: change its state to Stop</div></dd>
+<dd><div class="param">Play</div></dd>
+<dd><div class="description">PUT Only: change its state to Play</div></dd>
+<dd><div class="param">|<<</div></dd>
+<dd><div class="description">PUT Only: change its state to |<<</div></dd>
+<dd><div class="notes">meaning Skip Rev</div></dd>
+<dd><div class="param">>>|</div></dd>
+<dd><div class="description">PUT Only: change its state to >>|</div></dd>
+<dd><div class="notes">meaning Skip Fwd</div></dd>
+<dd><div class="param">Skip Rev</div></dd>
+<dd><div class="description">PUT Only: change its state to Skip Rev</div></dd>
+<dd><div class="param">Skip Fwd</div></dd>
+<dd><div class="description">PUT Only: change its state to Skip Fwd</div></dd>
+<div class="backlink"><a href="#CatIdxPLAYBACK">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PLAYBACKINFO">PLAYBACKINFO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:PLAYBACKINFO=?</div></dd>
+<dd><div class="description">Retrieving the playback state</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Stop</div></dd>
+<dd><div class="description">GET Only: indicating its state is Stop</div></dd>
+<dd><div class="param">Play</div></dd>
+<dd><div class="description">GET Only: indicating its state is Play</div></dd>
+<div class="backlink"><a href="#CatIdxPLAYBACKINFO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="METAINFO">METAINFO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:METAINFO=?</div></dd>
+<dd><div class="description">GET Only. Meta Info can be retrieved at a time.</div></dd>
+<dd><div class="notes">Updated by following commands: "@XXXX:ARTIST", "@XXXX:ALBUM" and "@XXXX:SONG" (XXXX = SubUnit name)</div></dd>
+<div class="backlink"><a href="#CatIdxMETAINFO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="ARTIST">ARTIST</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:ARTIST=?</div></dd>
+<dd><div class="description">Retrieving Artist Name</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxARTIST">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="ALBUM">ALBUM</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:ALBUM=?</div></dd>
+<dd><div class="description">Retrieving Album Title</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#ARTIST">ARTIST</a></div></dd>
+<div class="backlink"><a href="#CatIdxALBUM">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SONG">SONG</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:SONG=?</div></dd>
+<dd><div class="description">Retrieving Song Title</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#ARTIST">ARTIST</a></div></dd>
+<div class="backlink"><a href="#CatIdxSONG">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTSEL">LISTSEL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:LISTSEL=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Selecting the current row of contents list</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Line_1</div></dd>
+<dd><div class="description">PUT Only: selecting Line 1</div></dd>
+<dd><div class="param">Line_2</div></dd>
+<dd><div class="description">PUT Only: selecting Line 2</div></dd>
+<dd><div class="param">Line_3</div></dd>
+<dd><div class="description">PUT Only: selecting Line 3</div></dd>
+<dd><div class="param">Line_4</div></dd>
+<dd><div class="description">PUT Only: selecting Line 4</div></dd>
+<dd><div class="param">Line_5</div></dd>
+<dd><div class="description">PUT Only: selecting Line 5</div></dd>
+<dd><div class="param">Line_6</div></dd>
+<dd><div class="description">PUT Only: selecting Line 6</div></dd>
+<dd><div class="param">Line_7</div></dd>
+<dd><div class="description">PUT Only: selecting Line 7</div></dd>
+<dd><div class="param">Line_8</div></dd>
+<dd><div class="description">PUT Only: selecting Line 8</div></dd>
+<div class="backlink"><a href="#CatIdxLISTSEL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTCURSOR">LISTCURSOR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:LISTCURSOR=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating the cursor of contents list</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: moving it Down</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: moving it Up</div></dd>
+<dd><div class="param">Sel</div></dd>
+<dd><div class="description">PUT Only: selecting the line that the cursor is on</div></dd>
+<dd><div class="param">Back</div></dd>
+<dd><div class="description">PUT Only: going back to the previous layer of contents list</div></dd>
+<dd><div class="param">Back to Home</div></dd>
+<div class="backlink"><a href="#CatIdxLISTCURSOR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTPAGE">LISTPAGE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@NAPSTER:LISTPAGE=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating the page control of contents list</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: moving it Down</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: moving it Up</div></dd>
+<div class="backlink"><a href="#CatIdxLISTPAGE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTINFO">LISTINFO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LISTINFO=?</div></dd>
+<dd><div class="description">GET Only. Contents list Info can be retrieved at a time.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dd><div class="notes">Updated by following commands: "@XXXX:LISTLAYER", "@XXXX:LISTLAYERNAME", "@XXXX:LINE1TXT" to "@XXXX:LINE8TXT", "@XXXX:LINE1ATRIB" to "@XXXX:LINE8ATRIB", "@XXXX:CURRLINE" and "@XXXX:MAXLINE" (XXXX = SubUnit name)</div></dd>
+<div class="backlink"><a href="#CatIdxLISTINFO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTLAYER">LISTLAYER</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LISTLAYER=?</div></dd>
+<dd><div class="description">Retrieving the current depth of layers.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: 1 to 16, Step: 1</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxLISTLAYER">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTLAYERNAME">LISTLAYERNAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LISTLAYERNAME=?</div></dd>
+<dd><div class="description">Retrieving the current layer name.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxLISTLAYERNAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE1TXT">LINE1TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE1TXT=?</div></dd>
+<dd><div class="description">Retrieving text info of the line 1 of contents list currently displayed.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxLINE1TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE1ATRIB">LINE1ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE1ATRIB=?</div></dd>
+<dd><div class="description">Retrieving the attributes of the line number 1.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Container</div></dd>
+<dd><div class="description">GET Only: indicating this line is Container</div></dd>
+<dd><div class="param">Item</div></dd>
+<dd><div class="description">GET Only: indicating this line is Item</div></dd>
+<dd><div class="param">Unplayable Item</div></dd>
+<dd><div class="description">GET Only: indicating this line is Unplayable Item</div></dd>
+<dd><div class="param">Unselectable</div></dd>
+<dd><div class="description">GET Only: indicating this line is Unselectable</div></dd>
+<dd><div class="param">Keyword</div></dd>
+<div class="backlink"><a href="#CatIdxLINE1ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE2TXT">LINE2TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE2TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE2TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE2ATRIB">LINE2ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE2ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE2ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE3TXT">LINE3TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE3TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE3TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE3ATRIB">LINE3ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE3ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE3ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE4TXT">LINE4TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE4TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE4TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE4ATRIB">LINE4ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE4ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE4ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE5TXT">LINE5TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE5TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE5TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE5ATRIB">LINE5ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE5ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE5ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE6TXT">LINE6TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE6TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE6TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE6ATRIB">LINE6ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE6ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE6ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE7TXT">LINE7TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE7TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE7TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE7ATRIB">LINE7ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE7ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE7ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE8TXT">LINE8TXT</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE8TXT=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1TXT">LINE1TXT</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE8TXT">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LINE8ATRIB">LINE8ATRIB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:LINE8ATRIB=?</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#LINE1ATRIB">LINE1ATRIB</a></div></dd>
+<div class="backlink"><a href="#CatIdxLINE8ATRIB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="CURRLINE">CURRLINE</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:CURRLINE=?</div></dd>
+<dd><div class="description">Retrieving absolute position number of current cursor position in the contents list layer currently displayed</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: 1 to 65000, Step: 1</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxCURRLINE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="MAXLINE">MAXLINE</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@NAPSTER:MAXLINE=?</div></dd>
+<dd><div class="description">Retrieving maximum lines in the contents list layer currently displayed</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: 0 to 65000, Step: 1</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxMAXLINE">Back To Index</a></div>
+</dl></li>
+</ul>
+<p>
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+</body>
+</html>

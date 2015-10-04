@@ -4,9 +4,8 @@ var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 var net = require('net');
 
-var avrConnection;
+var client;
 var keepAliveInterval;
-var errorTimeout;
 var address;
 
 var PORT = 50000;
@@ -16,51 +15,62 @@ var YamahaAvr = assign({}, EventEmitter.prototype, {
     "connect": function (addr) {
         address = addr;
         init();
-        avrConnection = avrConnection.connect(PORT, address, function () {
-            //client.write('I am Chuck Norris!');
-            this.emit('connect');
-        }.bind(this));
+    },
+    "command": function (section, key, value) {
+        var cmd = '@' + section.toUpperCase() + ':' + key.toUpperCase() + '=' + value + "\r\n";
+        client.write(cmd);
     }
 });
 
 function init() {
 
-    if (avrConnection) {
-        avrConnection.removeAllListeners();
+    console.log('try to connect Yamaha AVR on ' + address + ':' + PORT);
+    if (client) {
+        client.removeAllListeners();
     }
 
-    avrConnection = new net.Socket();
+    client = new net.Socket();
+    client.setTimeout(5000);
 
-    avrConnection.on('data', function (data) {
-        var parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)\r\n$/.exec(data);
+    client = client.connect(PORT, address, function () {
+        YamahaAvr.emit('connect');
+    }.bind(this));
 
-        if (parsed) {
-            console.log('getValue', parsed[1], parsed[2], parsed[3]);
-
-            avrConnection.emit('getValue', [parsed[1], parsed[2], parsed[3]]);
-        }
+    client.on('data', function (data) {
+        var parsed;
+        data.toString().split("\r\n").forEach(function(line) {
+            if (line !== '' && line !== '@RESTRICTED') {
+                parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)$/.exec(line);
+                if (parsed) {
+                    YamahaAvr.emit('getValue', parsed[1], parsed[2], parsed[3]);
+                } else {
+                    console.warn('not parsed', data.toString())
+                }
+            }
+        });
     });
 
-    avrConnection.on('connect', function () {
-        avrConnection.write("@MAIN:PWR=?\r\n");
+    client.on('connect', function () {
+        client.write("@SYS:MODELNAME=?\r\n");
+        client.write("@SYS:VERSION=?\r\n");
+        client.write("@SYS:INPNAME=?\r\n");
+        client.write("@MAIN:PWR=?\r\n");
+        client.write("@MAIN:VOL=?\r\n");
+        client.write("@MAIN:MUTE=?\r\n");
+        client.write("@MAIN:STRAIGHT=?\r\n");
+        client.write("@MAIN:SOUNDPRG=?\r\n");
+        client.write("@MAIN:INP=?\r\n");
+        //client.write("@MAIN:SCENE=?\r\n");
+        //client.write("@MAIN:HDMIAUDOUTAMP=?\r\n");
         keepAliveInterval = setInterval(function () {
-            avrConnection.write("@MAIN:PWR=?\r\n");
+            client.write("\r\n");
         }, KEEP_ALIVE * 1000);
     });
 
-    avrConnection.on('error', function (err) {
-
-        console.log('err', err);
-
-        if (err.code === 'EHOSTUNREACH' || err.code === 'ECONNRESET') {
-            console.log('retry in 30 seconds');
-
-            errorTimeout = setTimeout(function() {
-                YamahaAvr.connect(address);
-            }, 30000);
-        }
+    client.on('error', function (err) {
+        client.removeAllListeners('connect');
+        client.setTimeout(5000, init);
     });
-
 }
 
 module.exports = YamahaAvr;

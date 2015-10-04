@@ -1,0 +1,4659 @@
+﻿----- YNCA command list -----
+Function Tree version: 1.10
+Firmware version: 1.03-
+Model: RX-A2010
+Product Region: UK / Ireland
+$Date::                           $
+$Revision: $
+(c) 2011 Yamaha Corporation All Rights Reserved.
+
+<<<<<Sub Unit : SYS>>>>>
+[FuncName] MODELNAME
+  [GET Command] @SYS:MODELNAME=?
+    [Description] Retrieving Model Name
+  [Parameters]
+    [Parameter] Character Code: Ascii, Variable Length (1 to 16 characters)
+      [Description] GET Only
+
+[FuncName] VERSION
+  [GET Command] @SYS:VERSION=?
+    [Description] Retrieving the version of software.
+  [Parameters]
+    [Parameter] Character Code: Ascii, Fixed 9 characters
+      [Description] GET Only
+      [Note] Value string is in a format of "x.xx/y.yy"; x.xx = System Version, y.yy = Command Protocol Version.
+
+[FuncName] INPNAME
+  [GET Command] @SYS:INPNAME=?
+    [Description] Retrieving each input's renamed info at a time.
+    [Note] Each response command forms like @SYS:INPNAMExxxx=XXXX (xxxx: Default Input Name, XXXX: Renamed Info)
+
+[FuncName] INPNAMEMULTICH
+  [GET Command] @SYS:INPNAMEMULTICH=?
+    [Description] Retrieving renamed info of MULTICH
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 9 characters)
+      [Description] GET Only
+
+[FuncName] INPNAMEPHONO
+  [GET Command] @SYS:INPNAMEPHONO=?
+    [Description] Retrieving renamed info of PHONO
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV1
+  [GET Command] @SYS:INPNAMEAV1=?
+    [Description] Retrieving renamed info of AV1
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV2
+  [GET Command] @SYS:INPNAMEAV2=?
+    [Description] Retrieving renamed info of AV2
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV3
+  [GET Command] @SYS:INPNAMEAV3=?
+    [Description] Retrieving renamed info of AV3
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV4
+  [GET Command] @SYS:INPNAMEAV4=?
+    [Description] Retrieving renamed info of AV4
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV5
+  [GET Command] @SYS:INPNAMEAV5=?
+    [Description] Retrieving renamed info of AV5
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV6
+  [GET Command] @SYS:INPNAMEAV6=?
+    [Description] Retrieving renamed info of AV6
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAV7
+  [GET Command] @SYS:INPNAMEAV7=?
+    [Description] Retrieving renamed info of AUDIO3
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEVAUX
+  [GET Command] @SYS:INPNAMEVAUX=?
+    [Description] Retrieving renamed info of VAUX
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAUDIO1
+  [GET Command] @SYS:INPNAMEAUDIO1=?
+    [Description] Retrieving renamed info of AUDIO1
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAUDIO2
+  [GET Command] @SYS:INPNAMEAUDIO2=?
+    [Description] Retrieving renamed info of AUDIO2
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAUDIO3
+  [GET Command] @SYS:INPNAMEAUDIO3=?
+    [Description] Retrieving renamed info of AUDIO3
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEAUDIO4
+  [GET Command] @SYS:INPNAMEAUDIO4=?
+    [Description] Retrieving renamed info of AUDIO4
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEDOCK
+  [GET Command] @SYS:INPNAMEDOCK=?
+    [Description] Retrieving renamed info of DOCK
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] INPNAMEUSB
+  [GET Command] @SYS:INPNAMEUSB=?
+    [Description] Retrieving renamed info of USB
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:INPNAMEMULTICH
+      [Description] 
+
+[FuncName] PWR
+  [PUT Command] @SYS:PWR=[Values]
+  [GET Command] @SYS:PWR=?
+    [Description] Operating & retrieving All Zones power state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Standby
+      [Description] PUT: turining its state to Standby / GET: indicating Standby status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+
+[FuncName] PARTY
+  [PUT Command] @SYS:PARTY=[Values]
+  [GET Command] @SYS:PARTY=?
+    [Description] Operating & retrieving Party Mode state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its state to Off / GET: indicating Off status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+
+[FuncName] PARTYVOL
+  [PUT Command] @SYS:PARTYVOL=[Values]
+    [Description] Operating Party Mode Volume
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: decrementing the volume by 1 step
+    [Parameter] Up
+      [Description] PUT Only: incrementing the volume by 1 step
+
+[FuncName] PARTYMUTE
+  [PUT Command] @SYS:PARTYMUTE=[Values]
+    [Description] Operating Party Mode Muting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT Only: un-muting Party Mode
+    [Parameter] On
+      [Description] PUT Only: muting Party Mode
+
+[FuncName] VIDANLGCONV
+  [PUT Command] @SYS:VIDANLGCONV=[Values]
+  [GET Command] @SYS:VIDANLGCONV=?
+    [Description] Operating & retrieving Analog Video Conversion setting state.
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating Off status.
+    [Parameter] On
+      [Description] PUT: setting to On / GET: indicating On status.
+
+[FuncName] SPPATTERN
+  [PUT Command] @SYS:SPPATTERN=[Values]
+  [GET Command] @SYS:SPPATTERN=?
+    [Description] Operating & retrieving Speaker Pattern setting state.
+  [Parameters]
+    [Parameter] Pattern 1
+      [Description] PUT: setting to Pattern1 / GET: indicating its setting at Pattern1.
+    [Parameter] Pattern 2
+      [Description] PUT: setting to Pattern2 / GET: indicating its setting at Pattern2.
+
+[FuncName] SPPATTERN1AMP
+  [PUT Command] @SYS:SPPATTERN1AMP=[Values]
+  [GET Command] @SYS:SPPATTERN1AMP=?
+    [Description] Operating & retrieving Amp Assign setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] Basic
+      [Description] PUT: setting to Basic / GET: indicating its setting at Basic.
+    [Parameter] 7ch +1ZONE
+      [Description] PUT: setting to 7ch +1ZONE / GET: indicating its setting at 7ch +1ZONE.
+    [Parameter] 9ch +1ZONE
+      [Description] PUT: setting to 9ch +1ZONE / GET: indicating its setting at 9ch +1ZONE.
+    [Parameter] 7ch +2ZONE
+      [Description] PUT: setting to 7ch +2ZONE / GET: indicating its setting at 7ch +2ZONE.
+    [Parameter] 7ch +FRONT+1ZONE
+      [Description] PUT: setting to 7ch +FRONT+1ZONE / GET: indicating its setting at 7ch +FRONT+1ZONE.
+    [Parameter] 5ch +FRONT+2ZONE
+      [Description] PUT: setting to 5ch +FRONT+2ZONE / GET: indicating its setting at 5ch +FRONT+2ZONE.
+    [Parameter] 7ch BI-AMP
+      [Description] PUT: setting to 7ch BI-AMP / GET: indicating its setting at 7ch BI-AMP.
+
+[FuncName] SPPATTERN1FRNTCNFG
+  [PUT Command] @SYS:SPPATTERN1FRNTCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN1FRNTCNFG=?
+    [Description] Operating & retrieving Front Ch Configuration setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] Small
+      [Description] PUT: setting to Small / GET: indicating its setting at Small.
+    [Parameter] Large
+      [Description] PUT: setting to Large / GET: indicating its setting at Large.
+
+[FuncName] SPPATTERN1FRNTCRSOVR
+  [PUT Command] @SYS:SPPATTERN1FRNTCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN1FRNTCRSOVR=?
+    [Description] Operating & retrieving Front Ch Crossover Frequency setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] 40 Hz
+      [Description] PUT: setting to 40 Hz / GET: indicating its setting at 40 Hz.
+    [Parameter] 60 Hz
+      [Description] PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.
+    [Parameter] 80 Hz
+      [Description] PUT: setting to 80 Hz / GET: indicating its setting at 80 Hz.
+    [Parameter] 90 Hz
+      [Description] PUT: setting to 90 Hz / GET: indicating its setting at 90 Hz.
+    [Parameter] 100 Hz
+      [Description] PUT: setting to 100 Hz / GET: indicating its setting at 100 Hz.
+    [Parameter] 110 Hz
+      [Description] PUT: setting to 110 Hz / GET: indicating its setting at 110 Hz.
+    [Parameter] 120 Hz
+      [Description] PUT: setting to 120 Hz / GET: indicating its setting at 120 Hz.
+    [Parameter] 160 Hz
+      [Description] PUT: setting to 160 Hz / GET: indicating its setting at 160 Hz.
+    [Parameter] 200 Hz
+      [Description] PUT: setting to 200 Hz / GET: indicating its setting at 200 Hz.
+
+[FuncName] SPPATTERN1CENTCNFG
+  [PUT Command] @SYS:SPPATTERN1CENTCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN1CENTCNFG=?
+    [Description] Operating & retrieving Center Ch Configuration setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] None
+      [Description] PUT: setting to None / GET: indicating its setting at None.
+    [Parameter] Small
+      [Description] PUT: setting to Small / GET: indicating its setting at Small.
+    [Parameter] Large
+      [Description] PUT: setting to Large / GET: indicating its setting at Large.
+
+[FuncName] SPPATTERN1CENTCRSOVR
+  [PUT Command] @SYS:SPPATTERN1CENTCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN1CENTCRSOVR=?
+    [Description] Operating & retrieving Center Ch Crossover Frequency setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] 40 Hz
+      [Description] PUT: setting to 40 Hz / GET: indicating its setting at 40 Hz.
+    [Parameter] 60 Hz
+      [Description] PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.
+    [Parameter] 80 Hz
+      [Description] PUT: setting to 80 Hz / GET: indicating its setting at 80 Hz.
+    [Parameter] 90 Hz
+      [Description] PUT: setting to 90 Hz / GET: indicating its setting at 90 Hz.
+    [Parameter] 100 Hz
+      [Description] PUT: setting to 100 Hz / GET: indicating its setting at 100 Hz.
+    [Parameter] 110 Hz
+      [Description] PUT: setting to 110 Hz / GET: indicating its setting at 110 Hz.
+    [Parameter] 120 Hz
+      [Description] PUT: setting to 120 Hz / GET: indicating its setting at 120 Hz.
+    [Parameter] 160 Hz
+      [Description] PUT: setting to 160 Hz / GET: indicating its setting at 160 Hz.
+    [Parameter] 200 Hz
+      [Description] PUT: setting to 200 Hz / GET: indicating its setting at 200 Hz.
+
+[FuncName] SPPATTERN1SURCNFG
+  [PUT Command] @SYS:SPPATTERN1SURCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN1SURCNFG=?
+    [Description] Operating & retrieving Surround Ch Configuration setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] None
+      [Description] PUT: setting to None / GET: indicating its setting at None.
+    [Parameter] Small
+      [Description] PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.
+    [Parameter] Large
+      [Description] PUT: setting to Large / GET: indicating its setting at Large.
+
+[FuncName] SPPATTERN1SURCRSOVR
+  [PUT Command] @SYS:SPPATTERN1SURCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN1SURCRSOVR=?
+    [Description] Operating & retrieving Surround Ch Crossover Frequency setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] 40 Hz
+      [Description] PUT: setting to 40 Hz / GET: indicating its setting at 40 Hz.
+    [Parameter] 60 Hz
+      [Description] PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.
+    [Parameter] 80 Hz
+      [Description] PUT: setting to 80 Hz / GET: indicating its setting at 80 Hz.
+    [Parameter] 90 Hz
+      [Description] PUT: setting to 90 Hz / GET: indicating its setting at 90 Hz.
+    [Parameter] 100 Hz
+      [Description] PUT: setting to 100 Hz / GET: indicating its setting at 100 Hz.
+    [Parameter] 110 Hz
+      [Description] PUT: setting to 110 Hz / GET: indicating its setting at 110 Hz.
+    [Parameter] 120 Hz
+      [Description] PUT: setting to 120 Hz / GET: indicating its setting at 120 Hz.
+    [Parameter] 160 Hz
+      [Description] PUT: setting to 160 Hz / GET: indicating its setting at 160 Hz.
+    [Parameter] 200 Hz
+      [Description] PUT: setting to 200 Hz / GET: indicating its setting at 200 Hz.
+
+[FuncName] SPPATTERN1SURBCNFG
+  [PUT Command] @SYS:SPPATTERN1SURBCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN1SURBCNFG=?
+    [Description] Operating & retrieving Surround Back Ch Configuration setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] None
+      [Description] PUT: setting to None / GET: indicating its setting at None.
+    [Parameter] Small x1
+      [Description] PUT: setting to Small x1 / GET: indicating its setting at Small x1.
+    [Parameter] Large x1
+      [Description] PUT: setting to Large x1 / GET: indicating its setting at Large x1.
+    [Parameter] Small x2
+      [Description] PUT: setting to Small x2 / GET: indicating its setting at Small x2.
+    [Parameter] Large x2
+      [Description] PUT: setting to Large x2 / GET: indicating its setting at Large x2.
+
+[FuncName] SPPATTERN1SURBCRSOVR
+  [PUT Command] @SYS:SPPATTERN1SURBCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN1SURBCRSOVR=?
+    [Description] Operating & retrieving Surround Back Ch Crossover Frequency setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] 40 Hz
+      [Description] PUT: setting to 40 Hz / GET: indicating its setting at 40 Hz.
+    [Parameter] 60 Hz
+      [Description] PUT: setting to 60 Hz / GET: indicating its setting at 60 Hz.
+    [Parameter] 80 Hz
+      [Description] PUT: setting to 80 Hz / GET: indicating its setting at 80 Hz.
+    [Parameter] 90 Hz
+      [Description] PUT: setting to 90 Hz / GET: indicating its setting at 90 Hz.
+    [Parameter] 100 Hz
+      [Description] PUT: setting to 100 Hz / GET: indicating its setting at 100 Hz.
+    [Parameter] 110 Hz
+      [Description] PUT: setting to 110 Hz / GET: indicating its setting at 110 Hz.
+    [Parameter] 120 Hz
+      [Description] PUT: setting to 120 Hz / GET: indicating its setting at 120 Hz.
+    [Parameter] 160 Hz
+      [Description] PUT: setting to 160 Hz / GET: indicating its setting at 160 Hz.
+    [Parameter] 200 Hz
+      [Description] PUT: setting to 200 Hz / GET: indicating its setting at 200 Hz.
+
+[FuncName] SPPATTERN1FRNTPRES
+  [PUT Command] @SYS:SPPATTERN1FRNTPRES=[Values]
+  [GET Command] @SYS:SPPATTERN1FRNTPRES=?
+    [Description] Operating & retrieving Front Presence Ch setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] None
+      [Description] PUT: setting to None / GET: indicating its setting at None.
+    [Parameter] Use
+      [Description] PUT: setting to Use / GET: indicating its setting at Use.
+
+[FuncName] SPPATTERN1REARPRES
+  [PUT Command] @SYS:SPPATTERN1REARPRES=[Values]
+  [GET Command] @SYS:SPPATTERN1REARPRES=?
+    [Description] Operating & retrieving Rear Presence Ch setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1FRNTPRES
+      [Description] 
+
+[FuncName] SPPATTERN1SWFR1CNFG
+  [PUT Command] @SYS:SPPATTERN1SWFR1CNFG=[Values]
+  [GET Command] @SYS:SPPATTERN1SWFR1CNFG=?
+    [Description] Operating & retrieving Subwoofer1 Configuration state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] None
+      [Description] PUT: setting to None / GET: indicating its setting at None.
+    [Parameter] Use
+      [Description] PUT: setting to Use / GET: indicating its setting at Use.
+
+[FuncName] SPPATTERN1SWFR1PHASE
+  [PUT Command] @SYS:SPPATTERN1SWFR1PHASE=[Values]
+  [GET Command] @SYS:SPPATTERN1SWFR1PHASE=?
+    [Description] Operating & retrieving Subwoofer1 Phase setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] Normal
+      [Description] PUT: setting to Normal / GET: indicating its setting at Normal.
+    [Parameter] Reverse
+      [Description] PUT: setting to Reverse / GET: indicating its setting at Reverse.
+
+[FuncName] SPPATTERN1SWFR2CNFG
+  [PUT Command] @SYS:SPPATTERN1SWFR2CNFG=[Values]
+  [GET Command] @SYS:SPPATTERN1SWFR2CNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFR1CNFG
+      [Description] 
+
+[FuncName] SPPATTERN1SWFR2PHASE
+  [PUT Command] @SYS:SPPATTERN1SWFR2PHASE=[Values]
+  [GET Command] @SYS:SPPATTERN1SWFR2PHASE=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFR1PHASE
+      [Description] 
+
+[FuncName] SPPATTERN1SWFRLAYOUT
+  [PUT Command] @SYS:SPPATTERN1SWFRLAYOUT=[Values]
+  [GET Command] @SYS:SPPATTERN1SWFRLAYOUT=?
+    [Description] Operating & retrieving Subwoofer Layout Setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] Left & Right
+      [Description] PUT: setting to Left & Right / GET: indicating its setting at Left & Right.
+    [Parameter] Front & Rear
+      [Description] PUT: setting to Front & Rear / GET: indicating its setting at Front & Rear.
+    [Parameter] Monaural x2
+      [Description] PUT: setting to Monaural x2 / GET: indicating its setting at Monaural x2.
+
+[FuncName] SPPATTERN1EXBASS
+  [PUT Command] @SYS:SPPATTERN1EXBASS=[Values]
+  [GET Command] @SYS:SPPATTERN1EXBASS=?
+    [Description] Operating & retrieving Extra Bass Setting state for Speaker Pattern1.
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its setting at Off.
+    [Parameter] On
+      [Description] PUT: setting to On / GET: indicating its setting at On.
+
+[FuncName] SPPATTERN2AMP
+  [PUT Command] @SYS:SPPATTERN2AMP=[Values]
+  [GET Command] @SYS:SPPATTERN2AMP=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1AMP
+      [Description] 
+
+[FuncName] SPPATTERN2FRNTCNFG
+  [PUT Command] @SYS:SPPATTERN2FRNTCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN2FRNTCNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1FRNTCNFG
+      [Description] 
+
+[FuncName] SPPATTERN2FRNTCRSOVR
+  [PUT Command] @SYS:SPPATTERN2FRNTCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN2FRNTCRSOVR=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1FRNTCRSOVR
+      [Description] 
+
+[FuncName] SPPATTERN2CENTCNFG
+  [PUT Command] @SYS:SPPATTERN2CENTCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN2CENTCNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1CENTCNFG
+      [Description] 
+
+[FuncName] SPPATTERN2CENTCRSOVR
+  [PUT Command] @SYS:SPPATTERN2CENTCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN2CENTCRSOVR=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1CENTCRSOVR
+      [Description] 
+
+[FuncName] SPPATTERN2SURCNFG
+  [PUT Command] @SYS:SPPATTERN2SURCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN2SURCNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SURCNFG
+      [Description] 
+
+[FuncName] SPPATTERN2SURCRSOVR
+  [PUT Command] @SYS:SPPATTERN2SURCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN2SURCRSOVR=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SURCRSOVR
+      [Description] 
+
+[FuncName] SPPATTERN2SURBCNFG
+  [PUT Command] @SYS:SPPATTERN2SURBCNFG=[Values]
+  [GET Command] @SYS:SPPATTERN2SURBCNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SURBCNFG
+      [Description] 
+
+[FuncName] SPPATTERN2SURBCRSOVR
+  [PUT Command] @SYS:SPPATTERN2SURBCRSOVR=[Values]
+  [GET Command] @SYS:SPPATTERN2SURBCRSOVR=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SURBCRSOVR
+      [Description] 
+
+[FuncName] SPPATTERN2FRNTPRES
+  [PUT Command] @SYS:SPPATTERN2FRNTPRES=[Values]
+  [GET Command] @SYS:SPPATTERN2FRNTPRES=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1FRNTPRES
+      [Description] 
+
+[FuncName] SPPATTERN2REARPRES
+  [PUT Command] @SYS:SPPATTERN2REARPRES=[Values]
+  [GET Command] @SYS:SPPATTERN2REARPRES=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1REARPRES
+      [Description] 
+
+[FuncName] SPPATTERN2SWFR1CNFG
+  [PUT Command] @SYS:SPPATTERN2SWFR1CNFG=[Values]
+  [GET Command] @SYS:SPPATTERN2SWFR1CNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFR1CNFG
+      [Description] 
+
+[FuncName] SPPATTERN2SWFR1PHASE
+  [PUT Command] @SYS:SPPATTERN2SWFR1PHASE=[Values]
+  [GET Command] @SYS:SPPATTERN2SWFR1PHASE=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFR1PHASE
+      [Description] 
+
+[FuncName] SPPATTERN2SWFR2CNFG
+  [PUT Command] @SYS:SPPATTERN2SWFR2CNFG=[Values]
+  [GET Command] @SYS:SPPATTERN2SWFR2CNFG=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFR2CNFG
+      [Description] 
+
+[FuncName] SPPATTERN2SWFR2PHASE
+  [PUT Command] @SYS:SPPATTERN2SWFR2PHASE=[Values]
+  [GET Command] @SYS:SPPATTERN2SWFR2PHASE=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFR2PHASE
+      [Description] 
+
+[FuncName] SPPATTERN2SWFRLAYOUT
+  [PUT Command] @SYS:SPPATTERN2SWFRLAYOUT=[Values]
+  [GET Command] @SYS:SPPATTERN2SWFRLAYOUT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1SWFRLAYOUT
+      [Description] 
+
+[FuncName] SPPATTERN2EXBASS
+  [PUT Command] @SYS:SPPATTERN2EXBASS=[Values]
+  [GET Command] @SYS:SPPATTERN2EXBASS=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:SPPATTERN1EXBASS
+      [Description] 
+
+[FuncName] DMCCONTROL
+  [PUT Command] @SYS:DMCCONTROL=[Values]
+  [GET Command] @SYS:DMCCONTROL=?
+    [Description] Operating & retrieving DMC Control Setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Disable
+      [Description] PUT: setting to Disable / GET: indicating its setting at Disable.
+    [Parameter] Enable
+      [Description] PUT: setting to Enable / GET: indicating its setting at Enable.
+
+[FuncName] YNCAPORT
+  [PUT Command] @SYS:YNCAPORT=[Values]
+  [GET Command] @SYS:YNCAPORT=?
+    [Description] Operating & retrieving TCP Port Setting state for YNCA commands.
+  [Parameters]
+    [Parameter] Numerical Number: 50000 to 65535, Step: 1
+      [Description] PUT: setting to the specified number. / GET: indicating its setting with the retrieved value. The Default value is 50000.
+
+[FuncName] TRIG1MANUAL
+  [PUT Command] @SYS:TRIG1MANUAL=[Values]
+  [GET Command] @SYS:TRIG1MANUAL=?
+    [Description] Operating & retrieving Manual Operating state for Trigger Out 1.
+  [Parameters]
+    [Parameter] Lo
+      [Description] PUT: turning its state to Lo / GET: indicating its status at Lo.
+    [Parameter] Hi
+      [Description] PUT: turning its state to Hi / GET: indicating its status at Hi.
+
+[FuncName] TRIG1TYPE
+  [PUT Command] @SYS:TRIG1TYPE=[Values]
+  [GET Command] @SYS:TRIG1TYPE=?
+    [Description] Operating & retrieving Trigger Type Setting state for Trigger Out 1.
+  [Parameters]
+    [Parameter] Manual
+      [Description] PUT: setting to Manual / GET: indicating its setting at Manual.
+    [Parameter] Power
+      [Description] PUT: setting to Power / GET: indicating its setting at Power.
+    [Parameter] Zone and Input
+      [Description] PUT: setting to Zone and Input / GET: indicating its setting at Zone and Input.
+
+[FuncName] TRIG1ZONE
+  [PUT Command] @SYS:TRIG1ZONE=[Values]
+  [GET Command] @SYS:TRIG1ZONE=?
+    [Description] Operating & retrieving Zone Setting state of Trigger Type "Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Main Zone
+      [Description] PUT: setting to Main Zone / GET: indicating its setting at Main Zone.
+    [Parameter] Zone2
+      [Description] PUT: setting to Zone2 / GET: indicating its setting at Zone2.
+    [Parameter] Zone3
+      [Description] PUT: setting to Zone3 / GET: indicating its setting at Zone3.
+    [Parameter] All
+      [Description] PUT: setting to All / GET: indicating its setting at All.
+
+[FuncName] TRIG1INPTUNER
+  [PUT Command] @SYS:TRIG1INPTUNER=[Values]
+  [GET Command] @SYS:TRIG1INPTUNER=?
+    [Description] Operating & retrieving the setting state for Input TUNER of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPMULTICH
+  [PUT Command] @SYS:TRIG1INPMULTICH=[Values]
+  [GET Command] @SYS:TRIG1INPMULTICH=?
+    [Description] Operating & retrieving the setting state for Input MULTICH of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPPHONO
+  [PUT Command] @SYS:TRIG1INPPHONO=[Values]
+  [GET Command] @SYS:TRIG1INPPHONO=?
+    [Description] Operating & retrieving the setting state for Input PHONO of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV1
+  [PUT Command] @SYS:TRIG1INPAV1=[Values]
+  [GET Command] @SYS:TRIG1INPAV1=?
+    [Description] Operating & retrieving the setting state for Input AV1 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV2
+  [PUT Command] @SYS:TRIG1INPAV2=[Values]
+  [GET Command] @SYS:TRIG1INPAV2=?
+    [Description] Operating & retrieving the setting state for Input AV2 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV3
+  [PUT Command] @SYS:TRIG1INPAV3=[Values]
+  [GET Command] @SYS:TRIG1INPAV3=?
+    [Description] Operating & retrieving the setting state for Input AV3 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV4
+  [PUT Command] @SYS:TRIG1INPAV4=[Values]
+  [GET Command] @SYS:TRIG1INPAV4=?
+    [Description] Operating & retrieving the setting state for Input AV4 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV5
+  [PUT Command] @SYS:TRIG1INPAV5=[Values]
+  [GET Command] @SYS:TRIG1INPAV5=?
+    [Description] Operating & retrieving the setting state for Input AV5 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV6
+  [PUT Command] @SYS:TRIG1INPAV6=[Values]
+  [GET Command] @SYS:TRIG1INPAV6=?
+    [Description] Operating & retrieving the setting state for Input AV6 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAV7
+  [PUT Command] @SYS:TRIG1INPAV7=[Values]
+  [GET Command] @SYS:TRIG1INPAV7=?
+    [Description] Operating & retrieving the setting state for Input AV7 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPVAUX
+  [PUT Command] @SYS:TRIG1INPVAUX=[Values]
+  [GET Command] @SYS:TRIG1INPVAUX=?
+    [Description] Operating & retrieving the setting state for Input VAUX of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAUDIO1
+  [PUT Command] @SYS:TRIG1INPAUDIO1=[Values]
+  [GET Command] @SYS:TRIG1INPAUDIO1=?
+    [Description] Operating & retrieving the setting state for Input AUDIO1 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAUDIO2
+  [PUT Command] @SYS:TRIG1INPAUDIO2=[Values]
+  [GET Command] @SYS:TRIG1INPAUDIO2=?
+    [Description] Operating & retrieving the setting state for Input AUDIO2 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAUDIO3
+  [PUT Command] @SYS:TRIG1INPAUDIO3=[Values]
+  [GET Command] @SYS:TRIG1INPAUDIO3=?
+    [Description] Operating & retrieving the setting state for Input AUDIO3 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPAUDIO4
+  [PUT Command] @SYS:TRIG1INPAUDIO4=[Values]
+  [GET Command] @SYS:TRIG1INPAUDIO4=?
+    [Description] Operating & retrieving the setting state for Input AUDIO4 of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPDOCK
+  [PUT Command] @SYS:TRIG1INPDOCK=[Values]
+  [GET Command] @SYS:TRIG1INPDOCK=?
+    [Description] Operating & retrieving the setting state for Input DOCK of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPIPOD
+  [PUT Command] @SYS:TRIG1INPIPOD=[Values]
+  [GET Command] @SYS:TRIG1INPIPOD=?
+    [Description] Operating & retrieving the setting state for Input IPOD of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPBT
+  [PUT Command] @SYS:TRIG1INPBT=[Values]
+  [GET Command] @SYS:TRIG1INPBT=?
+    [Description] Operating & retrieving the setting state for Input BT of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPUAW
+  [PUT Command] @SYS:TRIG1INPUAW=[Values]
+  [GET Command] @SYS:TRIG1INPUAW=?
+    [Description] Operating & retrieving the setting state for Input UAW of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPNET
+  [PUT Command] @SYS:TRIG1INPNET=[Values]
+  [GET Command] @SYS:TRIG1INPNET=?
+    [Description] Operating & retrieving the setting state for Input NET of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPNAPSTER
+  [PUT Command] @SYS:TRIG1INPNAPSTER=[Values]
+  [GET Command] @SYS:TRIG1INPNAPSTER=?
+    [Description] Operating & retrieving the setting state for Input NAPSTER of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPPC
+  [PUT Command] @SYS:TRIG1INPPC=[Values]
+  [GET Command] @SYS:TRIG1INPPC=?
+    [Description] Operating & retrieving the setting state for Input PC of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPNETRADIO
+  [PUT Command] @SYS:TRIG1INPNETRADIO=[Values]
+  [GET Command] @SYS:TRIG1INPNETRADIO=?
+    [Description] Operating & retrieving the setting state for Input NETRADIO of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPUSB
+  [PUT Command] @SYS:TRIG1INPUSB=[Values]
+  [GET Command] @SYS:TRIG1INPUSB=?
+    [Description] Operating & retrieving the setting state for Input USB of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG1INPIPODUSB
+  [PUT Command] @SYS:TRIG1INPIPODUSB=[Values]
+  [GET Command] @SYS:TRIG1INPIPODUSB=?
+    [Description] Operating & retrieving the setting state for Input IPODUSB of Trigger "Type Zone and Input" for Trigger Out 1.
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPSIRIUS
+      [Description] 
+
+[FuncName] TRIG2MANUAL
+  [PUT Command] @SYS:TRIG2MANUAL=[Values]
+  [GET Command] @SYS:TRIG2MANUAL=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1MANUAL
+      [Description] 
+
+[FuncName] TRIG2TYPE
+  [PUT Command] @SYS:TRIG2TYPE=[Values]
+  [GET Command] @SYS:TRIG2TYPE=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1TYPE
+      [Description] 
+
+[FuncName] TRIG2ZONE
+  [PUT Command] @SYS:TRIG2ZONE=[Values]
+  [GET Command] @SYS:TRIG2ZONE=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1ZONE
+      [Description] 
+
+[FuncName] TRIG2INPTUNER
+  [PUT Command] @SYS:TRIG2INPTUNER=[Values]
+  [GET Command] @SYS:TRIG2INPTUNER=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPTUNER
+      [Description] 
+
+[FuncName] TRIG2INPMULTICH
+  [PUT Command] @SYS:TRIG2INPMULTICH=[Values]
+  [GET Command] @SYS:TRIG2INPMULTICH=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPMULTICH
+      [Description] 
+
+[FuncName] TRIG2INPPHONO
+  [PUT Command] @SYS:TRIG2INPPHONO=[Values]
+  [GET Command] @SYS:TRIG2INPPHONO=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPPHONO
+      [Description] 
+
+[FuncName] TRIG2INPAV1
+  [PUT Command] @SYS:TRIG2INPAV1=[Values]
+  [GET Command] @SYS:TRIG2INPAV1=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV1
+      [Description] 
+
+[FuncName] TRIG2INPAV2
+  [PUT Command] @SYS:TRIG2INPAV2=[Values]
+  [GET Command] @SYS:TRIG2INPAV2=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV2
+      [Description] 
+
+[FuncName] TRIG2INPAV3
+  [PUT Command] @SYS:TRIG2INPAV3=[Values]
+  [GET Command] @SYS:TRIG2INPAV3=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV3
+      [Description] 
+
+[FuncName] TRIG2INPAV4
+  [PUT Command] @SYS:TRIG2INPAV4=[Values]
+  [GET Command] @SYS:TRIG2INPAV4=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV4
+      [Description] 
+
+[FuncName] TRIG2INPAV5
+  [PUT Command] @SYS:TRIG2INPAV5=[Values]
+  [GET Command] @SYS:TRIG2INPAV5=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV5
+      [Description] 
+
+[FuncName] TRIG2INPAV6
+  [PUT Command] @SYS:TRIG2INPAV6=[Values]
+  [GET Command] @SYS:TRIG2INPAV6=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV6
+      [Description] 
+
+[FuncName] TRIG2INPAV7
+  [PUT Command] @SYS:TRIG2INPAV7=[Values]
+  [GET Command] @SYS:TRIG2INPAV7=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAV7
+      [Description] 
+
+[FuncName] TRIG2INPVAUX
+  [PUT Command] @SYS:TRIG2INPVAUX=[Values]
+  [GET Command] @SYS:TRIG2INPVAUX=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPVAUX
+      [Description] 
+
+[FuncName] TRIG2INPAUDIO1
+  [PUT Command] @SYS:TRIG2INPAUDIO1=[Values]
+  [GET Command] @SYS:TRIG2INPAUDIO1=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAUDIO1
+      [Description] 
+
+[FuncName] TRIG2INPAUDIO2
+  [PUT Command] @SYS:TRIG2INPAUDIO2=[Values]
+  [GET Command] @SYS:TRIG2INPAUDIO2=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAUDIO2
+      [Description] 
+
+[FuncName] TRIG2INPAUDIO3
+  [PUT Command] @SYS:TRIG2INPAUDIO3=[Values]
+  [GET Command] @SYS:TRIG2INPAUDIO3=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAUDIO3
+      [Description] 
+
+[FuncName] TRIG2INPAUDIO4
+  [PUT Command] @SYS:TRIG2INPAUDIO4=[Values]
+  [GET Command] @SYS:TRIG2INPAUDIO4=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPAUDIO4
+      [Description] 
+
+[FuncName] TRIG2INPDOCK
+  [PUT Command] @SYS:TRIG2INPDOCK=[Values]
+  [GET Command] @SYS:TRIG2INPDOCK=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPDOCK
+      [Description] 
+
+[FuncName] TRIG2INPIPOD
+  [PUT Command] @SYS:TRIG2INPIPOD=[Values]
+  [GET Command] @SYS:TRIG2INPIPOD=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPIPOD
+      [Description] 
+
+[FuncName] TRIG2INPBT
+  [PUT Command] @SYS:TRIG2INPBT=[Values]
+  [GET Command] @SYS:TRIG2INPBT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPBT
+      [Description] 
+
+[FuncName] TRIG2INPUAW
+  [PUT Command] @SYS:TRIG2INPUAW=[Values]
+  [GET Command] @SYS:TRIG2INPUAW=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPUAW
+      [Description] 
+
+[FuncName] TRIG2INPNET
+  [PUT Command] @SYS:TRIG2INPNET=[Values]
+  [GET Command] @SYS:TRIG2INPNET=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPNET
+      [Description] 
+
+[FuncName] TRIG2INPNAPSTER
+  [PUT Command] @SYS:TRIG2INPNAPSTER=[Values]
+  [GET Command] @SYS:TRIG2INPNAPSTER=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPNAPSTER
+      [Description] 
+
+[FuncName] TRIG2INPPC
+  [PUT Command] @SYS:TRIG2INPPC=[Values]
+  [GET Command] @SYS:TRIG2INPPC=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPPC
+      [Description] 
+
+[FuncName] TRIG2INPNETRADIO
+  [PUT Command] @SYS:TRIG2INPNETRADIO=[Values]
+  [GET Command] @SYS:TRIG2INPNETRADIO=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPNETRADIO
+      [Description] 
+
+[FuncName] TRIG2INPUSB
+  [PUT Command] @SYS:TRIG2INPUSB=[Values]
+  [GET Command] @SYS:TRIG2INPUSB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPUSB
+      [Description] 
+
+[FuncName] TRIG2INPIPODUSB
+  [PUT Command] @SYS:TRIG2INPIPODUSB=[Values]
+  [GET Command] @SYS:TRIG2INPIPODUSB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @SYS:TRIG1INPIPODUSB
+      [Description] 
+
+[FuncName] MEMGRD
+  [PUT Command] @SYS:MEMGRD=[Values]
+  [GET Command] @SYS:MEMGRD=?
+    [Description] Operating & retrieving Memory Guard Setting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its setting at Off.
+    [Parameter] On
+      [Description] PUT: setting to On / GET: indicating its setting at On.
+
+[FuncName] REMOTECODE
+  [PUT Command] @SYS:REMOTECODE=[Values]
+    [Description] Operation by specifying IR command codes.
+  [Parameters]
+    [Parameter] Character Code: Hex, Fixed 8 characters
+      [Description] PUT Only: 8-digit ASCII (Hex) IR codes are to be specified for its value. See the IR command chart separately provided.
+
+[FuncName] DEST
+  [GET Command] @SYS:DEST=?
+    [Description] 
+  [Parameters]
+    [Parameter] U
+      [Description] 
+    [Parameter] C
+      [Description] 
+    [Parameter] J
+      [Description] 
+    [Parameter] RS
+      [Description] 
+    [Parameter] T
+      [Description] 
+    [Parameter] K
+      [Description] 
+    [Parameter] L
+      [Description] 
+    [Parameter] A
+      [Description] 
+    [Parameter] BGF
+      [Description] 
+
+[FuncName] FREQSTEP
+  [GET Command] @SYS:FREQSTEP=?
+    [Description] 
+  [Parameters]
+    [Parameter] FM50/AM9
+      [Description] 
+    [Parameter] FM100/AM9
+      [Description] 
+    [Parameter] FM100/AM10
+      [Description] 
+    [Parameter] FM200/AM10
+      [Description] 
+
+
+<<<<<Sub Unit : MAIN>>>>>
+[FuncName] AVAIL
+  [GET Command] @MAIN:AVAIL=?
+    [Description] Retrieving the validity of Main Zone operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] ZONENAME
+  [PUT Command] @MAIN:ZONENAME=[Values]
+  [GET Command] @MAIN:ZONENAME=?
+    [Description] Setting & retrieving renamed info of Main Zone
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 9 characters)
+      [Description] PUT: setting its name / GET: indicating its name
+
+[FuncName] SCENENAME
+  [GET Command] @MAIN:SCENENAME=?
+    [Description] Retrieving renamed info of all SCENE presets for Main Zone
+
+[FuncName] SCENE1NAME
+  [GET Command] @MAIN:SCENE1NAME=?
+    [Description] Retrieving renamed info of SCENE1
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 20 characters)
+      [Description] GET Only
+
+[FuncName] SCENE2NAME
+  [GET Command] @MAIN:SCENE2NAME=?
+    [Description] Retrieving renamed info of SCENE2
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE3NAME
+  [GET Command] @MAIN:SCENE3NAME=?
+    [Description] Retrieving renamed info of SCENE3
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE4NAME
+  [GET Command] @MAIN:SCENE4NAME=?
+    [Description] Retrieving renamed info of SCENE4
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE5NAME
+  [GET Command] @MAIN:SCENE5NAME=?
+    [Description] Retrieving renamed info of SCENE5
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE6NAME
+  [GET Command] @MAIN:SCENE6NAME=?
+    [Description] Retrieving renamed info of SCENE6
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE7NAME
+  [GET Command] @MAIN:SCENE7NAME=?
+    [Description] Retrieving renamed info of SCENE7
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE8NAME
+  [GET Command] @MAIN:SCENE8NAME=?
+    [Description] Retrieving renamed info of SCENE8
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE9NAME
+  [GET Command] @MAIN:SCENE9NAME=?
+    [Description] Retrieving renamed info of SCENE9
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE10NAME
+  [GET Command] @MAIN:SCENE10NAME=?
+    [Description] Retrieving renamed info of SCENE10
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE11NAME
+  [GET Command] @MAIN:SCENE11NAME=?
+    [Description] Retrieving renamed info of SCENE11
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE12NAME
+  [GET Command] @MAIN:SCENE12NAME=?
+    [Description] Retrieving renamed info of SCENE12
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SCENE1NAME
+      [Description] 
+
+[FuncName] BASIC
+  [GET Command] @MAIN:BASIC=?
+    [Description] GET Only. Main Zone basic info is retrieved at a time.
+    [Note] Updated by following commands: "@MAIN:PWR", "@MAIN:SLEEP", "@MAIN:VOL", "@MAIN:MUTE", "@MAIN:INP", "@MAIN:STRAIGHT", "@MAIN:ENHANCER" and "@MAIN:SOUNDPRG"
+
+[FuncName] PWR
+  [PUT Command] @MAIN:PWR=[Values]
+  [GET Command] @MAIN:PWR=?
+    [Description] Operating & retrieving Power state of Main Zone
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Standby
+      [Description] PUT: turining its state to Standby / GET: indicating Standby status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+    [Parameter] On/Standby
+      [Description] PUT Only: toggling its status between On/Standby
+
+[FuncName] SLEEP
+  [PUT Command] @MAIN:SLEEP=[Values]
+  [GET Command] @MAIN:SLEEP=?
+    [Description] Operating & retrieving Sleep setting state of Main Zone
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] 30 min
+      [Description] PUT: setting to 30 min / GET: indicating it's setting is 30 min.
+    [Parameter] 60 min
+      [Description] PUT: setting to 60 min / GET: indicating it's setting is 60 min.
+    [Parameter] 90 min
+      [Description] PUT: setting to 90 min / GET: indicating it's setting is 90 min.
+    [Parameter] 120 min
+      [Description] PUT: setting to 120 min / GET: indicating it's setting is 120 min.
+    [Parameter] Last
+      [Description] PUT Only: setting to the value set last
+
+[FuncName] VOL
+  [PUT Command] @MAIN:VOL=[Values]
+  [GET Command] @MAIN:VOL=?
+    [Description] Operating & retrieving Main Zone Volume state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: decrementing by 1 step (0.5dB)
+    [Parameter] Up
+      [Description] PUT Only: incrementing by 1 step (0.5dB)
+    [Parameter] Down 1 dB
+      [Description] PUT Only: decrementing by 1 dB
+    [Parameter] Up 1 dB
+      [Description] PUT Only: incrementing by 1 dB
+    [Parameter] Down 2 dB
+      [Description] PUT Only: decrementing by 2 dB
+    [Parameter] Up 2 dB
+      [Description] PUT Only: incrementing by 2 dB
+    [Parameter] Down 5 dB
+      [Description] PUT Only: decrementing by 5 dB
+    [Parameter] Up 5 dB
+      [Description] PUT Only: incrementing by 5 dB
+    [Parameter] Numerical Number: -80.5 to 16.5, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current value.
+      [Note] -80.5 means muting. First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+
+[FuncName] MUTE
+  [PUT Command] @MAIN:MUTE=[Values]
+  [GET Command] @MAIN:MUTE=?
+    [Description] Operating & retrieving Main Zone muting state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its state to Off / GET: indicating Off status.
+    [Parameter] Att -40 dB
+      [Description] PUT: attenuating by 40 dB from current volume status. / GET: indicating attenuated by 40 dB from current volume status.
+    [Parameter] Att -20 dB
+      [Description] PUT: attenuating by 20 dB from current volume status. / GET: indicating attenuated by 20 dB from current volume status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+    [Parameter] On/Off
+      [Description] PUT Only: toggling its status between On/Off
+
+[FuncName] MAXVOL
+  [PUT Command] @MAIN:MAXVOL=[Values]
+  [GET Command] @MAIN:MAXVOL=?
+    [Description] Operating & retrieving Max Volume setting state of Main Zone
+    [Note] For setting the upper limit of volume
+  [Parameters]
+    [Parameter] Numerical Number: -30.0 to 15.0, Step: 5.0
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+    [Parameter] 16.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] Meaning no limit of maximum volume
+             The unit for this parameter is "dB".
+
+[FuncName] INITVOLMODE
+  [PUT Command] @MAIN:INITVOLMODE=[Values]
+  [GET Command] @MAIN:INITVOLMODE=?
+    [Description] Operating & retrieving Initial Volume Mode state of Main Zone
+    [Note] Initial Volume is for setting the volume value initially set when the applicable Zone is turned on.
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] INITVOLLVL
+  [PUT Command] @MAIN:INITVOLLVL=[Values]
+  [GET Command] @MAIN:INITVOLLVL=?
+    [Description] Operating & retrieving Initial Volume Level setting state of Main Zone
+  [Parameters]
+    [Parameter] Mute
+      [Description] PUT: turining its setting state to Mute / GET: indicating Mute setting status.
+      [Note] Initially muted when turned on
+    [Parameter] Numerical Number: -80.0 to 16.5, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+
+[FuncName] INP
+  [PUT Command] @MAIN:INP=[Values]
+  [GET Command] @MAIN:INP=?
+    [Description] Operating & retrieving Main Zone Input state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] TUNER
+      [Description] PUT: selecting input TUNER / GET: indicating current input is TUNER
+    [Parameter] MULTI CH
+      [Description] PUT: selecting input MULTI CH / GET: indicating current input is MULTI CH
+    [Parameter] PHONO
+      [Description] PUT: selecting input PHONO / GET: indicating current input is PHONO
+    [Parameter] AV1
+      [Description] PUT: selecting input AV1 / GET: indicating current input is AV1
+    [Parameter] AV2
+      [Description] PUT: selecting input AV2 / GET: indicating current input is AV2
+    [Parameter] AV3
+      [Description] PUT: selecting input AV3 / GET: indicating current input is AV3
+    [Parameter] AV4
+      [Description] PUT: selecting input AV4 / GET: indicating current input is AV4
+    [Parameter] AV5
+      [Description] PUT: selecting input AV5 / GET: indicating current input is AV5
+    [Parameter] AV6
+      [Description] PUT: selecting input AV6 / GET: indicating current input is AV6
+    [Parameter] AV7
+      [Description] PUT: selecting input AV7 / GET: indicating current input is AV7
+    [Parameter] V-AUX
+      [Description] PUT: selecting input V-AUX / GET: indicating current input is V-AUX
+    [Parameter] AUDIO1
+      [Description] PUT: selecting input AUDIO1 / GET: indicating current input is AUDIO1
+    [Parameter] AUDIO2
+      [Description] PUT: selecting input AUDIO2 / GET: indicating current input is AUDIO2
+    [Parameter] AUDIO3
+      [Description] PUT: selecting input AUDIO3 / GET: indicating current input is AUDIO3
+    [Parameter] AUDIO4
+      [Description] PUT: selecting input AUDIO4 / GET: indicating current input is AUDIO4
+    [Parameter] DOCK
+      [Description] PUT Only: selecting input DOCK
+    [Parameter] iPod
+      [Description] PUT: selecting input iPod / GET: indicating current input is iPod
+    [Parameter] Bluetooth
+      [Description] PUT: selecting input Bluetooth / GET: indicating current input is Bluetooth
+    [Parameter] UAW
+      [Description] PUT: selecting input UAW / GET: indicating current input is UAW
+    [Parameter] NET
+      [Description] PUT Only: selecting input NET
+    [Parameter] Napster
+      [Description] PUT: selecting input Napster / GET: indicating current input is Napster
+    [Parameter] PC
+      [Description] PUT: selecting input PC / GET: indicating current input is PC
+    [Parameter] NET RADIO
+      [Description] PUT: selecting input NET RADIO / GET: indicating current input is NET RADIO
+    [Parameter] USB
+      [Description] PUT Only: selecting input USB
+    [Parameter] iPod (USB)
+      [Description] PUT: selecting input iPod (USB) / GET: indicating current input is iPod (USB)
+
+[FuncName] AUDSEL
+  [PUT Command] @MAIN:AUDSEL=[Values]
+  [GET Command] @MAIN:AUDSEL=?
+    [Description] Operating & retrieving Audio Select setting state
+    [Note] Audio Select is for selecting an audio input terminal for the current input. Valid for Main Zone input only.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+      [Note] Automatically selects audio available terminals. Priority: HDMI > Coax/Opt > Analog
+    [Parameter] HDMI
+      [Description] PUT: turining its setting state to HDMI / GET: indicating HDMI setting status.
+      [Note] Audio source is fixed to HDMI terminal.
+    [Parameter] Coax/Opt
+      [Description] PUT: turining its setting state to Coax/Opt / GET: indicating Coax/Opt setting status.
+      [Note] Audio source is fixed to Coax/Opt terminal.
+    [Parameter] Analog
+      [Description] PUT: turining its setting state to Analog / GET: indicating Analog setting status.
+      [Note] Audio source is fixed to Analog terminal.
+    [Parameter] Unavailable
+      [Description] GET Only: indicating its setting is currently unavailable.
+
+[FuncName] DECODERSEL
+  [PUT Command] @MAIN:DECODERSEL=[Values]
+  [GET Command] @MAIN:DECODERSEL=?
+    [Description] Operating & retrieving Decoder Select setting state
+    [Note] Decoder Select is for selecting an audio decoder specifically.
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+      [Note] Automatically selects audio decoder. Default value.
+    [Parameter] DTS
+      [Description] PUT: turining its setting state to DTS / GET: indicating DTS setting status.
+      [Note] Audio decoder is fixed to DTS
+    [Parameter] Unavailable
+      [Description] GET Only: indicating its setting is currently unavailable.
+
+[FuncName] SCENE
+  [PUT Command] @MAIN:SCENE=[Values]
+    [Description] Recalling Main Zone Scene banks.
+  [Parameters]
+    [Parameter] Scene 1
+      [Description] PUT Only: selecting Scene 1
+    [Parameter] Scene 2
+      [Description] PUT Only: selecting Scene 2
+    [Parameter] Scene 3
+      [Description] PUT Only: selecting Scene 3
+    [Parameter] Scene 4
+      [Description] PUT Only: selecting Scene 4
+    [Parameter] Scene 5
+      [Description] PUT Only: selecting Scene 5
+    [Parameter] Scene 6
+      [Description] PUT Only: selecting Scene 6
+    [Parameter] Scene 7
+      [Description] PUT Only: selecting Scene 7
+    [Parameter] Scene 8
+      [Description] PUT Only: selecting Scene 12
+    [Parameter] Scene 9
+      [Description] PUT Only: selecting Scene 9
+    [Parameter] Scene 10
+      [Description] PUT Only: selecting Scene 10
+    [Parameter] Scene 11
+      [Description] PUT Only: selecting Scene 11
+    [Parameter] Scene 12
+      [Description] PUT Only: selecting Scene 12
+
+[FuncName] SPBASS
+  [PUT Command] @MAIN:SPBASS=[Values]
+  [GET Command] @MAIN:SPBASS=?
+    [Description] Operating & retrieving Bass Tone Control setting state (Effective to speaker output)
+  [Parameters]
+    [Parameter] Numerical Number: -6.0 to 6.0, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 3.0, -4.0
+             The unit for this parameter is "dB".
+
+[FuncName] SPTREBLE
+  [PUT Command] @MAIN:SPTREBLE=[Values]
+  [GET Command] @MAIN:SPTREBLE=?
+    [Description] Operating & retrieving Treble Tone Control setting state. (Effective to speaker output)
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:SPBASS
+      [Description] 
+
+[FuncName] PUREDIRMODE
+  [PUT Command] @MAIN:PUREDIRMODE=[Values]
+  [GET Command] @MAIN:PUREDIRMODE=?
+    [Description] Operating & retrieving Pure Direct Mode setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] ADAPTIVEDRC
+  [PUT Command] @MAIN:ADAPTIVEDRC=[Values]
+  [GET Command] @MAIN:ADAPTIVEDRC=?
+    [Description] Operating & retrieving Adaptive DRC setting state
+    [Note] Adaptive DRC is an automatic Dynamic Range Control feature.
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+
+[FuncName] LIPSYNCMODE
+  [PUT Command] @MAIN:LIPSYNCMODE=[Values]
+  [GET Command] @MAIN:LIPSYNCMODE=?
+    [Description] Operating & retrieving Lipsync Mode setting state
+  [Parameters]
+    [Parameter] Manual
+      [Description] PUT: turining its setting state to Manual / GET: indicating Manual setting status.
+      [Note] About "Manual" setting of Lipsync Mode: When selecting "Manual" here, the audio delay value can be manually set. The effective setting of the audio delay value has some dependencies as follows. In case of using Analog Video Output only (no HDMI connection is active), audio delay value set by "@MAIN:ANLGOUT" command is effective. In case that HDMI OUT1 is in active connection, the value set by "@MAIN:HDMIOUT1MANUAL" command works. Else if HDMI OUT2 is the only one activated, the setting by "@MAIN:HDMIOUT2MANUAL" is enabled.
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+      [Note] About Lipsync Mode "Auto": Basically, Audio Delay value has 5 different settings internally according to "Video Output State (5 Status available)". And the 5 different status of "Video Output State" is determined by the combination of two states of "Display's state of compatibility/incompatibility with Auto Lipsync feature" and "Current effective HDMI output state (on the receiver)", which means 4 status, plus a status of "Analog Video Out only in use", summing up to 5 in total. The "Auto" setting of Lipsync Mode is to dynamically change the Audio Delay value corresponding to a specific status of Video Output State. "Video Output State" can be retrieved with a command of "@MAIN:SELINFO", and you can set the effective Audio Delay value according to respective Video Output status by these commands as following;
+  When "@MAIN:SELINFO=Analog": the audio delay can be set by "@MAIN:ANLGOUT" command
+  When "@MAIN:SELINFO=HDMI1 Auto" (meaning TV compatible with Auto Lipsync and HDMI OUT1 is effective): the audio delay can be set by "@MAIN:HDMIOUT1OFFSET" command
+  When "@MAIN:SELINFO=HDMI1 Manual" (meaning TV incompatible with Auto Lipsync and HDMI OUT1 is effective): the audio delay can be set by "@MAIN:HDMIOUT1MANUAL" command
+  When "@MAIN:SELINFO=HDMI2 Auto" (meaning TV compatible with Auto Lipsync and HDMI OUT 2 is the only one in effective): the audio delay can be set by "@MAIN:HDMIOUT2OFFSET" command
+  When "@MAIN:SELINFO=HDMI2 Manual" (meaning TV incompatible with Auto Lipsync and HDMI OUT 2 is the only one in effective): the audio delay can be set by "@MAIN:HDMIOU21MANUAL" command
+
+[FuncName] LIPSYNCANLGOUT
+  [PUT Command] @MAIN:LIPSYNCANLGOUT=[Values]
+  [GET Command] @MAIN:LIPSYNCANLGOUT=?
+    [Description] Operating & retrieving Audio Delay setting state in case when the Analog Video output is only effective (no HDMI output is in use).
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: incrementing by 1 step (1 millisecond)
+    [Parameter] Up
+      [Description] PUT Only: decrementing by 1 step (1 millisecond)
+    [Parameter] Numerical Number: 0 to 500, Step: 1
+      [Description] PUT: setting to the specified value. / GET: indicating the current value.
+
+[FuncName] LIPSYNCHDMIOUT1OFFSET
+  [PUT Command] @MAIN:LIPSYNCHDMIOUT1OFFSET=[Values]
+  [GET Command] @MAIN:LIPSYNCHDMIOUT1OFFSET=?
+    [Description] Operating & retrieving Audio Delay setting state in case when the Display is compatible with Auto Lipsync feature and HDMI OUT1 is effective.
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: incrementing by 1 step (1 millisecond)
+    [Parameter] Up
+      [Description] PUT Only: decrementing by 1 step (1 millisecond)
+    [Parameter] Numerical Number: -500 to 500, Step: 1
+      [Description] 
+
+[FuncName] LIPSYNCHDMIOUT1MANUAL
+  [PUT Command] @MAIN:LIPSYNCHDMIOUT1MANUAL=[Values]
+  [GET Command] @MAIN:LIPSYNCHDMIOUT1MANUAL=?
+    [Description] Operating & retrieving Audio Delay setting state in case when the Display is NOT compatible with Auto Lipsync feature and HDMI OUT1 is effective.
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: incrementing by 1 step (1 millisecond)
+    [Parameter] Up
+      [Description] PUT Only: decrementing by 1 step (1 millisecond)
+    [Parameter] Numerical Number: 0 to 500, Step: 1
+      [Description] PUT: setting to the specified value. / GET: indicating the current value.
+
+[FuncName] LIPSYNCHDMIOUT2OFFSET
+  [PUT Command] @MAIN:LIPSYNCHDMIOUT2OFFSET=[Values]
+  [GET Command] @MAIN:LIPSYNCHDMIOUT2OFFSET=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:LIPSYNCHDMIOUT1OFFSET
+      [Description] 
+
+[FuncName] LIPSYNCHDMIOUT2MANUAL
+  [PUT Command] @MAIN:LIPSYNCHDMIOUT2MANUAL=[Values]
+  [GET Command] @MAIN:LIPSYNCHDMIOUT2MANUAL=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:LIPSYNCHDMIOUT1MANUAL
+      [Description] 
+
+[FuncName] LIPSYNCSELINFO
+  [GET Command] @MAIN:LIPSYNCSELINFO=?
+    [Description] Retrieving current Video Output State
+  [Parameters]
+    [Parameter] Analog
+      [Description] GET Only: indicating Analog video connection is only available (no HDMI out is in use)
+    [Parameter] HDMI1 Auto
+      [Description] GET Only: indicating HDMI1 output connection is effective, and the Display is compatible with Auto Lipsync feature.
+    [Parameter] HDMI1 Manual
+      [Description] GET Only: indicating HDMI1 output connection is effective, and the Display is NOT compatible with Auto Lipsync feature.
+    [Parameter] HDMI2 Auto
+      [Description] GET Only: indicating HDMI2 output connection is the only one in use, and the Display is compatible with Auto Lipsync feature.
+    [Parameter] HDMI2 Manual
+      [Description] GET Only: indicating HDMI2 output connection is the only one in use, and the Display is NOT compatible with Auto Lipsync feature.
+
+[FuncName] LIPSYNCOFFSETINFO
+  [GET Command] @MAIN:LIPSYNCOFFSETINFO=?
+    [Description] Retrieving the Audio Delay Offset value that is reported by the Display compatible with Auto Lipsync feature
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 500, Step: 1
+      [Description] 
+
+[FuncName] HDMIOUT
+  [PUT Command] @MAIN:HDMIOUT=[Values]
+  [GET Command] @MAIN:HDMIOUT=?
+    [Description] Operating & retrieving HDMI Output setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off (output is disabled)/ GET: indicating Off setting status.
+    [Parameter] OUT1
+      [Description] PUT: turining its setting state to OUT1 (HDMI OUT2 is disabled) / GET: indicating OUT1 setting status.
+    [Parameter] OUT2
+      [Description] PUT: turining its setting state to OUT2 (HDMI OUT1 is disabled) / GET: indicating OUT2 setting status.
+    [Parameter] OUT1 + 2
+      [Description] PUT: turining its setting state to OUT1 + 2 (Both HDMI OUT1 & 2 are enabled) / GET: indicating OUT1 + 2 setting status.
+
+[FuncName] HDMIAUDOUTAMP
+  [PUT Command] @MAIN:HDMIAUDOUTAMP=[Values]
+  [GET Command] @MAIN:HDMIAUDOUTAMP=?
+    [Description] Operating & retrieving HDMI Audio Output to Amp (Receiver) setting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] HDMIAUDOUT1
+  [PUT Command] @MAIN:HDMIAUDOUT1=[Values]
+  [GET Command] @MAIN:HDMIAUDOUT1=?
+    [Description] Operating & retrieving HDMI Audio Output to HDMI OUT1 setting state
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:HDMIAUDOUTAMP
+      [Description] 
+
+[FuncName] HDMIAUDOUT2
+  [PUT Command] @MAIN:HDMIAUDOUT2=[Values]
+  [GET Command] @MAIN:HDMIAUDOUT2=?
+    [Description] Operating & retrieving HDMI Audio Output to HDMI OUT2 setting state
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:HDMIAUDOUTAMP
+      [Description] 
+
+[FuncName] TVAUDIN1
+  [PUT Command] @MAIN:TVAUDIN1=[Values]
+  [GET Command] @MAIN:TVAUDIN1=?
+    [Description] Operating & retrieving TV Audio In: TV1 setting status.
+    [Note] This sets whici input is going to use the Audio Return signal from the TV connected to HDMI OUT1.
+  [Parameters]
+    [Parameter] AUDIO1
+      [Description] PUT: turining its setting state to AUDIO1 / GET: indicating AUDIO1 setting status.
+    [Parameter] AUDIO2
+      [Description] PUT: turining its setting state to AUDIO2 / GET: indicating AUDIO2 setting status.
+    [Parameter] AUDIO3
+      [Description] PUT: turining its setting state to AUDIO3 / GET: indicating AUDIO3 setting status.
+    [Parameter] AUDIO4
+      [Description] PUT: turining its setting state to AUDIO4 / GET: indicating AUDIO4 setting status.
+
+[FuncName] TVAUDIN2
+  [PUT Command] @MAIN:TVAUDIN2=[Values]
+  [GET Command] @MAIN:TVAUDIN2=?
+    [Description] Operating & retrieving TV Audio In: TV2 setting status.
+    [Note] This sets which input is going to use the Audio Return signal from the TV connected to HDMI OUT2.
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:TVAUDIN1
+      [Description] 
+
+[FuncName] HDMIPROCESSING
+  [PUT Command] @MAIN:HDMIPROCESSING=[Values]
+  [GET Command] @MAIN:HDMIPROCESSING=?
+    [Description] Operating & retrieving HDMI Video Processing setting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] HDMIASPECT
+  [PUT Command] @MAIN:HDMIASPECT=[Values]
+  [GET Command] @MAIN:HDMIASPECT=?
+    [Description] Operating & retrieving HDMI Video Aspect setting state
+  [Parameters]
+    [Parameter] Through
+      [Description] PUT: turining its setting state to Through / GET: indicating Through setting status.
+    [Parameter] 16:9 Normal
+      [Description] PUT: turining its setting state to 16:9 Normal / GET: indicating 16:9 Normal setting status.
+    [Parameter] Smart Zoom
+      [Description] PUT: turining its setting state to Smart Zoom / GET: indicating Smart Zoom setting status.
+
+[FuncName] HDMIRESOL
+  [PUT Command] @MAIN:HDMIRESOL=[Values]
+  [GET Command] @MAIN:HDMIRESOL=?
+    [Description] Operating & retrieving HDMI Video Resolution setting state
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+    [Parameter] 480p / 576p
+      [Description] PUT: turining its setting state to 480p / 576p / GET: indicating 480p / 576p setting status.
+    [Parameter] 720p
+      [Description] PUT: turining its setting state to 720p / GET: indicating 720p setting status.
+    [Parameter] 1080i
+      [Description] PUT: turining its setting state to 1080i / GET: indicating 1080i setting status.
+    [Parameter] 1080p
+      [Description] PUT: turining its setting state to 1080p / GET: indicating 1080p setting status.
+    [Parameter] Through
+      [Description] PUT: turining its setting state to Through / GET: indicating Through setting status.
+
+[FuncName] HPBASS
+  [PUT Command] @MAIN:HPBASS=[Values]
+  [GET Command] @MAIN:HPBASS=?
+    [Description] Operating & retrieving Bass Tone Control setting state for Headphone
+  [Parameters]
+    [Parameter] Numerical Number: -6.0 to 6.0, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current value.
+
+[FuncName] HPTREBLE
+  [PUT Command] @MAIN:HPTREBLE=[Values]
+  [GET Command] @MAIN:HPTREBLE=?
+    [Description] Operating & retrieving Treble Tone Control setting state for Headphone
+  [Parameters]
+    [Parameter] Parameters are the same as @MAIN:HPBASS
+      [Description] 
+
+[FuncName] STRAIGHT
+  [PUT Command] @MAIN:STRAIGHT=[Values]
+  [GET Command] @MAIN:STRAIGHT=?
+    [Description] Operating & retrieving STRAIGHT setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] ENHANCER
+  [PUT Command] @MAIN:ENHANCER=[Values]
+  [GET Command] @MAIN:ENHANCER=?
+    [Description] Operating & retrieving ENHANCER setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] SOUNDPRG
+  [PUT Command] @MAIN:SOUNDPRG=[Values]
+  [GET Command] @MAIN:SOUNDPRG=?
+    [Description] Operating & retrieving DSP SOUND PROGRAM setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Hall in Munich
+      [Description] PUT: turining its setting state to Hall in Munich / GET: indicating Hall in Munich setting status.
+    [Parameter] Hall in Vienna
+      [Description] PUT: turining its setting state to Hall in Vienna / GET: indicating Hall in Vienna setting status.
+    [Parameter] Hall in Amsterdam
+      [Description] PUT: turining its setting state to Hall in Amsterdam / GET: indicating Hall in Amsterdam setting status.
+    [Parameter] Church in Freiburg
+      [Description] PUT: turining its setting state to Church in Freiburg / GET: indicating Church in Freiburg setting status.
+    [Parameter] Church in Royaumont
+      [Description] PUT: turining its setting state to Church in Royaumont / GET: indicating Church in Royaumont setting status.
+    [Parameter] Chamber
+      [Description] PUT: turining its setting state to Chamber / GET: indicating Chamber setting status.
+    [Parameter] Village Vanguard
+      [Description] PUT: turining its setting state to Village Vanguard / GET: indicating Village Vanguard setting status.
+    [Parameter] Warehouse Loft
+      [Description] PUT: turining its setting state to Warehouse Loft / GET: indicating Warehouse Loft setting status.
+    [Parameter] Cellar Club
+      [Description] PUT: turining its setting state to Cellar Club / GET: indicating Cellar Club setting status.
+    [Parameter] The Roxy Theatre
+      [Description] PUT: turining its setting state to The Roxy Theatre / GET: indicating The Roxy Theatre setting status.
+    [Parameter] The Bottom Line
+      [Description] PUT: turining its setting state to The Bottom Line / GET: indicating The Bottom Line setting status.
+    [Parameter] Sports
+      [Description] PUT: turining its setting state to Sports / GET: indicating Sports setting status.
+    [Parameter] Action Game
+      [Description] PUT: turining its setting state to Action Game / GET: indicating Action Game setting status.
+    [Parameter] Roleplaying Game
+      [Description] PUT: turining its setting state to Roleplaying Game / GET: indicating Roleplaying Game setting status.
+    [Parameter] Music Video
+      [Description] PUT: turining its setting state to Music Video / GET: indicating Music Video setting status.
+    [Parameter] Recital/Opera
+      [Description] PUT: turining its setting state to Recital/Opera / GET: indicating Recital/Opera setting status.
+    [Parameter] Standard
+      [Description] PUT: turining its setting state to Standard / GET: indicating Standard setting status.
+    [Parameter] Spectacle
+      [Description] PUT: turining its setting state to Spectacle / GET: indicating Spectacle setting status.
+    [Parameter] Sci-Fi
+      [Description] PUT: turining its setting state to Sci-Fi / GET: indicating Sci-Fi setting status.
+    [Parameter] Adventure
+      [Description] PUT: turining its setting state to Adventure / GET: indicating Adventure setting status.
+    [Parameter] Drama
+      [Description] PUT: turining its setting state to Drama / GET: indicating Drama setting status.
+    [Parameter] Mono Movie
+      [Description] PUT: turining its setting state to Mono Movie / GET: indicating Mono Movie setting status.
+    [Parameter] 2ch Stereo
+      [Description] PUT: turining its setting state to 2ch Stereo / GET: indicating 2ch Stereo setting status.
+    [Parameter] 9ch Stereo
+      [Description] PUT: turining its setting state to 9ch Stereo / GET: indicating 9ch Stereo setting status.
+    [Parameter] Surround Decoder
+      [Description] PUT: turining its setting state to Surround Decoder / GET: indicating Surround Decoder setting status.
+
+[FuncName] ADAPTIVEDSP
+  [PUT Command] @MAIN:ADAPTIVEDSP=[Values]
+  [GET Command] @MAIN:ADAPTIVEDSP=?
+    [Description] Operating & retrieving Adaptive DSP setting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+
+[FuncName] 3DCINEMA
+  [PUT Command] @MAIN:3DCINEMA=[Values]
+  [GET Command] @MAIN:3DCINEMA=?
+    [Description] Operating & retrieving 3D DSP setting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+
+[FuncName] EXSURDECODER
+  [PUT Command] @MAIN:EXSURDECODER=[Values]
+  [GET Command] @MAIN:EXSURDECODER=?
+    [Description] Operating & retrieving Extended Surround setting state
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] Auto
+      [Description] PUT: turining its setting state to Auto / GET: indicating Auto setting status.
+    [Parameter] Dolby PLIIx Movie
+      [Description] PUT: turining its setting state to Dolby PLIIx Movie / GET: indicating Dolby PLIIx Movie setting status.
+    [Parameter] Dolby PLIIx Music
+      [Description] PUT: turining its setting state to Dolby PLIIx Music / GET: indicating Dolby PLIIx Music setting status.
+    [Parameter] EX/ES
+      [Description] PUT: turining its setting state to EX/ES / GET: indicating EX/ES setting status.
+
+[FuncName] 2CHDECODER
+  [PUT Command] @MAIN:2CHDECODER=[Values]
+  [GET Command] @MAIN:2CHDECODER=?
+    [Description] Operating & retrieving Surround Decoder setting state for 2ch audio sigal
+    [Note] It changes to PLII or PLIIx automatically depending on other settings or status.
+  [Parameters]
+    [Parameter] Dolby PL
+      [Description] 
+    [Parameter] Dolby PLII Movie
+      [Description] PUT: turining its setting state to Dolby PLII Movie / GET: indicating Dolby PLII Movie setting status.
+    [Parameter] Dolby PLII Music
+      [Description] PUT: turining its setting state to Dolby PLII Music / GET: indicating Dolby PLII Music setting status.
+    [Parameter] Dolby PLII Game
+      [Description] PUT: turining its setting state to Dolby PLII Game / GET: indicating Dolby PLII Game setting status.
+    [Parameter] Dolby PLIIx Movie
+      [Description] PUT: turining its setting state to Dolby PLIIx Movie / GET: indicating Dolby PLIIx Movie setting status.
+    [Parameter] Dolby PLIIx Music
+      [Description] PUT: turining its setting state to Dolby PLIIx Music / GET: indicating Dolby PLIIx Music setting status.
+    [Parameter] Dolby PLIIx Game
+      [Description] PUT: turining its setting state to Dolby PLIIx Game / GET: indicating Dolby PLIIx Game setting status.
+    [Parameter] DTS NEO:6 Cinema
+      [Description] PUT: turining its setting state to DTS NEO:6 Cinema / GET: indicating DTS NEO:6 Cinema setting status.
+    [Parameter] DTS NEO:6 Music
+      [Description] PUT: turining its setting state to DTS NEO:6 Music / GET: indicating DTS NEO:6 Music setting status.
+
+[FuncName] PLAYBACK
+  [PUT Command] @MAIN:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] LISTCURSOR
+  [PUT Command] @MAIN:LISTCURSOR=[Values]
+    [Description] 
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Left
+      [Description] 
+    [Parameter] Right
+      [Description] 
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTMENU
+  [PUT Command] @MAIN:LISTMENU=[Values]
+    [Description] 
+  [Parameters]
+    [Parameter] On Screen
+      [Description] 
+    [Parameter] Top Menu
+      [Description] 
+    [Parameter] Menu
+      [Description] 
+    [Parameter] Option
+      [Description] 
+
+
+<<<<<Sub Unit : ZONE2>>>>>
+[FuncName] AVAIL
+  [GET Command] @ZONE2:AVAIL=?
+    [Description] Retrieving the validity of Zone 2 operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] ZONENAME
+  [PUT Command] @ZONE2:ZONENAME=[Values]
+  [GET Command] @ZONE2:ZONENAME=?
+    [Description] Setting & retrieving renamed info of Zone 2
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 9 characters)
+      [Description] PUT: setting its name / GET: indicating its name
+
+[FuncName] SCENENAME
+  [GET Command] @ZONE2:SCENENAME=?
+    [Description] Retrieving renamed info of all SCENE presets for Zone 2
+
+[FuncName] SCENE1NAME
+  [GET Command] @ZONE2:SCENE1NAME=?
+    [Description] Retrieving renamed info of SCENE1
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 20 characters)
+      [Description] GET Only
+
+[FuncName] SCENE2NAME
+  [GET Command] @ZONE2:SCENE2NAME=?
+    [Description] Retrieving renamed info of SCENE2
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE2:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE3NAME
+  [GET Command] @ZONE2:SCENE3NAME=?
+    [Description] Retrieving renamed info of SCENE3
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE2:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE4NAME
+  [GET Command] @ZONE2:SCENE4NAME=?
+    [Description] Retrieving renamed info of SCENE4
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE2:SCENE1NAME
+      [Description] 
+
+[FuncName] BASIC
+  [GET Command] @ZONE2:BASIC=?
+    [Description] GET Only. Zone 2 basic info is retrieved at a time.
+    [Note] Updated by following commands: "@ZONE2:PWR", "@ZONE2:SLEEP", "@ZONE2:VOL", "@ZONE2:MUTE", and "@ZONE2:INP"
+
+[FuncName] PWR
+  [PUT Command] @ZONE2:PWR=[Values]
+  [GET Command] @ZONE2:PWR=?
+    [Description] Operating & retrieving Power state of Zone 2
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Standby
+      [Description] PUT: turining its state to Standby / GET: indicating Standby status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+    [Parameter] On/Standby
+      [Description] PUT Only: toggling its status between On/Standby
+
+[FuncName] SLEEP
+  [PUT Command] @ZONE2:SLEEP=[Values]
+  [GET Command] @ZONE2:SLEEP=?
+    [Description] Operating & retrieving Sleep setting state of Zone 2
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] 30 min
+      [Description] PUT: setting to 30 min / GET: indicating it's setting is 30 min.
+    [Parameter] 60 min
+      [Description] PUT: setting to 60 min / GET: indicating it's setting is 60 min.
+    [Parameter] 90 min
+      [Description] PUT: setting to 90 min / GET: indicating it's setting is 90 min.
+    [Parameter] 120 min
+      [Description] PUT: setting to 120 min / GET: indicating it's setting is 120 min.
+    [Parameter] Last
+      [Description] PUT Only: setting to the value set last
+
+[FuncName] VOL
+  [PUT Command] @ZONE2:VOL=[Values]
+  [GET Command] @ZONE2:VOL=?
+    [Description] Operating & retrieving Zone 2 Volume state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: decrementing by 1 step (0.5dB)
+    [Parameter] Up
+      [Description] PUT Only: incrementing by 1 step (0.5dB)
+    [Parameter] Down 1 dB
+      [Description] PUT Only: decrementing by 1 dB
+    [Parameter] Up 1 dB
+      [Description] PUT Only: incrementing by 1 dB
+    [Parameter] Down 2 dB
+      [Description] PUT Only: decrementing by 2 dB
+    [Parameter] Up 2 dB
+      [Description] PUT Only: incrementing by 2 dB
+    [Parameter] Down 5 dB
+      [Description] PUT Only: decrementing by 5 dB
+    [Parameter] Up 5 dB
+      [Description] PUT Only: incrementing by 5 dB
+    [Parameter] Numerical Number: -80.5 to 16.5, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current value.
+      [Note] -80.5 means muting. First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+
+[FuncName] MUTE
+  [PUT Command] @ZONE2:MUTE=[Values]
+  [GET Command] @ZONE2:MUTE=?
+    [Description] Operating & retrieving Zone 2 muting state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its state to Off / GET: indicating Off status.
+    [Parameter] Att -40 dB
+      [Description] PUT: attenuating by 40 dB from current volume status. / GET: indicating attenuated by 40 dB from current volume status.
+    [Parameter] Att -20 dB
+      [Description] PUT: attenuating by 20 dB from current volume status. / GET: indicating attenuated by 20 dB from current volume status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+    [Parameter] On/Off
+      [Description] PUT Only: toggling its status between On/Off
+
+[FuncName] VOLFIXVAR
+  [PUT Command] @ZONE2:VOLFIXVAR=[Values]
+  [GET Command] @ZONE2:VOLFIXVAR=?
+    [Description] Operating & retrieving Zone 2 Preout Level setting state
+  [Parameters]
+    [Parameter] Variable
+      [Description] PUT: turining its setting state to Variable / GET: indicating Variable setting status.
+    [Parameter] Fixed
+      [Description] PUT: turining its setting state to Fixed / GET: indicating Fixed setting status.
+
+[FuncName] MAXVOL
+  [PUT Command] @ZONE2:MAXVOL=[Values]
+  [GET Command] @ZONE2:MAXVOL=?
+    [Description] Operating & retrieving Max Volume setting state of Main Zone
+    [Note] For setting the upper limit of volume
+  [Parameters]
+    [Parameter] Numerical Number: -30.0 to 15.0, Step: 5.0
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+    [Parameter] 16.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] Meaning no limit of maximum volume
+             The unit for this parameter is "dB".
+
+[FuncName] INITVOLMODE
+  [PUT Command] @ZONE2:INITVOLMODE=[Values]
+  [GET Command] @ZONE2:INITVOLMODE=?
+    [Description] Operating & retrieving Initial Volume Mode setting state of Zone 2
+    [Note] Initial Volume is for setting the volume value initially set when the applicable Zone is turned on.
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] INITVOLLVL
+  [PUT Command] @ZONE2:INITVOLLVL=[Values]
+  [GET Command] @ZONE2:INITVOLLVL=?
+    [Description] Operating & retrieving Initial Volume Level setting state of Main Zone
+  [Parameters]
+    [Parameter] Mute
+      [Description] PUT: turining its setting state to Mute / GET: indicating Mute setting status.
+      [Note] Initially muted when turned on
+    [Parameter] Numerical Number: -80.0 to 16.5, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+
+[FuncName] BALANCE
+  [PUT Command] @ZONE2:BALANCE=[Values]
+  [GET Command] @ZONE2:BALANCE=?
+    [Description] Operating & retrieving Channel Balance setting state of Zone 2
+  [Parameters]
+    [Parameter] Numerical Number: -20 to 20, Step: 1
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] 0 means the balance is at the center.
+
+[FuncName] INP
+  [PUT Command] @ZONE2:INP=[Values]
+  [GET Command] @ZONE2:INP=?
+    [Description] Operating & retrieving Zone 2 Input state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] TUNER
+      [Description] PUT: selecting input TUNER / GET: indicating current input is TUNER
+    [Parameter] PHONO
+      [Description] PUT: selecting input PHONO / GET: indicating current input is PHONO
+    [Parameter] AV1
+      [Description] PUT: selecting input AV1 / GET: indicating current input is AV1
+    [Parameter] AV2
+      [Description] PUT: selecting input AV2 / GET: indicating current input is AV2
+    [Parameter] AV3
+      [Description] PUT: selecting input AV3 / GET: indicating current input is AV3
+    [Parameter] AV4
+      [Description] PUT: selecting input AV4 / GET: indicating current input is AV4
+    [Parameter] V-AUX
+      [Description] PUT: selecting input V-AUX / GET: indicating current input is V-AUX
+    [Parameter] AUDIO1
+      [Description] PUT: selecting input AUDIO1 / GET: indicating current input is AUDIO1
+    [Parameter] AUDIO2
+      [Description] PUT: selecting input AUDIO2 / GET: indicating current input is AUDIO2
+    [Parameter] AUDIO3
+      [Description] PUT: selecting input AUDIO / GET: indicating current input is AUDIO
+    [Parameter] AUDIO4
+      [Description] PUT: selecting input AUDIO4 / GET: indicating current input is AUDIO4
+    [Parameter] DOCK
+      [Description] PUT Only: selecting input DOCK
+    [Parameter] iPod
+      [Description] PUT: selecting input iPod / GET: indicating current input is iPod
+    [Parameter] Bluetooth
+      [Description] PUT: selecting input Bluetooth / GET: indicating current input is Bluetooth
+    [Parameter] UAW
+      [Description] PUT: selecting input UAW / GET: indicating current input is UAW
+    [Parameter] NET
+      [Description] PUT Only: selecting input NET
+    [Parameter] Napster
+      [Description] PUT: selecting input Napster / GET: indicating current input is Napster
+    [Parameter] PC
+      [Description] PUT: selecting input PC / GET: indicating current input is PC
+    [Parameter] NET RADIO
+      [Description] PUT: selecting input NET RADIO / GET: indicating current input is NET RADIO
+    [Parameter] USB
+      [Description] PUT: selecting input USB / GET: indicating current input is USB
+    [Parameter] iPod (USB)
+      [Description] PUT: selecting input iPod (USB) / GET: indicating current input is iPod (USB)
+
+[FuncName] SCENE
+  [PUT Command] @ZONE2:SCENE=[Values]
+    [Description] Recalling Zone 2 Scene banks.
+  [Parameters]
+    [Parameter] Scene 1
+      [Description] PUT Only: selecting Scene 1
+    [Parameter] Scene 2
+      [Description] PUT Only: selecting Scene 2
+    [Parameter] Scene 3
+      [Description] PUT Only: selecting Scene 3
+    [Parameter] Scene 4
+      [Description] PUT Only: selecting Scene 4
+
+[FuncName] BASS
+  [PUT Command] @ZONE2:BASS=[Values]
+  [GET Command] @ZONE2:BASS=?
+    [Description] Operating & retrieving Bass Tone Control setting state
+  [Parameters]
+    [Parameter] Numerical Number: -10.0 to 10.0, Step: 2.0
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 3.0, -4.0
+             The unit for this parameter is "dB".
+
+[FuncName] TREBLE
+  [PUT Command] @ZONE2:TREBLE=[Values]
+  [GET Command] @ZONE2:TREBLE=?
+    [Description] Operating & retrieving Treble Tone Control setting state
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE2:BASS
+      [Description] 
+
+[FuncName] PLAYBACK
+  [PUT Command] @ZONE2:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] LISTCURSOR
+  [PUT Command] @ZONE2:LISTCURSOR=[Values]
+    [Description] 
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Left
+      [Description] 
+    [Parameter] Right
+      [Description] 
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTMENU
+  [PUT Command] @ZONE2:LISTMENU=[Values]
+    [Description] 
+  [Parameters]
+    [Parameter] On Screen
+      [Description] 
+    [Parameter] Top Menu
+      [Description] 
+    [Parameter] Menu
+      [Description] 
+    [Parameter] Option
+      [Description] 
+
+
+<<<<<Sub Unit : ZONE3>>>>>
+[FuncName] AVAIL
+  [GET Command] @ZONE3:AVAIL=?
+    [Description] Retrieving the validity of Zone 3 operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] ZONENAME
+  [PUT Command] @ZONE3:ZONENAME=[Values]
+  [GET Command] @ZONE3:ZONENAME=?
+    [Description] Setting & retrieving renamed info of Zone 3
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 9 characters)
+      [Description] PUT: setting its name / GET: indicating its name
+
+[FuncName] SCENENAME
+  [GET Command] @ZONE3:SCENENAME=?
+    [Description] Retrieving renamed info of all SCENE presets for Zone 3
+
+[FuncName] SCENE1NAME
+  [GET Command] @ZONE3:SCENE1NAME=?
+    [Description] Retrieving renamed info of SCENE1
+  [Parameters]
+    [Parameter] Character Code: Latin-1, Variable Length (0 to 20 characters)
+      [Description] GET Only
+
+[FuncName] SCENE2NAME
+  [GET Command] @ZONE3:SCENE2NAME=?
+    [Description] Retrieving renamed info of SCENE2
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE3:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE3NAME
+  [GET Command] @ZONE3:SCENE3NAME=?
+    [Description] Retrieving renamed info of SCENE3
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE3:SCENE1NAME
+      [Description] 
+
+[FuncName] SCENE4NAME
+  [GET Command] @ZONE3:SCENE4NAME=?
+    [Description] Retrieving renamed info of SCENE4
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE3:SCENE1NAME
+      [Description] 
+
+[FuncName] BASIC
+  [GET Command] @ZONE3:BASIC=?
+    [Description] GET Only. Zone 3 basic info is retrieved at a time.
+    [Note] Updated by following commands: "@ZONE3:PWR", "@ZONE3:SLEEP", "@ZONE3:VOL", "@ZONE3:MUTE", and "@ZONE3:INP"
+
+[FuncName] PWR
+  [PUT Command] @ZONE3:PWR=[Values]
+  [GET Command] @ZONE3:PWR=?
+    [Description] Operating & retrieving Power state of Zone 3
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Standby
+      [Description] PUT: turining its state to Standby / GET: indicating Standby status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+    [Parameter] On/Standby
+      [Description] PUT Only: toggling its status between On/Standby
+
+[FuncName] SLEEP
+  [PUT Command] @ZONE3:SLEEP=[Values]
+  [GET Command] @ZONE3:SLEEP=?
+    [Description] Operating & retrieving Sleep setting state of Zone 3
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] 30 min
+      [Description] PUT: setting to 30 min / GET: indicating it's setting is 30 min.
+    [Parameter] 60 min
+      [Description] PUT: setting to 60 min / GET: indicating it's setting is 60 min.
+    [Parameter] 90 min
+      [Description] PUT: setting to 90 min / GET: indicating it's setting is 90 min.
+    [Parameter] 120 min
+      [Description] PUT: setting to 120 min / GET: indicating it's setting is 120 min.
+    [Parameter] Last
+      [Description] PUT Only: setting to the value set last
+
+[FuncName] VOL
+  [PUT Command] @ZONE3:VOL=[Values]
+  [GET Command] @ZONE3:VOL=?
+    [Description] Operating & retrieving Zone 3 Volume state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: decrementing by 1 step (0.5dB)
+    [Parameter] Up
+      [Description] PUT Only: incrementing by 1 step (0.5dB)
+    [Parameter] Down 1 dB
+      [Description] PUT Only: decrementing by 1 dB
+    [Parameter] Up 1 dB
+      [Description] PUT Only: incrementing by 1 dB
+    [Parameter] Down 2 dB
+      [Description] PUT Only: decrementing by 2 dB
+    [Parameter] Up 2 dB
+      [Description] PUT Only: incrementing by 2 dB
+    [Parameter] Down 5 dB
+      [Description] PUT Only: decrementing by 5 dB
+    [Parameter] Up 5 dB
+      [Description] PUT Only: incrementing by 5 dB
+    [Parameter] Numerical Number: -80.5 to 16.5, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current value.
+      [Note] -80.5 means muting. First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+
+[FuncName] MUTE
+  [PUT Command] @ZONE3:MUTE=[Values]
+  [GET Command] @ZONE3:MUTE=?
+    [Description] Operating & retrieving Zone 3 muting state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its state to Off / GET: indicating Off status.
+    [Parameter] Att -40 dB
+      [Description] PUT: attenuating by 40 dB from current volume status. / GET: indicating attenuated by 40 dB from current volume status.
+    [Parameter] Att -20 dB
+      [Description] PUT: attenuating by 20 dB from current volume status. / GET: indicating attenuated by 20 dB from current volume status.
+    [Parameter] On
+      [Description] PUT: turining its state to On / GET: indicating On status.
+    [Parameter] On/Off
+      [Description] PUT Only: toggling its status between On/Off
+
+[FuncName] VOLFIXVAR
+  [PUT Command] @ZONE3:VOLFIXVAR=[Values]
+  [GET Command] @ZONE3:VOLFIXVAR=?
+    [Description] Operating & retrieving Zone 3 Preout Level setting state
+  [Parameters]
+    [Parameter] Variable
+      [Description] PUT: turining its setting state to Variable / GET: indicating Variable setting status.
+    [Parameter] Fixed
+      [Description] PUT: turining its setting state to Fixed / GET: indicating Fixed setting status.
+
+[FuncName] MAXVOL
+  [PUT Command] @ZONE3:MAXVOL=[Values]
+  [GET Command] @ZONE3:MAXVOL=?
+    [Description] Operating & retrieving Max Volume setting state of Main Zone
+    [Note] For setting the upper limit of volume
+  [Parameters]
+    [Parameter] Numerical Number: -30.0 to 15.0, Step: 5.0
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+    [Parameter] 16.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] Meaning no limit of maximum volume
+             The unit for this parameter is "dB".
+
+[FuncName] INITVOLMODE
+  [PUT Command] @ZONE3:INITVOLMODE=[Values]
+  [GET Command] @ZONE3:INITVOLMODE=?
+    [Description] Operating & retrieving Initial Volume Mode setting state of Zone 3
+    [Note] Initial Volume is for setting the volume value initially set when the applicable Zone is turned on.
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: turining its setting state to Off / GET: indicating Off setting status.
+    [Parameter] On
+      [Description] PUT: turining its setting state to On / GET: indicating On setting status.
+
+[FuncName] INITVOLLVL
+  [PUT Command] @ZONE3:INITVOLLVL=[Values]
+  [GET Command] @ZONE3:INITVOLLVL=?
+    [Description] Operating & retrieving Initial Volume Level setting state of Main Zone
+  [Parameters]
+    [Parameter] Mute
+      [Description] PUT: turining its setting state to Mute / GET: indicating Mute setting status.
+      [Note] Initially muted when turned on
+    [Parameter] Numerical Number: -80.0 to 16.5, Step: 0.5
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.
+             The unit for this parameter is "dB".
+
+[FuncName] BALANCE
+  [PUT Command] @ZONE3:BALANCE=[Values]
+  [GET Command] @ZONE3:BALANCE=?
+    [Description] Operating & retrieving Channel Balance setting state of Zone 3
+  [Parameters]
+    [Parameter] Numerical Number: -20 to 20, Step: 1
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] 0 means the balance is at the center.
+
+[FuncName] INP
+  [PUT Command] @ZONE3:INP=[Values]
+  [GET Command] @ZONE3:INP=?
+    [Description] Operating & retrieving Zone 3 Input state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] TUNER
+      [Description] PUT: selecting input TUNER / GET: indicating current input is TUNER
+    [Parameter] PHONO
+      [Description] PUT: selecting input PHONO / GET: indicating current input is PHONO
+    [Parameter] AV1
+      [Description] PUT: selecting input AV1 / GET: indicating current input is AV1
+    [Parameter] AV2
+      [Description] PUT: selecting input AV2 / GET: indicating current input is AV2
+    [Parameter] AV3
+      [Description] PUT: selecting input AV3 / GET: indicating current input is AV3
+    [Parameter] AV4
+      [Description] PUT: selecting input AV4 / GET: indicating current input is AV4
+    [Parameter] V-AUX
+      [Description] PUT: selecting input V-AUX / GET: indicating current input is V-AUX
+    [Parameter] AUDIO1
+      [Description] PUT: selecting input AUDIO1 / GET: indicating current input is AUDIO1
+    [Parameter] AUDIO2
+      [Description] PUT: selecting input AUDIO2 / GET: indicating current input is AUDIO2
+    [Parameter] AUDIO3
+      [Description] PUT: selecting input AUDIO / GET: indicating current input is AUDIO
+    [Parameter] AUDIO4
+      [Description] PUT: selecting input AUDIO4 / GET: indicating current input is AUDIO4
+    [Parameter] DOCK
+      [Description] PUT Only: selecting input DOCK
+    [Parameter] iPod
+      [Description] PUT: selecting input iPod / GET: indicating current input is iPod
+    [Parameter] Bluetooth
+      [Description] PUT: selecting input Bluetooth / GET: indicating current input is Bluetooth
+    [Parameter] UAW
+      [Description] PUT: selecting input UAW / GET: indicating current input is UAW
+    [Parameter] NET
+      [Description] PUT Only: selecting input NET
+    [Parameter] Napster
+      [Description] PUT: selecting input Napster / GET: indicating current input is Napster
+    [Parameter] PC
+      [Description] PUT: selecting input PC / GET: indicating current input is PC
+    [Parameter] NET RADIO
+      [Description] PUT: selecting input NET RADIO / GET: indicating current input is NET RADIO
+    [Parameter] USB
+      [Description] PUT: selecting input USB / GET: indicating current input is USB
+    [Parameter] iPod (USB)
+      [Description] PUT: selecting input iPod (USB) / GET: indicating current input is iPod (USB)
+
+[FuncName] SCENE
+  [PUT Command] @ZONE3:SCENE=[Values]
+    [Description] Recalling Zone 3 Scene banks.
+  [Parameters]
+    [Parameter] Scene 1
+      [Description] PUT Only: selecting Scene 1
+    [Parameter] Scene 2
+      [Description] PUT Only: selecting Scene 2
+    [Parameter] Scene 3
+      [Description] PUT Only: selecting Scene 3
+    [Parameter] Scene 4
+      [Description] PUT Only: selecting Scene 4
+
+[FuncName] BASS
+  [PUT Command] @ZONE3:BASS=[Values]
+  [GET Command] @ZONE3:BASS=?
+    [Description] Operating & retrieving Bass Tone Control setting state
+  [Parameters]
+    [Parameter] Numerical Number: -10.0 to 10.0, Step: 2.0
+      [Description] PUT: setting to the specified value. / GET: indicating the current setting value.
+      [Note] First decimal place must be always included. Ex: 3.0, -4.0
+             The unit for this parameter is "dB".
+
+[FuncName] TREBLE
+  [PUT Command] @ZONE3:TREBLE=[Values]
+  [GET Command] @ZONE3:TREBLE=?
+    [Description] Operating & retrieving Treble Tone Control setting state
+  [Parameters]
+    [Parameter] Parameters are the same as @ZONE3:BASS
+      [Description] 
+
+[FuncName] PLAYBACK
+  [PUT Command] @ZONE3:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] LISTCURSOR
+  [PUT Command] @ZONE3:LISTCURSOR=[Values]
+    [Description] 
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Left
+      [Description] 
+    [Parameter] Right
+      [Description] 
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTMENU
+  [PUT Command] @ZONE3:LISTMENU=[Values]
+    [Description] 
+  [Parameters]
+    [Parameter] On Screen
+      [Description] 
+    [Parameter] Top Menu
+      [Description] 
+    [Parameter] Menu
+      [Description] 
+    [Parameter] Option
+      [Description] 
+
+
+<<<<<Sub Unit : TUN>>>>>
+[FuncName] AVAIL
+  [GET Command] @TUN:AVAIL=?
+    [Description] Retrieving the validity of Tuner operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+      [Note] All feedback are invalid (its validity is not guaranteed) even though there are when "Not Ready" status.
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] SEARCHMODE
+  [PUT Command] @TUN:SEARCHMODE=[Values]
+  [GET Command] @TUN:SEARCHMODE=?
+    [Description] Operating & retrieving Search Mode state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Preset
+      [Description] PUT: selecting Preset search mode / GET: indicating current search mode is Preset
+    [Parameter] Tuning
+      [Description] PUT: selecting Tuning search mode / GET: indicating current search mode is Tuning
+
+[FuncName] PRESET
+  [PUT Command] @TUN:PRESET=[Values]
+  [GET Command] @TUN:PRESET=?
+    [Description] Operating & retrieving Preset state.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] No Preset
+      [Description] GET Only: indicating there is no preset registered yet.
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT: recalling specified number of preset bank. / GET: indicating the preset number currently selected.
+      [Note] If no station is yet registered in the recalled number, nothing happens.
+    [Parameter] Down
+      [Description] PUT Only: selecting the nearest available preset number to the current one in the way of larger number to smaller.
+    [Parameter] Up
+      [Description] PUT Only: selecting the nearest available preset number to the current one in the way of smaller number to larger.
+
+[FuncName] MEM
+  [PUT Command] @TUN:MEM=[Values]
+    [Description] Registering current frequency to a preset bank
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT Only: registering to a preset bank with automatically specifying the number.
+      [Note] Empty (not regisitered) preset banks are used first.
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: registering to a preset bank of the number specified.
+
+[FuncName] FMFREQ
+  [PUT Command] @TUN:FMFREQ=[Values]
+  [GET Command] @TUN:FMFREQ=?
+    [Description] Operating & retrieving FM frequency
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] 
+      [Description] PUT Only: used when there's no FM frequency specified.
+      [Note] This is a dummy command.
+    [Parameter] Down
+      [Description] PUT Only: incrementing it by 1 step
+    [Parameter] Up
+      [Description] PUT Only: decrementing it by 1 step
+    [Parameter] Auto Down
+      [Description] PUT Only: starting Auto Search to the incremental direction.
+    [Parameter] Auto Up
+      [Description] PUT Only: starting Auto Search to the decremental direction.
+    [Parameter] TP Down
+      [Description] PUT Only: incrementing it by 1 step
+    [Parameter] TP Up
+      [Description] PUT Only: decrementing it by 1 step
+    [Parameter] Numerical Number: 87.50 to 108.00, Step: 0.05
+      [Description] PUT: tuning to the specified frequency. / GET: indicating the current frequency.
+
+[FuncName] AMFREQ
+  [PUT Command] @TUN:AMFREQ=[Values]
+  [GET Command] @TUN:AMFREQ=?
+    [Description] Operating & retrieving AM frequency
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] 
+      [Description] PUT Only: used when there's no AM frequency specified.
+      [Note] This is a dummy command.
+    [Parameter] Down
+      [Description] PUT Only: incrementing it by 1 step
+    [Parameter] Up
+      [Description] PUT Only: decrementing it by 1 step
+    [Parameter] Auto Down
+      [Description] PUT Only: starting Auto Search to the incremental direction.
+    [Parameter] Auto Up
+      [Description] PUT Only: starting Auto Search to the decremental direction.
+    [Parameter] Numerical Number: 531 to 1611, Step: 9
+      [Description] PUT: tuning to the specified frequency. / GET: indicating the current frequency.
+
+[FuncName] BAND
+  [PUT Command] @TUN:BAND=[Values]
+  [GET Command] @TUN:BAND=?
+    [Description] Operating & retrieving the Frequency Band type
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] FM
+      [Description] PUT: selecting FM / GET: indicating current band type is FM
+    [Parameter] AM
+      [Description] PUT: selecting AM / GET: indicating current band type is AM
+
+[FuncName] FMMODE
+  [PUT Command] @TUN:FMMODE=[Values]
+  [GET Command] @TUN:FMMODE=?
+    [Description] Operating & retrieving FM playback mode
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT: selecting Auto mode. / GET: indicating Auto mode
+      [Note] This is a mode that automatically mutes the sound when no stereo reception is available.
+    [Parameter] Mono
+      [Description] PUT: selecting Mono mode. / GET: indicating Mono mode
+      [Note] This is a mode to force the reception to be monaural (used when the reception is weak and easily gets muted).
+
+[FuncName] SIGINFO
+  [GET Command] @TUN:SIGINFO=?
+    [Description] GET Only. Tuner singal status can be retrieved at a time.
+    [Note] Updated by following commands: "@TUN:TUNED" and "@TUN:SIGSTEREOMONO"
+
+[FuncName] TUNED
+  [GET Command] @TUN:TUNED=?
+    [Description] Retrieving the tuning status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Negate
+      [Description] GET Only: indicating untuned status
+    [Parameter] Assert
+      [Description] GET Only: indicating tuned to a station
+
+[FuncName] SIGSTEREOMONO
+  [GET Command] @TUN:SIGSTEREOMONO=?
+    [Description] Retrieving whether the playback signal is mono or stereo.
+    [Note] Negate means now playing monaural signal or not tuned. Assert means now playing Stereo signal.
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @TUN:TUNED
+      [Description] 
+
+[FuncName] RDSINFO
+  [GET Command] @TUN:RDSINFO=?
+    [Description] GET Only. RDS related information can be retrieved at a time.
+    [Note] Updated by following commands: "@TUN:RDSPRGTYPE", "@TUN:RDSPRGSERVICE", "@TUN:RDSTXTA", "@TUN:RDSTXTB" and "@TUN:RDSCLOCK"
+
+[FuncName] RDSPRGTYPE
+  [GET Command] @TUN:RDSPRGTYPE=?
+    [Description] Retrieving Program Type Info
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] 
+      [Description] GET Only: indicating no data
+    [Parameter] NEWS
+      [Description] GET Only: indicating it's now NEWS
+    [Parameter] AFFAIRS
+      [Description] GET Only: indicating it's now AFFAIRS
+    [Parameter] INFO
+      [Description] GET Only: indicating it's now INFO
+    [Parameter] SPORT
+      [Description] GET Only: indicating it's now SPORT
+    [Parameter] EDUCATE
+      [Description] GET Only: indicating it's now EDUCATE
+    [Parameter] DRAMA
+      [Description] GET Only: indicating it's now DRAMA
+    [Parameter] CULTURE
+      [Description] GET Only: indicating it's now CULTURE
+    [Parameter] SCIENCE
+      [Description] GET Only: indicating it's now SCIENCE
+    [Parameter] VARIED
+      [Description] GET Only: indicating it's now VARIED
+    [Parameter] POP M
+      [Description] GET Only: indicating it's now POP M
+    [Parameter] ROCK M
+      [Description] GET Only: indicating it's now ROCK M
+    [Parameter] M.O.R M
+      [Description] GET Only: indicating it's now M.O.R M
+    [Parameter] LIGHT M
+      [Description] GET Only: indicating it's now LIGHT M
+    [Parameter] CLASSICS
+      [Description] GET Only: indicating it's now CLASSICS
+    [Parameter] OTHER M
+      [Description] GET Only: indicating it's now OTHER M
+
+[FuncName] RDSPRGSERVICE
+  [GET Command] @TUN:RDSPRGSERVICE=?
+    [Description] Retrieving Program Service info
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 8 bytes)
+      [Description] GET Only: indicating the information
+
+[FuncName] RDSTXTA
+  [GET Command] @TUN:RDSTXTA=?
+    [Description] Retrieving Radio Text A
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only: indicating the information
+
+[FuncName] RDSTXTB
+  [GET Command] @TUN:RDSTXTB=?
+    [Description] Retrieving Radio Text B
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @TUN:RDSTXTA
+      [Description] 
+
+[FuncName] RDSCLOCK
+  [GET Command] @TUN:RDSCLOCK=?
+    [Description] Retrieving Clock Info
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Ascii, Variable Length (0 to 5 characters)
+      [Description] 
+
+
+<<<<<Sub Unit : IPOD>>>>>
+[FuncName] AVAIL
+  [GET Command] @IPOD:AVAIL=?
+    [Description] Retrieving the connection state of iPod (device) or the validity of its operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the device is not connected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] MODE
+  [PUT Command] @IPOD:MODE=[Values]
+  [GET Command] @IPOD:MODE=?
+    [Description] Operating & retrieving the iPod control mode setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Normal
+      [Description] PUT: setting to Normal mode / GET: indicating current mode is Normal
+      [Note] Normal mode is an operation by the UI on the iPod
+    [Parameter] Extended
+      [Description] PUT: setting to Extended mode / GET: indicating current mode is Extended
+      [Note] Extended mode is an operation by the UI on the receiver (through its on-screen display)
+
+[FuncName] REPEAT
+  [PUT Command] @IPOD:REPEAT=[Values]
+  [GET Command] @IPOD:REPEAT=?
+    [Description] Operating & retrieving the repeat setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] One
+      [Description] PUT: setting to One / GET: indicating its state is One
+    [Parameter] All
+      [Description] PUT: setting to All / GET: indicating its state is All
+
+[FuncName] SHUFFLE
+  [PUT Command] @IPOD:SHUFFLE=[Values]
+  [GET Command] @IPOD:SHUFFLE=?
+    [Description] Operating & retrieving the shuffle setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] Songs
+      [Description] PUT: setting to Songs / GET: indicating its state is Songs
+    [Parameter] Albums
+      [Description] PUT: setting to Albums / GET: indicating its state is Albums
+
+[FuncName] PLAYBACK
+  [PUT Command] @IPOD:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] |<<
+      [Description] PUT Only: change its state to |<<
+      [Note] meaning Skip Rev
+    [Parameter] >>|
+      [Description] PUT Only: change its state to >>|
+      [Note] meaning Skip Fwd
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] PLAYBACKINFO
+  [GET Command] @IPOD:PLAYBACKINFO=?
+    [Description] Retrieving the playback state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Stop
+      [Description] GET Only: indicating its state is Stop
+    [Parameter] Pause
+      [Description] GET Only: indicating its state is Pause
+    [Parameter] Play
+      [Description] GET Only: indicating its state is Play
+
+[FuncName] METAINFO
+  [GET Command] @IPOD:METAINFO=?
+    [Description] GET Only. Meta Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:ARTIST", "@XXXX:ALBUM" and "@XXXX:SONG" (XXXX = SubUnit name)
+
+[FuncName] ARTIST
+  [GET Command] @IPOD:ARTIST=?
+    [Description] Retrieving Artist Name
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] ALBUM
+  [GET Command] @IPOD:ALBUM=?
+    [Description] Retrieving Album Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:ARTIST
+      [Description] 
+
+[FuncName] SONG
+  [GET Command] @IPOD:SONG=?
+    [Description] Retrieving Song Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:ARTIST
+      [Description] 
+
+[FuncName] LISTSEL
+  [PUT Command] @IPOD:LISTSEL=[Values]
+    [Description] Selecting the current row of contents list
+  [Parameters]
+    [Parameter] Line_1
+      [Description] PUT Only: selecting Line 1
+    [Parameter] Line_2
+      [Description] PUT Only: selecting Line 2
+    [Parameter] Line_3
+      [Description] PUT Only: selecting Line 3
+    [Parameter] Line_4
+      [Description] PUT Only: selecting Line 4
+    [Parameter] Line_5
+      [Description] PUT Only: selecting Line 5
+    [Parameter] Line_6
+      [Description] PUT Only: selecting Line 6
+    [Parameter] Line_7
+      [Description] PUT Only: selecting Line 7
+    [Parameter] Line_8
+      [Description] PUT Only: selecting Line 8
+
+[FuncName] LISTCURSOR
+  [PUT Command] @IPOD:LISTCURSOR=[Values]
+    [Description] Operating the cursor of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTPAGE
+  [PUT Command] @IPOD:LISTPAGE=[Values]
+    [Description] Operating the page control of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+
+[FuncName] LISTINFO
+  [GET Command] @IPOD:LISTINFO=?
+    [Description] GET Only. Contents list Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:LISTLAYER", "@XXXX:LISTLAYERNAME", "@XXXX:LINE1TXT" to "@XXXX:LINE8TXT", "@XXXX:LINE1ATRIB" to "@XXXX:LINE8ATRIB", "@XXXX:CURRLINE" and "@XXXX:MAXLINE" (XXXX = SubUnit name)
+    [Initial Auto Feedback] Available
+
+[FuncName] LISTLAYER
+  [GET Command] @IPOD:LISTLAYER=?
+    [Description] Retrieving the current depth of layers.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 16, Step: 1
+      [Description] GET Only
+
+[FuncName] LISTLAYERNAME
+  [GET Command] @IPOD:LISTLAYERNAME=?
+    [Description] Retrieving the current layer name.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1TXT
+  [GET Command] @IPOD:LINE1TXT=?
+    [Description] Retrieving text info of the line 1 of contents list currently displayed.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1ATRIB
+  [GET Command] @IPOD:LINE1ATRIB=?
+    [Description] Retrieving the attributes of the line number 1.
+  [Parameters]
+    [Parameter] Container
+      [Description] GET Only: indicating this line is Container
+      [Note] meaning a folder
+    [Parameter] Item
+      [Description] GET Only: indicating this line is Item
+      [Note] meaning a playable item
+    [Parameter] Unplayable Item
+      [Description] GET Only: indicating this line is Unplayable Item
+    [Parameter] Unselectable
+      [Description] GET Only: indicating this line is Unselectable
+
+[FuncName] LINE2TXT
+  [GET Command] @IPOD:LINE2TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE2ATRIB
+  [GET Command] @IPOD:LINE2ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE3TXT
+  [GET Command] @IPOD:LINE3TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE3ATRIB
+  [GET Command] @IPOD:LINE3ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE4TXT
+  [GET Command] @IPOD:LINE4TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE4ATRIB
+  [GET Command] @IPOD:LINE4ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE5TXT
+  [GET Command] @IPOD:LINE5TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE5ATRIB
+  [GET Command] @IPOD:LINE5ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE6TXT
+  [GET Command] @IPOD:LINE6TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE6ATRIB
+  [GET Command] @IPOD:LINE6ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE7TXT
+  [GET Command] @IPOD:LINE7TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE7ATRIB
+  [GET Command] @IPOD:LINE7ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE8TXT
+  [GET Command] @IPOD:LINE8TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1TXT
+      [Description] 
+
+[FuncName] LINE8ATRIB
+  [GET Command] @IPOD:LINE8ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPOD:LINE1ATRIB
+      [Description] 
+
+[FuncName] CURRLINE
+  [GET Command] @IPOD:CURRLINE=?
+    [Description] Retrieving absolute position number of current cursor position in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 65536, Step: 1
+      [Description] GET Only
+
+[FuncName] MAXLINE
+  [GET Command] @IPOD:MAXLINE=?
+    [Description] Retrieving maximum lines in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 65536, Step: 1
+      [Description] GET Only
+
+
+<<<<<Sub Unit : BT>>>>>
+[FuncName] AVAIL
+  [GET Command] @BT:AVAIL=?
+    [Description] Retrieving the connection state of Bluetooth (device) or the validity of its operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the device is not connected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] PAIRING
+  [PUT Command] @BT:PAIRING=[Values]
+    [Description] Operating the setting state of Pariring
+  [Parameters]
+    [Parameter] Start
+      [Description] PUT Only: changing its state to Start
+    [Parameter] Cancel
+      [Description] PUT Only: changing its state to Cancel
+
+[FuncName] CONNECT
+  [PUT Command] @BT:CONNECT=[Values]
+    [Description] Operating the connection state
+  [Parameters]
+    [Parameter] Disconnect
+      [Description] PUT Only: changing its state to Disconnect
+    [Parameter] Connect
+      [Description] PUT Only: changing its state to Connect
+
+[FuncName] CONNECTINFO
+  [GET Command] @BT:CONNECTINFO=?
+    [Description] 
+  [Parameters]
+    [Parameter] Disconnected
+      [Description] 
+    [Parameter] Connected
+      [Description] 
+
+[FuncName] PLAYBACK
+  [PUT Command] @BT:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] |<<
+      [Description] PUT Only: change its state to |<<
+      [Note] meaning Skip Rev
+    [Parameter] >>|
+      [Description] PUT Only: change its state to >>|
+      [Note] meaning Skip Fwd
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+
+<<<<<Sub Unit : UAW>>>>>
+[FuncName] AVAIL
+  [GET Command] @UAW:AVAIL=?
+    [Description] Retrieving the connection state of UAW (device) or the validity of its operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the device is not connected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+
+<<<<<Sub Unit : NAPSTER>>>>>
+[FuncName] AVAIL
+  [GET Command] @NAPSTER:AVAIL=?
+    [Description] Retrieving the state of network link or the validity of Rhapsody operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the network link is down.
+      [Note] This status can be reported only via RS-232C connection since the network cable connection is not physically detected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] REPEAT
+  [PUT Command] @NAPSTER:REPEAT=[Values]
+  [GET Command] @NAPSTER:REPEAT=?
+    [Description] Operating & retrieving the repeat setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] Single
+      [Description] PUT: setting to Single / GET: indicating its state is Single
+    [Parameter] All
+      [Description] PUT: setting to All / GET: indicating its state is All
+
+[FuncName] SHUFFLE
+  [PUT Command] @NAPSTER:SHUFFLE=[Values]
+  [GET Command] @NAPSTER:SHUFFLE=?
+    [Description] Operating & retrieving the shuffle setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] On
+      [Description] PUT: setting to On / GET: indicating its state is On
+
+[FuncName] PRESET
+  [PUT Command] @NAPSTER:PRESET=[Values]
+    [Description] Operating Preset Bank (for USB/NET) state.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: recalling specified number of preset bank.
+
+[FuncName] MEM
+  [PUT Command] @NAPSTER:MEM=[Values]
+    [Description] Registering current playback song or station to a preset bank
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT Only: registering to a preset bank with automatically specifying the number.
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: registering to a preset bank of the number specified.
+
+[FuncName] PLAYBACK
+  [PUT Command] @NAPSTER:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] |<<
+      [Description] PUT Only: change its state to |<<
+      [Note] meaning Skip Rev
+    [Parameter] >>|
+      [Description] PUT Only: change its state to >>|
+      [Note] meaning Skip Fwd
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] PLAYBACKINFO
+  [GET Command] @NAPSTER:PLAYBACKINFO=?
+    [Description] Retrieving the playback state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Stop
+      [Description] GET Only: indicating its state is Stop
+    [Parameter] Play
+      [Description] GET Only: indicating its state is Play
+
+[FuncName] METAINFO
+  [GET Command] @NAPSTER:METAINFO=?
+    [Description] GET Only. Meta Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:ARTIST", "@XXXX:ALBUM" and "@XXXX:SONG" (XXXX = SubUnit name)
+
+[FuncName] ARTIST
+  [GET Command] @NAPSTER:ARTIST=?
+    [Description] Retrieving Artist Name
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] ALBUM
+  [GET Command] @NAPSTER:ALBUM=?
+    [Description] Retrieving Album Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:ARTIST
+      [Description] 
+
+[FuncName] SONG
+  [GET Command] @NAPSTER:SONG=?
+    [Description] Retrieving Song Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:ARTIST
+      [Description] 
+
+[FuncName] LISTSEL
+  [PUT Command] @NAPSTER:LISTSEL=[Values]
+    [Description] Selecting the current row of contents list
+  [Parameters]
+    [Parameter] Line_1
+      [Description] PUT Only: selecting Line 1
+    [Parameter] Line_2
+      [Description] PUT Only: selecting Line 2
+    [Parameter] Line_3
+      [Description] PUT Only: selecting Line 3
+    [Parameter] Line_4
+      [Description] PUT Only: selecting Line 4
+    [Parameter] Line_5
+      [Description] PUT Only: selecting Line 5
+    [Parameter] Line_6
+      [Description] PUT Only: selecting Line 6
+    [Parameter] Line_7
+      [Description] PUT Only: selecting Line 7
+    [Parameter] Line_8
+      [Description] PUT Only: selecting Line 8
+
+[FuncName] LISTCURSOR
+  [PUT Command] @NAPSTER:LISTCURSOR=[Values]
+    [Description] Operating the cursor of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTPAGE
+  [PUT Command] @NAPSTER:LISTPAGE=[Values]
+    [Description] Operating the page control of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+
+[FuncName] LISTINFO
+  [GET Command] @NAPSTER:LISTINFO=?
+    [Description] GET Only. Contents list Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:LISTLAYER", "@XXXX:LISTLAYERNAME", "@XXXX:LINE1TXT" to "@XXXX:LINE8TXT", "@XXXX:LINE1ATRIB" to "@XXXX:LINE8ATRIB", "@XXXX:CURRLINE" and "@XXXX:MAXLINE" (XXXX = SubUnit name)
+    [Initial Auto Feedback] Available
+
+[FuncName] LISTLAYER
+  [GET Command] @NAPSTER:LISTLAYER=?
+    [Description] Retrieving the current depth of layers.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 16, Step: 1
+      [Description] GET Only
+
+[FuncName] LISTLAYERNAME
+  [GET Command] @NAPSTER:LISTLAYERNAME=?
+    [Description] Retrieving the current layer name.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1TXT
+  [GET Command] @NAPSTER:LINE1TXT=?
+    [Description] Retrieving text info of the line 1 of contents list currently displayed.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1ATRIB
+  [GET Command] @NAPSTER:LINE1ATRIB=?
+    [Description] Retrieving the attributes of the line number 1.
+  [Parameters]
+    [Parameter] Container
+      [Description] GET Only: indicating this line is Container
+    [Parameter] Item
+      [Description] GET Only: indicating this line is Item
+    [Parameter] Unplayable Item
+      [Description] GET Only: indicating this line is Unplayable Item
+    [Parameter] Unselectable
+      [Description] GET Only: indicating this line is Unselectable
+    [Parameter] Keyword
+      [Description] 
+
+[FuncName] LINE2TXT
+  [GET Command] @NAPSTER:LINE2TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE2ATRIB
+  [GET Command] @NAPSTER:LINE2ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE3TXT
+  [GET Command] @NAPSTER:LINE3TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE3ATRIB
+  [GET Command] @NAPSTER:LINE3ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE4TXT
+  [GET Command] @NAPSTER:LINE4TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE4ATRIB
+  [GET Command] @NAPSTER:LINE4ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE5TXT
+  [GET Command] @NAPSTER:LINE5TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE5ATRIB
+  [GET Command] @NAPSTER:LINE5ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE6TXT
+  [GET Command] @NAPSTER:LINE6TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE6ATRIB
+  [GET Command] @NAPSTER:LINE6ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE7TXT
+  [GET Command] @NAPSTER:LINE7TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE7ATRIB
+  [GET Command] @NAPSTER:LINE7ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE8TXT
+  [GET Command] @NAPSTER:LINE8TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1TXT
+      [Description] 
+
+[FuncName] LINE8ATRIB
+  [GET Command] @NAPSTER:LINE8ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NAPSTER:LINE1ATRIB
+      [Description] 
+
+[FuncName] CURRLINE
+  [GET Command] @NAPSTER:CURRLINE=?
+    [Description] Retrieving absolute position number of current cursor position in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 65000, Step: 1
+      [Description] GET Only
+
+[FuncName] MAXLINE
+  [GET Command] @NAPSTER:MAXLINE=?
+    [Description] Retrieving maximum lines in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 65000, Step: 1
+      [Description] GET Only
+
+
+<<<<<Sub Unit : PC>>>>>
+[FuncName] AVAIL
+  [GET Command] @PC:AVAIL=?
+    [Description] Retrieving the state of network link or the validity of PC operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the network link is down.
+      [Note] This status can be reported only via RS-232C connection since the network cable connection is not physically detected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] REPEAT
+  [PUT Command] @PC:REPEAT=[Values]
+  [GET Command] @PC:REPEAT=?
+    [Description] Operating & retrieving the repeat setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] Single
+      [Description] PUT: setting to Single / GET: indicating its state is Single
+    [Parameter] All
+      [Description] PUT: setting to All / GET: indicating its state is All
+
+[FuncName] SHUFFLE
+  [PUT Command] @PC:SHUFFLE=[Values]
+  [GET Command] @PC:SHUFFLE=?
+    [Description] Operating & retrieving the shuffle setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] On
+      [Description] PUT: setting to On / GET: indicating its state is On
+
+[FuncName] PRESET
+  [PUT Command] @PC:PRESET=[Values]
+    [Description] Operating Preset Bank (for USB/NET) state.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: recalling specified number of preset bank.
+
+[FuncName] MEM
+  [PUT Command] @PC:MEM=[Values]
+    [Description] Registering current playback song or station to a preset bank
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT Only: registering to a preset bank with automatically specifying the number.
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: registering to a preset bank of the number specified.
+
+[FuncName] PLAYBACK
+  [PUT Command] @PC:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] |<<
+      [Description] PUT Only: change its state to |<<
+      [Note] meaning Skip Rev
+    [Parameter] >>|
+      [Description] PUT Only: change its state to >>|
+      [Note] meaning Skip Fwd
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] PLAYBACKINFO
+  [GET Command] @PC:PLAYBACKINFO=?
+    [Description] Retrieving the playback state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Stop
+      [Description] GET Only: indicating its state is Stop
+    [Parameter] Pause
+      [Description] GET Only: indicating its state is Pause
+    [Parameter] Play
+      [Description] GET Only: indicating its state is Play
+
+[FuncName] METAINFO
+  [GET Command] @PC:METAINFO=?
+    [Description] GET Only. Meta Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:ARTIST", "@XXXX:ALBUM" and "@XXXX:SONG" (XXXX = SubUnit name)
+
+[FuncName] ARTIST
+  [GET Command] @PC:ARTIST=?
+    [Description] Retrieving Artist Name
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] ALBUM
+  [GET Command] @PC:ALBUM=?
+    [Description] Retrieving Album Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:ARTIST
+      [Description] 
+
+[FuncName] SONG
+  [GET Command] @PC:SONG=?
+    [Description] Retrieving Song Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:ARTIST
+      [Description] 
+
+[FuncName] LISTSEL
+  [PUT Command] @PC:LISTSEL=[Values]
+    [Description] Selecting the current row of contents list
+  [Parameters]
+    [Parameter] Line_1
+      [Description] PUT Only: selecting Line 1
+    [Parameter] Line_2
+      [Description] PUT Only: selecting Line 2
+    [Parameter] Line_3
+      [Description] PUT Only: selecting Line 3
+    [Parameter] Line_4
+      [Description] PUT Only: selecting Line 8
+    [Parameter] Line_5
+      [Description] PUT Only: selecting Line 5
+    [Parameter] Line_6
+      [Description] PUT Only: selecting Line 6
+    [Parameter] Line_7
+      [Description] PUT Only: selecting Line 7
+    [Parameter] Line_8
+      [Description] PUT Only: selecting Line 8
+
+[FuncName] LISTCURSOR
+  [PUT Command] @PC:LISTCURSOR=[Values]
+    [Description] Operating the cursor of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTPAGE
+  [PUT Command] @PC:LISTPAGE=[Values]
+    [Description] Operating the page control of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+
+[FuncName] LISTINFO
+  [GET Command] @PC:LISTINFO=?
+    [Description] GET Only. Contents list Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:LISTLAYER", "@XXXX:LISTLAYERNAME", "@XXXX:LINE1TXT" to "@XXXX:LINE8TXT", "@XXXX:LINE1ATRIB" to "@XXXX:LINE8ATRIB", "@XXXX:CURRLINE" and "@XXXX:MAXLINE" (XXXX = SubUnit name)
+    [Initial Auto Feedback] Available
+
+[FuncName] LISTLAYER
+  [GET Command] @PC:LISTLAYER=?
+    [Description] Retrieving the current depth of layers.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 16, Step: 1
+      [Description] GET Only
+
+[FuncName] LISTLAYERNAME
+  [GET Command] @PC:LISTLAYERNAME=?
+    [Description] Retrieving the current layer name.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1TXT
+  [GET Command] @PC:LINE1TXT=?
+    [Description] Retrieving text info of the line 1 of contents list currently displayed.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1ATRIB
+  [GET Command] @PC:LINE1ATRIB=?
+    [Description] Retrieving the attributes of the line number 1.
+  [Parameters]
+    [Parameter] Container
+      [Description] GET Only: indicating this line is Container
+    [Parameter] Item
+      [Description] GET Only: indicating this line is Item
+    [Parameter] Unplayable Item
+      [Description] GET Only: indicating this line is Unplayable Item
+    [Parameter] Unselectable
+      [Description] GET Only: indicating this line is Unselectable
+
+[FuncName] LINE2TXT
+  [GET Command] @PC:LINE2TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE2ATRIB
+  [GET Command] @PC:LINE2ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE3TXT
+  [GET Command] @PC:LINE3TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE3ATRIB
+  [GET Command] @PC:LINE3ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE4TXT
+  [GET Command] @PC:LINE4TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE4ATRIB
+  [GET Command] @PC:LINE4ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE5TXT
+  [GET Command] @PC:LINE5TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE5ATRIB
+  [GET Command] @PC:LINE5ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE6TXT
+  [GET Command] @PC:LINE6TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE6ATRIB
+  [GET Command] @PC:LINE6ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE7TXT
+  [GET Command] @PC:LINE7TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE7ATRIB
+  [GET Command] @PC:LINE7ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE8TXT
+  [GET Command] @PC:LINE8TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1TXT
+      [Description] 
+
+[FuncName] LINE8ATRIB
+  [GET Command] @PC:LINE8ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @PC:LINE1ATRIB
+      [Description] 
+
+[FuncName] CURRLINE
+  [GET Command] @PC:CURRLINE=?
+    [Description] Retrieving absolute position number of current cursor position in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 65000, Step: 1
+      [Description] GET Only
+
+[FuncName] MAXLINE
+  [GET Command] @PC:MAXLINE=?
+    [Description] Retrieving maximum lines in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 65000, Step: 1
+      [Description] GET Only
+
+
+<<<<<Sub Unit : NETRADIO>>>>>
+[FuncName] AVAIL
+  [GET Command] @NETRADIO:AVAIL=?
+    [Description] Retrieving the state of network link or the validity of NET RADIO operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the network link is down.
+      [Note] This status can be reported only via RS-232C connection since the network cable connection is not physically detected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] PRESET
+  [PUT Command] @NETRADIO:PRESET=[Values]
+    [Description] Operating Preset Bank (for USB/NET) state.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: recalling specified number of preset bank.
+
+[FuncName] MEM
+  [PUT Command] @NETRADIO:MEM=[Values]
+    [Description] Registering current playback song or station to a preset bank
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT Only: registering to a preset bank with automatically specifying the number.
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: registering to a preset bank of the number specified.
+
+[FuncName] PLAYBACK
+  [PUT Command] @NETRADIO:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+
+[FuncName] PLAYBACKINFO
+  [GET Command] @NETRADIO:PLAYBACKINFO=?
+    [Description] Retrieving the playback state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Stop
+      [Description] GET Only: indicating its state is Stop
+    [Parameter] Play
+      [Description] GET Only: indicating its state is Play
+
+[FuncName] METAINFO
+  [GET Command] @NETRADIO:METAINFO=?
+    [Description] GET Only. Meta Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:STATION" Only (XXXX = SubUnit name)
+
+[FuncName] STATION
+  [GET Command] @NETRADIO:STATION=?
+    [Description] Retrieving Station Name
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LISTSEL
+  [PUT Command] @NETRADIO:LISTSEL=[Values]
+    [Description] Selecting the current row of contents list
+  [Parameters]
+    [Parameter] Line_1
+      [Description] PUT Only: selecting Line 1
+    [Parameter] Line_2
+      [Description] PUT Only: selecting Line 2
+    [Parameter] Line_3
+      [Description] PUT Only: selecting Line 3
+    [Parameter] Line_4
+      [Description] PUT Only: selecting Line 4
+    [Parameter] Line_5
+      [Description] PUT Only: selecting Line 5
+    [Parameter] Line_6
+      [Description] PUT Only: selecting Line 6
+    [Parameter] Line_7
+      [Description] PUT Only: selecting Line 7
+    [Parameter] Line_8
+      [Description] PUT Only: selecting Line 8
+
+[FuncName] LISTCURSOR
+  [PUT Command] @NETRADIO:LISTCURSOR=[Values]
+    [Description] Operating the cursor of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTPAGE
+  [PUT Command] @NETRADIO:LISTPAGE=[Values]
+    [Description] Operating the page control of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+
+[FuncName] BOOKMARK
+  [PUT Command] @NETRADIO:BOOKMARK=[Values]
+    [Description] Operating the Bookmark
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT Only: Bookmark Off the current playback station
+    [Parameter] On
+      [Description] PUT Only: Bookmark On the current playback station
+
+[FuncName] LISTINFO
+  [GET Command] @NETRADIO:LISTINFO=?
+    [Description] GET Only. Contents list Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:LISTLAYER", "@XXXX:LISTLAYERNAME", "@XXXX:LINE1TXT" to "@XXXX:LINE8TXT", "@XXXX:LINE1ATRIB" to "@XXXX:LINE8ATRIB", "@XXXX:CURRLINE" and "@XXXX:MAXLINE" (XXXX = SubUnit name)
+    [Initial Auto Feedback] Available
+
+[FuncName] LISTLAYER
+  [GET Command] @NETRADIO:LISTLAYER=?
+    [Description] Retrieving the current depth of layers.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 16, Step: 1
+      [Description] GET Only
+
+[FuncName] LISTLAYERNAME
+  [GET Command] @NETRADIO:LISTLAYERNAME=?
+    [Description] Retrieving the current layer name.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1TXT
+  [GET Command] @NETRADIO:LINE1TXT=?
+    [Description] Retrieving text info of the line 1 of contents list currently displayed.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1ATRIB
+  [GET Command] @NETRADIO:LINE1ATRIB=?
+    [Description] Retrieving the attributes of the line number 1.
+  [Parameters]
+    [Parameter] Container
+      [Description] GET Only: indicating this line is Container
+    [Parameter] Item
+      [Description] GET Only: indicating this line is Item
+    [Parameter] Unplayable Item
+      [Description] GET Only: indicating this line is Unplayable Item
+    [Parameter] Unselectable
+      [Description] GET Only: indicating this line is Unselectable
+
+[FuncName] LINE2TXT
+  [GET Command] @NETRADIO:LINE2TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE2ATRIB
+  [GET Command] @NETRADIO:LINE2ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE3TXT
+  [GET Command] @NETRADIO:LINE3TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE3ATRIB
+  [GET Command] @NETRADIO:LINE3ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE4TXT
+  [GET Command] @NETRADIO:LINE4TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE4ATRIB
+  [GET Command] @NETRADIO:LINE4ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE5TXT
+  [GET Command] @NETRADIO:LINE5TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE5ATRIB
+  [GET Command] @NETRADIO:LINE5ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE6TXT
+  [GET Command] @NETRADIO:LINE6TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE6ATRIB
+  [GET Command] @NETRADIO:LINE6ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE7TXT
+  [GET Command] @NETRADIO:LINE7TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE7ATRIB
+  [GET Command] @NETRADIO:LINE7ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE8TXT
+  [GET Command] @NETRADIO:LINE8TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1TXT
+      [Description] 
+
+[FuncName] LINE8ATRIB
+  [GET Command] @NETRADIO:LINE8ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @NETRADIO:LINE1ATRIB
+      [Description] 
+
+[FuncName] CURRLINE
+  [GET Command] @NETRADIO:CURRLINE=?
+    [Description] Retrieving absolute position number of current cursor position in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 65000, Step: 1
+      [Description] GET Only
+
+[FuncName] MAXLINE
+  [GET Command] @NETRADIO:MAXLINE=?
+    [Description] Retrieving maximum lines in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 65000, Step: 1
+      [Description] GET Only
+
+
+<<<<<Sub Unit : USB>>>>>
+[FuncName] AVAIL
+  [GET Command] @USB:AVAIL=?
+    [Description] Retrieving the connection state of USB (device) or the validity of USB operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the device is not connected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] REPEAT
+  [PUT Command] @USB:REPEAT=[Values]
+  [GET Command] @USB:REPEAT=?
+    [Description] Operating & retrieving the repeat setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] Single
+      [Description] PUT: setting to Single / GET: indicating its state is Single
+    [Parameter] All
+      [Description] PUT: setting to All / GET: indicating its state is All
+
+[FuncName] SHUFFLE
+  [PUT Command] @USB:SHUFFLE=[Values]
+  [GET Command] @USB:SHUFFLE=?
+    [Description] Operating & retrieving the shuffle setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] On
+      [Description] PUT: setting to On / GET: indicating its state is On
+
+[FuncName] PRESET
+  [PUT Command] @USB:PRESET=[Values]
+    [Description] Operating Preset Bank (for USB/NET) state.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: recalling specified number of preset bank.
+
+[FuncName] MEM
+  [PUT Command] @USB:MEM=[Values]
+    [Description] Registering current playback song or station to a preset bank
+  [Parameters]
+    [Parameter] Auto
+      [Description] PUT Only: registering to a preset bank with automatically specifying the number.
+    [Parameter] Numerical Number: 1 to 40, Step: 1
+      [Description] PUT Only: registering to a preset bank of the number specified.
+
+[FuncName] PLAYBACK
+  [PUT Command] @USB:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] |<<
+      [Description] PUT Only: change its state to |<<
+      [Note] meaning Skip Rev
+    [Parameter] >>|
+      [Description] PUT Only: change its state to >>|
+      [Note] meaning Skip Fwd
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] PLAYBACKINFO
+  [GET Command] @USB:PLAYBACKINFO=?
+    [Description] Retrieving the playback state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Stop
+      [Description] GET Only: indicating its state is Stop
+    [Parameter] Play
+      [Description] GET Only: indicating its state is Play
+
+[FuncName] METAINFO
+  [GET Command] @USB:METAINFO=?
+    [Description] GET Only. Meta Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:ARTIST", "@XXXX:ALBUM" and "@XXXX:SONG" (XXXX = SubUnit name)
+
+[FuncName] ARTIST
+  [GET Command] @USB:ARTIST=?
+    [Description] Retrieving Artist Name
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] ALBUM
+  [GET Command] @USB:ALBUM=?
+    [Description] Retrieving Album Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:ARTIST
+      [Description] 
+
+[FuncName] SONG
+  [GET Command] @USB:SONG=?
+    [Description] Retrieving Song Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:ARTIST
+      [Description] 
+
+[FuncName] LISTSEL
+  [PUT Command] @USB:LISTSEL=[Values]
+    [Description] Selecting the current row of contents list
+  [Parameters]
+    [Parameter] Line_1
+      [Description] PUT Only: selecting Line 1
+    [Parameter] Line_2
+      [Description] PUT Only: selecting Line 2
+    [Parameter] Line_3
+      [Description] PUT Only: selecting Line 3
+    [Parameter] Line_4
+      [Description] PUT Only: selecting Line 4
+    [Parameter] Line_5
+      [Description] PUT Only: selecting Line 5
+    [Parameter] Line_6
+      [Description] PUT Only: selecting Line 6
+    [Parameter] Line_7
+      [Description] PUT Only: selecting Line 7
+    [Parameter] Line_8
+      [Description] PUT Only: selecting Line 8
+
+[FuncName] LISTCURSOR
+  [PUT Command] @USB:LISTCURSOR=[Values]
+    [Description] Operating the cursor of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTPAGE
+  [PUT Command] @USB:LISTPAGE=[Values]
+    [Description] Operating the page control of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+
+[FuncName] LISTINFO
+  [GET Command] @USB:LISTINFO=?
+    [Description] GET Only. Contents list Info can be retrieved at a time.
+    [Initial Auto Feedback] Available
+
+[FuncName] LISTLAYER
+  [GET Command] @USB:LISTLAYER=?
+    [Description] Retrieving the current depth of layers.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 16, Step: 1
+      [Description] GET Only
+
+[FuncName] LISTLAYERNAME
+  [GET Command] @USB:LISTLAYERNAME=?
+    [Description] Retrieving the current layer name.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1TXT
+  [GET Command] @USB:LINE1TXT=?
+    [Description] Retrieving text info of the line 1 of contents list currently displayed.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1ATRIB
+  [GET Command] @USB:LINE1ATRIB=?
+    [Description] Retrieving the attributes of the line number 1.
+  [Parameters]
+    [Parameter] Container
+      [Description] GET Only: indicating this line is Container
+    [Parameter] Item
+      [Description] GET Only: indicating this line is Item
+    [Parameter] Unplayable Item
+      [Description] GET Only: indicating this line is Unplayable Item
+    [Parameter] Unselectable
+      [Description] GET Only: indicating this line is Unselectable
+
+[FuncName] LINE2TXT
+  [GET Command] @USB:LINE2TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE2ATRIB
+  [GET Command] @USB:LINE2ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE3TXT
+  [GET Command] @USB:LINE3TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE3ATRIB
+  [GET Command] @USB:LINE3ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE4TXT
+  [GET Command] @USB:LINE4TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE4ATRIB
+  [GET Command] @USB:LINE4ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE5TXT
+  [GET Command] @USB:LINE5TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE5ATRIB
+  [GET Command] @USB:LINE5ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE6TXT
+  [GET Command] @USB:LINE6TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE6ATRIB
+  [GET Command] @USB:LINE6ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE7TXT
+  [GET Command] @USB:LINE7TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE7ATRIB
+  [GET Command] @USB:LINE7ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE8TXT
+  [GET Command] @USB:LINE8TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE8ATRIB
+  [GET Command] @USB:LINE8ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @USB:LINE1ATRIB
+      [Description] 
+
+[FuncName] CURRLINE
+  [GET Command] @USB:CURRLINE=?
+    [Description] Retrieving absolute position number of current cursor position in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 65000, Step: 1
+      [Description] GET Only
+
+[FuncName] MAXLINE
+  [GET Command] @USB:MAXLINE=?
+    [Description] Retrieving maximum lines in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 65000, Step: 1
+      [Description] GET Only
+
+
+<<<<<Sub Unit : IPODUSB>>>>>
+[FuncName] AVAIL
+  [GET Command] @IPODUSB:AVAIL=?
+    [Description] Retrieving the connection state of iPod (device) or the validity of its operational status
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Not Connected
+      [Description] GET Only: indicating the device is not connected.
+    [Parameter] Not Ready
+      [Description] GET Only: indicating invalid state of operation
+    [Parameter] Ready
+      [Description] GET Only: indicating valid state of operation
+
+[FuncName] MODE
+  [PUT Command] @IPODUSB:MODE=[Values]
+  [GET Command] @IPODUSB:MODE=?
+    [Description] Operating & retrieving the iPod control mode setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Normal
+      [Description] PUT: setting to Normal mode / GET: indicating current mode is Normal
+      [Note] Normal mode is an operation by the UI on the iPod
+    [Parameter] Extended
+      [Description] PUT: setting to Extended mode / GET: indicating current mode is Extended
+      [Note] Extended mode is an operation by the UI on the receiver (through its on-screen display)
+
+[FuncName] REPEAT
+  [PUT Command] @IPODUSB:REPEAT=[Values]
+  [GET Command] @IPODUSB:REPEAT=?
+    [Description] Operating & retrieving the repeat setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] One
+      [Description] PUT: setting to One / GET: indicating its state is One
+    [Parameter] All
+      [Description] PUT: setting to All / GET: indicating its state is All
+
+[FuncName] SHUFFLE
+  [PUT Command] @IPODUSB:SHUFFLE=[Values]
+  [GET Command] @IPODUSB:SHUFFLE=?
+    [Description] Operating & retrieving the shuffle setting state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Off
+      [Description] PUT: setting to Off / GET: indicating its state is Off
+    [Parameter] Songs
+      [Description] PUT: setting to Songs / GET: indicating its state is Songs
+    [Parameter] Albums
+      [Description] PUT: setting to Albums / GET: indicating its state is Albums
+
+[FuncName] PLAYBACK
+  [PUT Command] @IPODUSB:PLAYBACK=[Values]
+    [Description] Operating the playback state
+  [Parameters]
+    [Parameter] Stop
+      [Description] PUT Only: change its state to Stop
+    [Parameter] Pause
+      [Description] PUT Only: change its state to Pause
+    [Parameter] Play
+      [Description] PUT Only: change its state to Play
+    [Parameter] |<<
+      [Description] PUT Only: change its state to |<<
+      [Note] meaning Skip Rev
+    [Parameter] >>|
+      [Description] PUT Only: change its state to >>|
+      [Note] meaning Skip Fwd
+    [Parameter] Skip Rev
+      [Description] PUT Only: change its state to Skip Rev
+    [Parameter] Skip Fwd
+      [Description] PUT Only: change its state to Skip Fwd
+
+[FuncName] PLAYBACKINFO
+  [GET Command] @IPODUSB:PLAYBACKINFO=?
+    [Description] Retrieving the playback state
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Stop
+      [Description] GET Only: indicating its state is Stop
+    [Parameter] Pause
+      [Description] GET Only: indicating its state is Pause
+    [Parameter] Play
+      [Description] GET Only: indicating its state is Play
+
+[FuncName] METAINFO
+  [GET Command] @IPODUSB:METAINFO=?
+    [Description] GET Only. Meta Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:ARTIST", "@XXXX:ALBUM" and "@XXXX:SONG" (XXXX = SubUnit name)
+
+[FuncName] ARTIST
+  [GET Command] @IPODUSB:ARTIST=?
+    [Description] Retrieving Artist Name
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] ALBUM
+  [GET Command] @IPODUSB:ALBUM=?
+    [Description] Retrieving Album Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:ARTIST
+      [Description] 
+
+[FuncName] SONG
+  [GET Command] @IPODUSB:SONG=?
+    [Description] Retrieving Song Title
+    [Initial Auto Feedback] Available
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:ARTIST
+      [Description] 
+
+[FuncName] LISTSEL
+  [PUT Command] @IPODUSB:LISTSEL=[Values]
+    [Description] Selecting the current row of contents list
+  [Parameters]
+    [Parameter] Line_1
+      [Description] PUT Only: selecting Line 1
+    [Parameter] Line_2
+      [Description] PUT Only: selecting Line 2
+    [Parameter] Line_3
+      [Description] PUT Only: selecting Line 3
+    [Parameter] Line_4
+      [Description] PUT Only: selecting Line 4
+    [Parameter] Line_5
+      [Description] PUT Only: selecting Line 5
+    [Parameter] Line_6
+      [Description] PUT Only: selecting Line 6
+    [Parameter] Line_7
+      [Description] PUT Only: selecting Line 7
+    [Parameter] Line_8
+      [Description] PUT Only: selecting Line 8
+
+[FuncName] LISTCURSOR
+  [PUT Command] @IPODUSB:LISTCURSOR=[Values]
+    [Description] Operating the cursor of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+    [Parameter] Sel
+      [Description] PUT Only: selecting the line that the cursor is on
+    [Parameter] Back
+      [Description] PUT Only: going back to the previous layer of contents list
+    [Parameter] Back to Home
+      [Description] 
+
+[FuncName] LISTPAGE
+  [PUT Command] @IPODUSB:LISTPAGE=[Values]
+    [Description] Operating the page control of contents list
+  [Parameters]
+    [Parameter] Down
+      [Description] PUT Only: moving it Down
+    [Parameter] Up
+      [Description] PUT Only: moving it Up
+
+[FuncName] LISTINFO
+  [GET Command] @IPODUSB:LISTINFO=?
+    [Description] GET Only. Contents list Info can be retrieved at a time.
+    [Note] Updated by following commands: "@XXXX:LISTLAYER", "@XXXX:LISTLAYERNAME", "@XXXX:LINE1TXT" to "@XXXX:LINE8TXT", "@XXXX:LINE1ATRIB" to "@XXXX:LINE8ATRIB", "@XXXX:CURRLINE" and "@XXXX:MAXLINE" (XXXX = SubUnit name)
+    [Initial Auto Feedback] Available
+
+[FuncName] LISTLAYER
+  [GET Command] @IPODUSB:LISTLAYER=?
+    [Description] Retrieving the current depth of layers.
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 16, Step: 1
+      [Description] GET Only
+
+[FuncName] LISTLAYERNAME
+  [GET Command] @IPODUSB:LISTLAYERNAME=?
+    [Description] Retrieving the current layer name.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1TXT
+  [GET Command] @IPODUSB:LINE1TXT=?
+    [Description] Retrieving text info of the line 1 of contents list currently displayed.
+  [Parameters]
+    [Parameter] Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)
+      [Description] GET Only
+
+[FuncName] LINE1ATRIB
+  [GET Command] @IPODUSB:LINE1ATRIB=?
+    [Description] Retrieving the attributes of the line number 1.
+  [Parameters]
+    [Parameter] Container
+      [Description] GET Only: indicating this line is Container
+      [Note] meaning a folder
+    [Parameter] Item
+      [Description] GET Only: indicating this line is Item
+      [Note] meaning a playable item
+    [Parameter] Unplayable Item
+      [Description] GET Only: indicating this line is Unplayable Item
+    [Parameter] Unselectable
+      [Description] GET Only: indicating this line is Unselectable
+
+[FuncName] LINE2TXT
+  [GET Command] @IPODUSB:LINE2TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE2ATRIB
+  [GET Command] @IPODUSB:LINE2ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE3TXT
+  [GET Command] @IPODUSB:LINE3TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE3ATRIB
+  [GET Command] @IPODUSB:LINE3ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE4TXT
+  [GET Command] @IPODUSB:LINE4TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE4ATRIB
+  [GET Command] @IPODUSB:LINE4ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE5TXT
+  [GET Command] @IPODUSB:LINE5TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE5ATRIB
+  [GET Command] @IPODUSB:LINE5ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE6TXT
+  [GET Command] @IPODUSB:LINE6TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE6ATRIB
+  [GET Command] @IPODUSB:LINE6ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE7TXT
+  [GET Command] @IPODUSB:LINE7TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE7ATRIB
+  [GET Command] @IPODUSB:LINE7ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] LINE8TXT
+  [GET Command] @IPODUSB:LINE8TXT=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1TXT
+      [Description] 
+
+[FuncName] LINE8ATRIB
+  [GET Command] @IPODUSB:LINE8ATRIB=?
+    [Description] 
+  [Parameters]
+    [Parameter] Parameters are the same as @IPODUSB:LINE1ATRIB
+      [Description] 
+
+[FuncName] CURRLINE
+  [GET Command] @IPODUSB:CURRLINE=?
+    [Description] Retrieving absolute position number of current cursor position in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 1 to 65536, Step: 1
+      [Description] GET Only
+
+[FuncName] MAXLINE
+  [GET Command] @IPODUSB:MAXLINE=?
+    [Description] Retrieving maximum lines in the contents list layer currently displayed
+  [Parameters]
+    [Parameter] Numerical Number: 0 to 65536, Step: 1
+      [Description] GET Only
+

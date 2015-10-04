@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../css/ss.css">
+<title>YNCA Command List Ver. 1.10 for RX-A3010_B</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+<div class="toptitle">Sub Unit : ZONE4</div>
+<div class="version">Function Tree version: 1.10</div>
+<div class="version">Firmware version: 1.03-</div>
+<div class="version">Model: RX-A3010</div>
+<div class="version">Product Region: UK / Ireland</div>
+<div class="version">$Date::                           $</div>
+<div class="version">$Revision: $</div>
+<hr>
+<div class ="title">Command Index</div>
+<ol type="1" start="1">
+    <li class="title">Power</li>
+        <div class="norm"><a href="#PWR" name="CatIdxPWR">PWR</a></div>
+        <div class="norm"><a href="#SLEEP" name="CatIdxSLEEP">SLEEP</a></div>
+    <li class="title">Input</li>
+        <div class="norm"><a href="#INP" name="CatIdxINP">INP</a></div>
+    <li class="title">Information</li>
+        <div class="norm"><a href="#BASIC" name="CatIdxBASIC">BASIC</a></div>
+    <li class="title">Others</li>
+        <div class="norm"><a href="#AVAIL" name="CatIdxAVAIL">AVAIL</a></div>
+        <div class="norm"><a href="#ZONENAME" name="CatIdxZONENAME">ZONENAME</a></div>
+        <div class="norm"><a href="#SCENENAME" name="CatIdxSCENENAME">SCENENAME</a></div>
+        <div class="norm"><a href="#SCENE1NAME" name="CatIdxSCENE1NAME">SCENE1NAME</a></div>
+        <div class="norm"><a href="#SCENE2NAME" name="CatIdxSCENE2NAME">SCENE2NAME</a></div>
+        <div class="norm"><a href="#SCENE3NAME" name="CatIdxSCENE3NAME">SCENE3NAME</a></div>
+        <div class="norm"><a href="#SCENE4NAME" name="CatIdxSCENE4NAME">SCENE4NAME</a></div>
+        <div class="norm"><a href="#SCENE" name="CatIdxSCENE">SCENE</a></div>
+</ol><hr>
+<div class="title">Command Details of SubUnit: ZONE4</div>
+<ul type="disc">
+<li>
+<div class="itemtitle"><a name="AVAIL">AVAIL</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:AVAIL=?</div></dd>
+<dd><div class="description">Retrieving the validity of Zone 4 operational status</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Not Ready</div></dd>
+<dd><div class="description">GET Only: indicating invalid state of operation</div></dd>
+<dd><div class="param">Ready</div></dd>
+<dd><div class="description">GET Only: indicating valid state of operation</div></dd>
+<div class="backlink"><a href="#CatIdxAVAIL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="ZONENAME">ZONENAME</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE4:ZONENAME=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:ZONENAME=?</div></dd>
+<dd><div class="description">Setting & retrieving renamed info of Zone 4</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Latin-1, Variable Length (0 to 9 characters)</div></dd>
+<dd><div class="description">PUT: setting its name / GET: indicating its name</div></dd>
+<div class="backlink"><a href="#CatIdxZONENAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENENAME">SCENENAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:SCENENAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of all SCENE presets for Zone 4</div></dd>
+<div class="backlink"><a href="#CatIdxSCENENAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE1NAME">SCENE1NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:SCENE1NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE1</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Latin-1, Variable Length (0 to 20 characters)</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxSCENE1NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE2NAME">SCENE2NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:SCENE2NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#SCENE1NAME">SCENE1NAME</a></div></dd>
+<div class="backlink"><a href="#CatIdxSCENE2NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE3NAME">SCENE3NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:SCENE3NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE3</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#SCENE1NAME">SCENE1NAME</a></div></dd>
+<div class="backlink"><a href="#CatIdxSCENE3NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE4NAME">SCENE4NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:SCENE4NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE4</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#SCENE1NAME">SCENE1NAME</a></div></dd>
+<div class="backlink"><a href="#CatIdxSCENE4NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="BASIC">BASIC</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:BASIC=?</div></dd>
+<dd><div class="description">GET Only. Zone 4 basic info is retrieved at a time.</div></dd>
+<dd><div class="notes">Updated by following commands: "@ZONE4:PWR", "@ZONE4:SLEEP", and "@ZONE4:INP"</div></dd>
+<div class="backlink"><a href="#CatIdxBASIC">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PWR">PWR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE4:PWR=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:PWR=?</div></dd>
+<dd><div class="description">Operating & retrieving Power state of Zone 4</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Standby</div></dd>
+<dd><div class="description">PUT: turining its state to Standby / GET: indicating Standby status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: turining its state to On / GET: indicating On status.</div></dd>
+<dd><div class="param">On/Standby</div></dd>
+<dd><div class="description">PUT Only: toggling its status between On/Standby</div></dd>
+<div class="backlink"><a href="#CatIdxPWR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SLEEP">SLEEP</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE4:SLEEP=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:SLEEP=?</div></dd>
+<dd><div class="description">Operating & retrieving Sleep setting state of Zone 4</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: turining its setting state to Off / GET: indicating Off setting status.</div></dd>
+<dd><div class="param">30 min</div></dd>
+<dd><div class="description">PUT: setting to 30 min / GET: indicating it's setting is 30 min.</div></dd>
+<dd><div class="param">60 min</div></dd>
+<dd><div class="description">PUT: setting to 60 min / GET: indicating it's setting is 60 min.</div></dd>
+<dd><div class="param">90 min</div></dd>
+<dd><div class="description">PUT: setting to 90 min / GET: indicating it's setting is 90 min.</div></dd>
+<dd><div class="param">120 min</div></dd>
+<dd><div class="description">PUT: setting to 120 min / GET: indicating it's setting is 120 min.</div></dd>
+<dd><div class="param">Last</div></dd>
+<dd><div class="description">PUT Only: setting to the value set last</div></dd>
+<div class="backlink"><a href="#CatIdxSLEEP">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INP">INP</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE4:INP=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE4:INP=?</div></dd>
+<dd><div class="description">Operating & retrieving Zone 4 Input state.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dd><div class="notes">Only inputs assigned with a digital audio (coax or opt) terminal are selectable in Zone 4.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">AV1</div></dd>
+<dd><div class="description">PUT: selecting input AV1 / GET: indicating current input is AV1</div></dd>
+<dd><div class="param">AV2</div></dd>
+<dd><div class="description">PUT: selecting input AV2 / GET: indicating current input is AV2</div></dd>
+<dd><div class="param">AV3</div></dd>
+<dd><div class="description">PUT: selecting input AV3 / GET: indicating current input is AV3</div></dd>
+<dd><div class="param">AV4</div></dd>
+<dd><div class="description">PUT: selecting input AV4 / GET: indicating current input is AV4</div></dd>
+<dd><div class="param">AV5</div></dd>
+<dd><div class="description">PUT: selecting input AV5 / GET: indicating current input is AV5</div></dd>
+<dd><div class="param">AV6</div></dd>
+<dd><div class="description">PUT: selecting input AV6 / GET: indicating current input is AV6</div></dd>
+<dd><div class="param">AV7</div></dd>
+<dd><div class="description">PUT: selecting input AV7 / GET: indicating current input is AV7</div></dd>
+<dd><div class="param">V-AUX</div></dd>
+<dd><div class="description">PUT: selecting input V-AUX / GET: indicating current input is V-AUX</div></dd>
+<dd><div class="param">AUDIO1</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO1 / GET: indicating current input is AUDIO1</div></dd>
+<dd><div class="param">AUDIO2</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO2 / GET: indicating current input is AUDIO2</div></dd>
+<dd><div class="param">AUDIO3</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO / GET: indicating current input is AUDIO</div></dd>
+<dd><div class="param">AUDIO4</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO4 / GET: indicating current input is AUDIO4</div></dd>
+<div class="backlink"><a href="#CatIdxINP">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE">SCENE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE4:SCENE=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Recalling Zone 4 Scene banks.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Scene 1</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 1</div></dd>
+<dd><div class="param">Scene 2</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 2</div></dd>
+<dd><div class="param">Scene 3</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 3</div></dd>
+<dd><div class="param">Scene 4</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 4</div></dd>
+<div class="backlink"><a href="#CatIdxSCENE">Back To Index</a></div>
+</dl></li>
+</ul>
+<p>
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+</body>
+</html>

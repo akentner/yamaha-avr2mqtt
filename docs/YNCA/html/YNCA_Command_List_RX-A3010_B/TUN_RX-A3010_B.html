@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../css/ss.css">
+<title>YNCA Command List Ver. 1.10 for RX-A3010_B</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+<div class="toptitle">Sub Unit : TUN</div>
+<div class="version">Function Tree version: 1.10</div>
+<div class="version">Firmware version: 1.03-</div>
+<div class="version">Model: RX-A3010</div>
+<div class="version">Product Region: UK / Ireland</div>
+<div class="version">$Date::                           $</div>
+<div class="version">$Revision: $</div>
+<hr>
+<div class ="title">Command Index</div>
+<ol type="1" start="1">
+    <li class="title">Information</li>
+        <div class="norm"><a href="#SIGINFO" name="CatIdxSIGINFO">SIGINFO</a></div>
+        <div class="norm"><a href="#RDSINFO" name="CatIdxRDSINFO">RDSINFO</a></div>
+    <li class="title">Play Control</li>
+        <div class="norm"><a href="#SEARCHMODE" name="CatIdxSEARCHMODE">SEARCHMODE</a></div>
+        <div class="norm"><a href="#FMMODE" name="CatIdxFMMODE">FMMODE</a></div>
+        <div class="norm"><a href="#PRESET" name="CatIdxPRESET">PRESET</a></div>
+        <div class="norm"><a href="#MEM" name="CatIdxMEM">MEM</a></div>
+        <div class="norm"><a href="#FMFREQ" name="CatIdxFMFREQ">FMFREQ</a></div>
+        <div class="norm"><a href="#AMFREQ" name="CatIdxAMFREQ">AMFREQ</a></div>
+        <div class="norm"><a href="#BAND" name="CatIdxBAND">BAND</a></div>
+    <li class="title">Others</li>
+        <div class="norm"><a href="#AVAIL" name="CatIdxAVAIL">AVAIL</a></div>
+        <div class="norm"><a href="#TUNED" name="CatIdxTUNED">TUNED</a></div>
+        <div class="norm"><a href="#SIGSTEREOMONO" name="CatIdxSIGSTEREOMONO">SIGSTEREOMONO</a></div>
+        <div class="norm"><a href="#RDSPRGTYPE" name="CatIdxRDSPRGTYPE">RDSPRGTYPE</a></div>
+        <div class="norm"><a href="#RDSPRGSERVICE" name="CatIdxRDSPRGSERVICE">RDSPRGSERVICE</a></div>
+        <div class="norm"><a href="#RDSTXTA" name="CatIdxRDSTXTA">RDSTXTA</a></div>
+        <div class="norm"><a href="#RDSTXTB" name="CatIdxRDSTXTB">RDSTXTB</a></div>
+        <div class="norm"><a href="#RDSCLOCK" name="CatIdxRDSCLOCK">RDSCLOCK</a></div>
+</ol><hr>
+<div class="title">Command Details of SubUnit: TUN</div>
+<ul type="disc">
+<li>
+<div class="itemtitle"><a name="AVAIL">AVAIL</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:AVAIL=?</div></dd>
+<dd><div class="description">Retrieving the validity of Tuner operational status</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Not Ready</div></dd>
+<dd><div class="description">GET Only: indicating invalid state of operation</div></dd>
+<dd><div class="notes">All feedback are invalid (its validity is not guaranteed) even though there are when "Not Ready" status.</div></dd>
+<dd><div class="param">Ready</div></dd>
+<dd><div class="description">GET Only: indicating valid state of operation</div></dd>
+<div class="backlink"><a href="#CatIdxAVAIL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SEARCHMODE">SEARCHMODE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:SEARCHMODE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:SEARCHMODE=?</div></dd>
+<dd><div class="description">Operating & retrieving Search Mode state.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Preset</div></dd>
+<dd><div class="description">PUT: selecting Preset search mode / GET: indicating current search mode is Preset</div></dd>
+<dd><div class="param">Tuning</div></dd>
+<dd><div class="description">PUT: selecting Tuning search mode / GET: indicating current search mode is Tuning</div></dd>
+<div class="backlink"><a href="#CatIdxSEARCHMODE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PRESET">PRESET</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:PRESET=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:PRESET=?</div></dd>
+<dd><div class="description">Operating & retrieving Preset state.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">No Preset</div></dd>
+<dd><div class="description">GET Only: indicating there is no preset registered yet.</div></dd>
+<dd><div class="param">Numerical Number: 1 to 40, Step: 1</div></dd>
+<dd><div class="description">PUT: recalling specified number of preset bank. / GET: indicating the preset number currently selected.</div></dd>
+<dd><div class="notes">If no station is yet registered in the recalled number, nothing happens.</div></dd>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: selecting the nearest available preset number to the current one in the way of larger number to smaller.</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: selecting the nearest available preset number to the current one in the way of smaller number to larger.</div></dd>
+<div class="backlink"><a href="#CatIdxPRESET">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="MEM">MEM</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:MEM=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Registering current frequency to a preset bank</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Auto</div></dd>
+<dd><div class="description">PUT Only: registering to a preset bank with automatically specifying the number.</div></dd>
+<dd><div class="notes">Empty (not regisitered) preset banks are used first.</div></dd>
+<dd><div class="param">Numerical Number: 1 to 40, Step: 1</div></dd>
+<dd><div class="description">PUT Only: registering to a preset bank of the number specified.</div></dd>
+<div class="backlink"><a href="#CatIdxMEM">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="FMFREQ">FMFREQ</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:FMFREQ=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:FMFREQ=?</div></dd>
+<dd><div class="description">Operating & retrieving FM frequency</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">(No Character)</div></dd>
+<dd><div class="description">PUT Only: used when there's no FM frequency specified.</div></dd>
+<dd><div class="notes">This is a dummy command.</div></dd>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: incrementing it by 1 step</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: decrementing it by 1 step</div></dd>
+<dd><div class="param">Auto Down</div></dd>
+<dd><div class="description">PUT Only: starting Auto Search to the incremental direction.</div></dd>
+<dd><div class="param">Auto Up</div></dd>
+<dd><div class="description">PUT Only: starting Auto Search to the decremental direction.</div></dd>
+<dd><div class="param">TP Down</div></dd>
+<dd><div class="description">PUT Only: incrementing it by 1 step</div></dd>
+<dd><div class="param">TP Up</div></dd>
+<dd><div class="description">PUT Only: decrementing it by 1 step</div></dd>
+<dd><div class="param">Numerical Number: 87.50 to 108.00, Step: 0.05</div></dd>
+<dd><div class="description">PUT: tuning to the specified frequency. / GET: indicating the current frequency.</div></dd>
+<dd><div class="notes">The unit for this parameter is "MHz".</div></dd>
+<div class="backlink"><a href="#CatIdxFMFREQ">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="AMFREQ">AMFREQ</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:AMFREQ=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:AMFREQ=?</div></dd>
+<dd><div class="description">Operating & retrieving AM frequency</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">(No Character)</div></dd>
+<dd><div class="description">PUT Only: used when there's no AM frequency specified.</div></dd>
+<dd><div class="notes">This is a dummy command.</div></dd>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: incrementing it by 1 step</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: decrementing it by 1 step</div></dd>
+<dd><div class="param">Auto Down</div></dd>
+<dd><div class="description">PUT Only: starting Auto Search to the incremental direction.</div></dd>
+<dd><div class="param">Auto Up</div></dd>
+<dd><div class="description">PUT Only: starting Auto Search to the decremental direction.</div></dd>
+<dd><div class="param">Numerical Number: 531 to 1611, Step: 9</div></dd>
+<dd><div class="description">PUT: tuning to the specified frequency. / GET: indicating the current frequency.</div></dd>
+<dd><div class="notes">The unit for this parameter is "kHz".</div></dd>
+<div class="backlink"><a href="#CatIdxAMFREQ">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="BAND">BAND</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:BAND=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:BAND=?</div></dd>
+<dd><div class="description">Operating & retrieving the Frequency Band type</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">FM</div></dd>
+<dd><div class="description">PUT: selecting FM / GET: indicating current band type is FM</div></dd>
+<dd><div class="param">AM</div></dd>
+<dd><div class="description">PUT: selecting AM / GET: indicating current band type is AM</div></dd>
+<div class="backlink"><a href="#CatIdxBAND">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="FMMODE">FMMODE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@TUN:FMMODE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:FMMODE=?</div></dd>
+<dd><div class="description">Operating & retrieving FM playback mode</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Auto</div></dd>
+<dd><div class="description">PUT: selecting Auto mode. / GET: indicating Auto mode</div></dd>
+<dd><div class="notes">This is a mode that automatically mutes the sound when no stereo reception is available.</div></dd>
+<dd><div class="param">Mono</div></dd>
+<dd><div class="description">PUT: selecting Mono mode. / GET: indicating Mono mode</div></dd>
+<dd><div class="notes">This is a mode to force the reception to be monaural (used when the reception is weak and easily gets muted).</div></dd>
+<div class="backlink"><a href="#CatIdxFMMODE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SIGINFO">SIGINFO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:SIGINFO=?</div></dd>
+<dd><div class="description">GET Only. Tuner singal status can be retrieved at a time.</div></dd>
+<dd><div class="notes">Updated by following commands: "@TUN:TUNED" and "@TUN:SIGSTEREOMONO"</div></dd>
+<div class="backlink"><a href="#CatIdxSIGINFO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TUNED">TUNED</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:TUNED=?</div></dd>
+<dd><div class="description">Retrieving the tuning status</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Negate</div></dd>
+<dd><div class="description">GET Only: indicating untuned status</div></dd>
+<dd><div class="param">Assert</div></dd>
+<dd><div class="description">GET Only: indicating tuned to a station</div></dd>
+<div class="backlink"><a href="#CatIdxTUNED">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SIGSTEREOMONO">SIGSTEREOMONO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:SIGSTEREOMONO=?</div></dd>
+<dd><div class="description">Retrieving whether the playback signal is mono or stereo.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dd><div class="notes">Negate means now playing monaural signal or not tuned. Assert means now playing Stereo signal.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#TUNED">TUNED</a></div></dd>
+<div class="backlink"><a href="#CatIdxSIGSTEREOMONO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="RDSINFO">RDSINFO</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:RDSINFO=?</div></dd>
+<dd><div class="description">GET Only. RDS related information can be retrieved at a time.</div></dd>
+<dd><div class="notes">Updated by following commands: "@TUN:RDSPRGTYPE", "@TUN:RDSPRGSERVICE", "@TUN:RDSTXTA", "@TUN:RDSTXTB" and "@TUN:RDSCLOCK"</div></dd>
+<div class="backlink"><a href="#CatIdxRDSINFO">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="RDSPRGTYPE">RDSPRGTYPE</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:RDSPRGTYPE=?</div></dd>
+<dd><div class="description">Retrieving Program Type Info</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">(No Character)</div></dd>
+<dd><div class="description">GET Only: indicating no data</div></dd>
+<dd><div class="param">NEWS</div></dd>
+<dd><div class="description">GET Only: indicating it's now NEWS</div></dd>
+<dd><div class="param">AFFAIRS</div></dd>
+<dd><div class="description">GET Only: indicating it's now AFFAIRS</div></dd>
+<dd><div class="param">INFO</div></dd>
+<dd><div class="description">GET Only: indicating it's now INFO</div></dd>
+<dd><div class="param">SPORT</div></dd>
+<dd><div class="description">GET Only: indicating it's now SPORT</div></dd>
+<dd><div class="param">EDUCATE</div></dd>
+<dd><div class="description">GET Only: indicating it's now EDUCATE</div></dd>
+<dd><div class="param">DRAMA</div></dd>
+<dd><div class="description">GET Only: indicating it's now DRAMA</div></dd>
+<dd><div class="param">CULTURE</div></dd>
+<dd><div class="description">GET Only: indicating it's now CULTURE</div></dd>
+<dd><div class="param">SCIENCE</div></dd>
+<dd><div class="description">GET Only: indicating it's now SCIENCE</div></dd>
+<dd><div class="param">VARIED</div></dd>
+<dd><div class="description">GET Only: indicating it's now VARIED</div></dd>
+<dd><div class="param">POP M</div></dd>
+<dd><div class="description">GET Only: indicating it's now POP M</div></dd>
+<dd><div class="param">ROCK M</div></dd>
+<dd><div class="description">GET Only: indicating it's now ROCK M</div></dd>
+<dd><div class="param">M.O.R M</div></dd>
+<dd><div class="description">GET Only: indicating it's now M.O.R M</div></dd>
+<dd><div class="param">LIGHT M</div></dd>
+<dd><div class="description">GET Only: indicating it's now LIGHT M</div></dd>
+<dd><div class="param">CLASSICS</div></dd>
+<dd><div class="description">GET Only: indicating it's now CLASSICS</div></dd>
+<dd><div class="param">OTHER M</div></dd>
+<dd><div class="description">GET Only: indicating it's now OTHER M</div></dd>
+<div class="backlink"><a href="#CatIdxRDSPRGTYPE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="RDSPRGSERVICE">RDSPRGSERVICE</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:RDSPRGSERVICE=?</div></dd>
+<dd><div class="description">Retrieving Program Service info</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 8 bytes)</div></dd>
+<dd><div class="description">GET Only: indicating the information</div></dd>
+<div class="backlink"><a href="#CatIdxRDSPRGSERVICE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="RDSTXTA">RDSTXTA</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:RDSTXTA=?</div></dd>
+<dd><div class="description">Retrieving Radio Text A</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Mixed (could be ASCII, Latin-1 or UTF-8 encoding), Variable Byte Length (0 to 64 bytes)</div></dd>
+<dd><div class="description">GET Only: indicating the information</div></dd>
+<div class="backlink"><a href="#CatIdxRDSTXTA">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="RDSTXTB">RDSTXTB</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:RDSTXTB=?</div></dd>
+<dd><div class="description">Retrieving Radio Text B</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#RDSTXTA">RDSTXTA</a></div></dd>
+<div class="backlink"><a href="#CatIdxRDSTXTB">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="RDSCLOCK">RDSCLOCK</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@TUN:RDSCLOCK=?</div></dd>
+<dd><div class="description">Retrieving Clock Info</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Ascii, Variable Length (0 to 5 characters)</div></dd>
+<div class="backlink"><a href="#CatIdxRDSCLOCK">Back To Index</a></div>
+</dl></li>
+</ul>
+<p>
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+</body>
+</html>

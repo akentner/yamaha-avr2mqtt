@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../css/ss.css">
+<title>YNCA Command List Ver. 1.10 for RX-A2010_B</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+<div class="toptitle">Sub Unit : ZONE2</div>
+<div class="version">Function Tree version: 1.10</div>
+<div class="version">Firmware version: 1.03-</div>
+<div class="version">Model: RX-A2010</div>
+<div class="version">Product Region: UK / Ireland</div>
+<div class="version">$Date::                           $</div>
+<div class="version">$Revision: $</div>
+<hr>
+<div class ="title">Command Index</div>
+<ol type="1" start="1">
+    <li class="title">Power</li>
+        <div class="norm"><a href="#PWR" name="CatIdxPWR">PWR</a></div>
+        <div class="norm"><a href="#SLEEP" name="CatIdxSLEEP">SLEEP</a></div>
+    <li class="title">Volume</li>
+        <div class="norm"><a href="#VOL" name="CatIdxVOL">VOL</a></div>
+        <div class="norm"><a href="#VOLFIXVAR" name="CatIdxVOLFIXVAR">VOLFIXVAR</a></div>
+        <div class="norm"><a href="#MAXVOL" name="CatIdxMAXVOL">MAXVOL</a></div>
+        <div class="norm"><a href="#INITVOLMODE" name="CatIdxINITVOLMODE">INITVOLMODE</a></div>
+        <div class="norm"><a href="#INITVOLLVL" name="CatIdxINITVOLLVL">INITVOLLVL</a></div>
+        <div class="norm"><a href="#MUTE" name="CatIdxMUTE">MUTE</a></div>
+    <li class="title">Input</li>
+        <div class="norm"><a href="#INP" name="CatIdxINP">INP</a></div>
+    <li class="title">Information</li>
+        <div class="norm"><a href="#BASIC" name="CatIdxBASIC">BASIC</a></div>
+    <li class="title">Play Control</li>
+        <div class="norm"><a href="#PLAYBACK" name="CatIdxPLAYBACK">PLAYBACK</a></div>
+    <li class="title">Contents Browse</li>
+        <div class="norm"><a href="#LISTCURSOR" name="CatIdxLISTCURSOR">LISTCURSOR</a></div>
+        <div class="norm"><a href="#LISTMENU" name="CatIdxLISTMENU">LISTMENU</a></div>
+    <li class="title">Others</li>
+        <div class="norm"><a href="#AVAIL" name="CatIdxAVAIL">AVAIL</a></div>
+        <div class="norm"><a href="#ZONENAME" name="CatIdxZONENAME">ZONENAME</a></div>
+        <div class="norm"><a href="#SCENENAME" name="CatIdxSCENENAME">SCENENAME</a></div>
+        <div class="norm"><a href="#SCENE1NAME" name="CatIdxSCENE1NAME">SCENE1NAME</a></div>
+        <div class="norm"><a href="#SCENE2NAME" name="CatIdxSCENE2NAME">SCENE2NAME</a></div>
+        <div class="norm"><a href="#SCENE3NAME" name="CatIdxSCENE3NAME">SCENE3NAME</a></div>
+        <div class="norm"><a href="#SCENE4NAME" name="CatIdxSCENE4NAME">SCENE4NAME</a></div>
+        <div class="norm"><a href="#BALANCE" name="CatIdxBALANCE">BALANCE</a></div>
+        <div class="norm"><a href="#SCENE" name="CatIdxSCENE">SCENE</a></div>
+        <div class="norm"><a href="#BASS" name="CatIdxBASS">BASS</a></div>
+        <div class="norm"><a href="#TREBLE" name="CatIdxTREBLE">TREBLE</a></div>
+</ol><hr>
+<div class="title">Command Details of SubUnit: ZONE2</div>
+<ul type="disc">
+<li>
+<div class="itemtitle"><a name="AVAIL">AVAIL</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:AVAIL=?</div></dd>
+<dd><div class="description">Retrieving the validity of Zone 2 operational status</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Not Ready</div></dd>
+<dd><div class="description">GET Only: indicating invalid state of operation</div></dd>
+<dd><div class="param">Ready</div></dd>
+<dd><div class="description">GET Only: indicating valid state of operation</div></dd>
+<div class="backlink"><a href="#CatIdxAVAIL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="ZONENAME">ZONENAME</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:ZONENAME=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:ZONENAME=?</div></dd>
+<dd><div class="description">Setting & retrieving renamed info of Zone 2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Latin-1, Variable Length (0 to 9 characters)</div></dd>
+<dd><div class="description">PUT: setting its name / GET: indicating its name</div></dd>
+<div class="backlink"><a href="#CatIdxZONENAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENENAME">SCENENAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:SCENENAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of all SCENE presets for Zone 2</div></dd>
+<div class="backlink"><a href="#CatIdxSCENENAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE1NAME">SCENE1NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:SCENE1NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE1</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Character Code: Latin-1, Variable Length (0 to 20 characters)</div></dd>
+<dd><div class="description">GET Only</div></dd>
+<div class="backlink"><a href="#CatIdxSCENE1NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE2NAME">SCENE2NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:SCENE2NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#SCENE1NAME">SCENE1NAME</a></div></dd>
+<div class="backlink"><a href="#CatIdxSCENE2NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE3NAME">SCENE3NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:SCENE3NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE3</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#SCENE1NAME">SCENE1NAME</a></div></dd>
+<div class="backlink"><a href="#CatIdxSCENE3NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE4NAME">SCENE4NAME</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:SCENE4NAME=?</div></dd>
+<dd><div class="description">Retrieving renamed info of SCENE4</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#SCENE1NAME">SCENE1NAME</a></div></dd>
+<div class="backlink"><a href="#CatIdxSCENE4NAME">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="BASIC">BASIC</a></div>
+<dl>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:BASIC=?</div></dd>
+<dd><div class="description">GET Only. Zone 2 basic info is retrieved at a time.</div></dd>
+<dd><div class="notes">Updated by following commands: "@ZONE2:PWR", "@ZONE2:SLEEP", "@ZONE2:VOL", "@ZONE2:MUTE", and "@ZONE2:INP"</div></dd>
+<div class="backlink"><a href="#CatIdxBASIC">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PWR">PWR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:PWR=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:PWR=?</div></dd>
+<dd><div class="description">Operating & retrieving Power state of Zone 2</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Standby</div></dd>
+<dd><div class="description">PUT: turining its state to Standby / GET: indicating Standby status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: turining its state to On / GET: indicating On status.</div></dd>
+<dd><div class="param">On/Standby</div></dd>
+<dd><div class="description">PUT Only: toggling its status between On/Standby</div></dd>
+<div class="backlink"><a href="#CatIdxPWR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SLEEP">SLEEP</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:SLEEP=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:SLEEP=?</div></dd>
+<dd><div class="description">Operating & retrieving Sleep setting state of Zone 2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: turining its setting state to Off / GET: indicating Off setting status.</div></dd>
+<dd><div class="param">30 min</div></dd>
+<dd><div class="description">PUT: setting to 30 min / GET: indicating it's setting is 30 min.</div></dd>
+<dd><div class="param">60 min</div></dd>
+<dd><div class="description">PUT: setting to 60 min / GET: indicating it's setting is 60 min.</div></dd>
+<dd><div class="param">90 min</div></dd>
+<dd><div class="description">PUT: setting to 90 min / GET: indicating it's setting is 90 min.</div></dd>
+<dd><div class="param">120 min</div></dd>
+<dd><div class="description">PUT: setting to 120 min / GET: indicating it's setting is 120 min.</div></dd>
+<dd><div class="param">Last</div></dd>
+<dd><div class="description">PUT Only: setting to the value set last</div></dd>
+<div class="backlink"><a href="#CatIdxSLEEP">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="VOL">VOL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:VOL=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:VOL=?</div></dd>
+<dd><div class="description">Operating & retrieving Zone 2 Volume state</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: decrementing by 1 step (0.5dB)</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: incrementing by 1 step (0.5dB)</div></dd>
+<dd><div class="param">Down 1 dB</div></dd>
+<dd><div class="description">PUT Only: decrementing by 1 dB</div></dd>
+<dd><div class="param">Up 1 dB</div></dd>
+<dd><div class="description">PUT Only: incrementing by 1 dB</div></dd>
+<dd><div class="param">Down 2 dB</div></dd>
+<dd><div class="description">PUT Only: decrementing by 2 dB</div></dd>
+<dd><div class="param">Up 2 dB</div></dd>
+<dd><div class="description">PUT Only: incrementing by 2 dB</div></dd>
+<dd><div class="param">Down 5 dB</div></dd>
+<dd><div class="description">PUT Only: decrementing by 5 dB</div></dd>
+<dd><div class="param">Up 5 dB</div></dd>
+<dd><div class="description">PUT Only: incrementing by 5 dB</div></dd>
+<dd><div class="param">Numerical Number: -80.5 to 16.5, Step: 0.5</div></dd>
+<dd><div class="description">PUT: setting to the specified value. / GET: indicating the current value.</div></dd>
+<dd><div class="notes">-80.5 means muting. First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.The unit for this parameter is "dB".</div></dd>
+<div class="backlink"><a href="#CatIdxVOL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="MUTE">MUTE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:MUTE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:MUTE=?</div></dd>
+<dd><div class="description">Operating & retrieving Zone 2 muting state.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: turining its state to Off / GET: indicating Off status.</div></dd>
+<dd><div class="param">Att -40 dB</div></dd>
+<dd><div class="description">PUT: attenuating by 40 dB from current volume status. / GET: indicating attenuated by 40 dB from current volume status.</div></dd>
+<dd><div class="param">Att -20 dB</div></dd>
+<dd><div class="description">PUT: attenuating by 20 dB from current volume status. / GET: indicating attenuated by 20 dB from current volume status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: turining its state to On / GET: indicating On status.</div></dd>
+<dd><div class="param">On/Off</div></dd>
+<dd><div class="description">PUT Only: toggling its status between On/Off</div></dd>
+<div class="backlink"><a href="#CatIdxMUTE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="VOLFIXVAR">VOLFIXVAR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:VOLFIXVAR=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:VOLFIXVAR=?</div></dd>
+<dd><div class="description">Operating & retrieving Zone 2 Preout Level setting state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Variable</div></dd>
+<dd><div class="description">PUT: turining its setting state to Variable / GET: indicating Variable setting status.</div></dd>
+<dd><div class="param">Fixed</div></dd>
+<dd><div class="description">PUT: turining its setting state to Fixed / GET: indicating Fixed setting status.</div></dd>
+<div class="backlink"><a href="#CatIdxVOLFIXVAR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="MAXVOL">MAXVOL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:MAXVOL=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:MAXVOL=?</div></dd>
+<dd><div class="description">Operating & retrieving Max Volume setting state of Main Zone</div></dd>
+<dd><div class="notes">For setting the upper limit of volume</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: -30.0 to 15.0, Step: 5.0</div></dd>
+<dd><div class="description">PUT: setting to the specified value. / GET: indicating the current setting value.</div></dd>
+<dd><div class="notes">First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.The unit for this parameter is "dB".</div></dd>
+<dd><div class="param">16.5</div></dd>
+<dd><div class="description">PUT: setting to the specified value. / GET: indicating the current setting value.</div></dd>
+<dd><div class="notes">Meaning no limit of maximum volumeThe unit for this parameter is "dB".</div></dd>
+<div class="backlink"><a href="#CatIdxMAXVOL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INITVOLMODE">INITVOLMODE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:INITVOLMODE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:INITVOLMODE=?</div></dd>
+<dd><div class="description">Operating & retrieving Initial Volume Mode setting state of Zone 2</div></dd>
+<dd><div class="notes">Initial Volume is for setting the volume value initially set when the applicable Zone is turned on.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Off</div></dd>
+<dd><div class="description">PUT: turining its setting state to Off / GET: indicating Off setting status.</div></dd>
+<dd><div class="param">On</div></dd>
+<dd><div class="description">PUT: turining its setting state to On / GET: indicating On setting status.</div></dd>
+<div class="backlink"><a href="#CatIdxINITVOLMODE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INITVOLLVL">INITVOLLVL</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:INITVOLLVL=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:INITVOLLVL=?</div></dd>
+<dd><div class="description">Operating & retrieving Initial Volume Level setting state of Main Zone</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Mute</div></dd>
+<dd><div class="description">PUT: turining its setting state to Mute / GET: indicating Mute setting status.</div></dd>
+<dd><div class="notes">Initially muted when turned on</div></dd>
+<dd><div class="param">Numerical Number: -80.0 to 16.5, Step: 0.5</div></dd>
+<dd><div class="description">PUT: setting to the specified value. / GET: indicating the current setting value.</div></dd>
+<dd><div class="notes">First decimal place must be always included. Ex: 10.0, -25.0 or 0.0 etc.The unit for this parameter is "dB".</div></dd>
+<div class="backlink"><a href="#CatIdxINITVOLLVL">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="BALANCE">BALANCE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:BALANCE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:BALANCE=?</div></dd>
+<dd><div class="description">Operating & retrieving Channel Balance setting state of Zone 2</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: -20 to 20, Step: 1</div></dd>
+<dd><div class="description">PUT: setting to the specified value. / GET: indicating the current setting value.</div></dd>
+<dd><div class="notes">0 means the balance is at the center.</div></dd>
+<div class="backlink"><a href="#CatIdxBALANCE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="INP">INP</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:INP=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:INP=?</div></dd>
+<dd><div class="description">Operating & retrieving Zone 2 Input state.</div></dd>
+<dd><div class="iaf">Initial Auto Feedback is Available</div><dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">TUNER</div></dd>
+<dd><div class="description">PUT: selecting input TUNER / GET: indicating current input is TUNER</div></dd>
+<dd><div class="param">PHONO</div></dd>
+<dd><div class="description">PUT: selecting input PHONO / GET: indicating current input is PHONO</div></dd>
+<dd><div class="param">AV1</div></dd>
+<dd><div class="description">PUT: selecting input AV1 / GET: indicating current input is AV1</div></dd>
+<dd><div class="param">AV2</div></dd>
+<dd><div class="description">PUT: selecting input AV2 / GET: indicating current input is AV2</div></dd>
+<dd><div class="param">AV3</div></dd>
+<dd><div class="description">PUT: selecting input AV3 / GET: indicating current input is AV3</div></dd>
+<dd><div class="param">AV4</div></dd>
+<dd><div class="description">PUT: selecting input AV4 / GET: indicating current input is AV4</div></dd>
+<dd><div class="param">V-AUX</div></dd>
+<dd><div class="description">PUT: selecting input V-AUX / GET: indicating current input is V-AUX</div></dd>
+<dd><div class="param">AUDIO1</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO1 / GET: indicating current input is AUDIO1</div></dd>
+<dd><div class="param">AUDIO2</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO2 / GET: indicating current input is AUDIO2</div></dd>
+<dd><div class="param">AUDIO3</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO / GET: indicating current input is AUDIO</div></dd>
+<dd><div class="param">AUDIO4</div></dd>
+<dd><div class="description">PUT: selecting input AUDIO4 / GET: indicating current input is AUDIO4</div></dd>
+<dd><div class="param">DOCK</div></dd>
+<dd><div class="description">PUT Only: selecting input DOCK</div></dd>
+<dd><div class="param">iPod</div></dd>
+<dd><div class="description">PUT: selecting input iPod / GET: indicating current input is iPod</div></dd>
+<dd><div class="param">Bluetooth</div></dd>
+<dd><div class="description">PUT: selecting input Bluetooth / GET: indicating current input is Bluetooth</div></dd>
+<dd><div class="param">UAW</div></dd>
+<dd><div class="description">PUT: selecting input UAW / GET: indicating current input is UAW</div></dd>
+<dd><div class="param">NET</div></dd>
+<dd><div class="description">PUT Only: selecting input NET</div></dd>
+<dd><div class="param">Napster</div></dd>
+<dd><div class="description">PUT: selecting input Napster / GET: indicating current input is Napster</div></dd>
+<dd><div class="param">PC</div></dd>
+<dd><div class="description">PUT: selecting input PC / GET: indicating current input is PC</div></dd>
+<dd><div class="param">NET RADIO</div></dd>
+<dd><div class="description">PUT: selecting input NET RADIO / GET: indicating current input is NET RADIO</div></dd>
+<dd><div class="param">USB</div></dd>
+<dd><div class="description">PUT: selecting input USB / GET: indicating current input is USB</div></dd>
+<dd><div class="param">iPod (USB)</div></dd>
+<dd><div class="description">PUT: selecting input iPod (USB) / GET: indicating current input is iPod (USB)</div></dd>
+<div class="backlink"><a href="#CatIdxINP">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="SCENE">SCENE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:SCENE=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Recalling Zone 2 Scene banks.</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Scene 1</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 1</div></dd>
+<dd><div class="param">Scene 2</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 2</div></dd>
+<dd><div class="param">Scene 3</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 3</div></dd>
+<dd><div class="param">Scene 4</div></dd>
+<dd><div class="description">PUT Only: selecting Scene 4</div></dd>
+<div class="backlink"><a href="#CatIdxSCENE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="BASS">BASS</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:BASS=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:BASS=?</div></dd>
+<dd><div class="description">Operating & retrieving Bass Tone Control setting state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Numerical Number: -10.0 to 10.0, Step: 2.0</div></dd>
+<dd><div class="description">PUT: setting to the specified value. / GET: indicating the current setting value.</div></dd>
+<dd><div class="notes">First decimal place must be always included. Ex: 3.0, -4.0The unit for this parameter is "dB".</div></dd>
+<div class="backlink"><a href="#CatIdxBASS">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="TREBLE">TREBLE</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:TREBLE=<span class="exparam">Parameter</span></div></dd>
+<dt><span class="itemtitle">[GET Command]</span><dt>
+<dd><div class="cmd">@ZONE2:TREBLE=?</div></dd>
+<dd><div class="description">Operating & retrieving Treble Tone Control setting state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Parameters are the same as <a href="#BASS">BASS</a></div></dd>
+<div class="backlink"><a href="#CatIdxTREBLE">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="PLAYBACK">PLAYBACK</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:PLAYBACK=<span class="exparam">Parameter</span></div></dd>
+<dd><div class="description">Operating the playback state</div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Stop</div></dd>
+<dd><div class="description">PUT Only: change its state to Stop</div></dd>
+<dd><div class="param">Pause</div></dd>
+<dd><div class="description">PUT Only: change its state to Pause</div></dd>
+<dd><div class="param">Play</div></dd>
+<dd><div class="description">PUT Only: change its state to Play</div></dd>
+<dd><div class="param">Skip Rev</div></dd>
+<dd><div class="description">PUT Only: change its state to Skip Rev</div></dd>
+<dd><div class="param">Skip Fwd</div></dd>
+<dd><div class="description">PUT Only: change its state to Skip Fwd</div></dd>
+<div class="backlink"><a href="#CatIdxPLAYBACK">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTCURSOR">LISTCURSOR</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:LISTCURSOR=<span class="exparam">Parameter</span></div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">Down</div></dd>
+<dd><div class="description">PUT Only: moving it Down</div></dd>
+<dd><div class="param">Up</div></dd>
+<dd><div class="description">PUT Only: moving it Up</div></dd>
+<dd><div class="param">Left</div></dd>
+<dd><div class="param">Right</div></dd>
+<dd><div class="param">Sel</div></dd>
+<dd><div class="description">PUT Only: selecting the line that the cursor is on</div></dd>
+<dd><div class="param">Back</div></dd>
+<dd><div class="description">PUT Only: going back to the previous layer of contents list</div></dd>
+<dd><div class="param">Back to Home</div></dd>
+<div class="backlink"><a href="#CatIdxLISTCURSOR">Back To Index</a></div>
+</dl></li>
+<li>
+<div class="itemtitle"><a name="LISTMENU">LISTMENU</a></div>
+<dl>
+<dt><span class="itemtitle">[PUT Command]</span></dt>
+<dd><div class="cmd">@ZONE2:LISTMENU=<span class="exparam">Parameter</span></div></dd>
+<dt><div class="itemtitle">[Parameters]</div></dt>
+<dd><div class="param">On Screen</div></dd>
+<dd><div class="param">Top Menu</div></dd>
+<dd><div class="param">Menu</div></dd>
+<dd><div class="param">Option</div></dd>
+<div class="backlink"><a href="#CatIdxLISTMENU">Back To Index</a></div>
+</dl></li>
+</ul>
+<p>
+<div id="copy">&copy; 2011 Yamaha Corporation All Rights Reserved.</div>
+</body>
+</html>
