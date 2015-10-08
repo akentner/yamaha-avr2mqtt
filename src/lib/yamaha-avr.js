@@ -11,17 +11,45 @@ var address;
 var PORT = 50000;
 var KEEP_ALIVE = 5;
 
+var lastCmd;
+var lastAnswer;
+
 var YamahaAvr = assign({}, EventEmitter.prototype, {
     "connect": function (addr) {
         address = addr;
         init();
     },
     "command": function (section, key, value) {
-        var cmd = '@' + section.toUpperCase() + ':' + key.toUpperCase() + '=' + value + "\r\n";
-        client.write(cmd);
+        sendCommand(section, key, value);
     }
 });
 
+/**
+ *
+ */
+function keepAlive() {
+    client.write("\r\n");
+}
+
+/**
+ *
+ * @param section
+ * @param key
+ * @param value
+ */
+function sendCommand(section, key, value) {
+    if (!value) {
+        value = '?';
+    }
+
+    var cmd = '@' + section.toUpperCase() + ':' + key.toUpperCase() + '=' + value;
+    client.write(cmd + "\r\n");
+    lastCmd = cmd;
+}
+
+/**
+ *
+ */
 function init() {
 
     console.log('try to connect Yamaha AVR on ' + address + ':' + PORT);
@@ -39,31 +67,41 @@ function init() {
     client.on('data', function (data) {
         var parsed;
         data.toString().split("\r\n").forEach(function(line) {
-            if (line !== '' && line !== '@RESTRICTED') {
-                parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)$/.exec(line);
-                if (parsed) {
-                    YamahaAvr.emit('getValue', parsed[1], parsed[2], parsed[3]);
+            if (line !== '') {
+                if (line === '@UNDEFINED') {
+                    console.warn('Invalid Command: ' + lastCmd);
+                } else if (line === '@RESTRICTED') {
+                    console.warn('Restricted Command: ' + lastCmd);
                 } else {
-                    console.warn('not parsed', data.toString())
+                    parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)$/.exec(line);
+                    if (parsed) {
+                        if (lastCmd) {
+                            lastAnswer = line;
+                        }
+                        YamahaAvr.emit('getValue', parsed[1], parsed[2], parsed[3]);
+                    } else {
+                        console.warn('not parsed', data.toString())
+                    }
                 }
+                lastCmd = null;
             }
+
+
         });
     });
 
     client.on('connect', function () {
-        client.write("@SYS:MODELNAME=?\r\n");
-        client.write("@SYS:VERSION=?\r\n");
-        client.write("@SYS:INPNAME=?\r\n");
-        client.write("@MAIN:PWR=?\r\n");
-        client.write("@MAIN:VOL=?\r\n");
-        client.write("@MAIN:MUTE=?\r\n");
-        client.write("@MAIN:STRAIGHT=?\r\n");
-        client.write("@MAIN:SOUNDPRG=?\r\n");
-        client.write("@MAIN:INP=?\r\n");
-        //client.write("@MAIN:SCENE=?\r\n");
-        //client.write("@MAIN:HDMIAUDOUTAMP=?\r\n");
+        sendCommand('SYS', 'MODELNAME');
+        sendCommand('SYS', 'VERSION');
+        sendCommand('SYS', 'INPNAME');
+        sendCommand('MAIN', 'PWR');
+        sendCommand('MAIN', 'VOL');
+        sendCommand('MAIN', 'MUTE');
+        sendCommand('MAIN', 'STRAIGHT');
+        sendCommand('MAIN', 'SOUNDPRG');
+        sendCommand('MAIN', 'AVAIL');
         keepAliveInterval = setInterval(function () {
-            client.write("\r\n");
+            keepAlive();
         }, KEEP_ALIVE * 1000);
     });
 

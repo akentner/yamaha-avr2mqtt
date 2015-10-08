@@ -2,16 +2,17 @@
   "name": "yamaha-avr2mqtt",
   "version": "0.1.0",
   "description": "Yamaha AVR to MQTT",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:akentner/yamaha-avr2mqtt.git"
   },
   "keywords": [
-    "fritz.box",
+    "yamaha",
+    "avr",
     "mqtt"
   ],
   "author": "Alexander Kentner <github@akentner.de>",
