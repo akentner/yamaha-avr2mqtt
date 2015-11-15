@@ -14,6 +14,11 @@ var KEEP_ALIVE = 5;
 var lastCmd;
 var lastAnswer;
 
+var reachableTimeout;
+var lastMsgKeepALive = false;
+
+var errorState;
+
 var YamahaAvr = assign({}, EventEmitter.prototype, {
     "connect": function (addr) {
         address = addr;
@@ -28,7 +33,16 @@ var YamahaAvr = assign({}, EventEmitter.prototype, {
  *
  */
 function keepAlive() {
-    client.write("\r\n");
+    lastMsgKeepALive = true;
+    sendCommand('MAIN', 'AVAIL');
+    reachableTimeout = setTimeout(function () {
+        client.destroy();
+        YamahaAvr.emit('disconnect');
+        console.log('disconnect');
+        clearInterval(keepAliveInterval);
+        YamahaAvr.emit('getValue', 'MAIN', 'PWR', 'Off');
+        YamahaAvr.emit('getValue', 'MAIN', 'AVAIL', 'Not Found');
+    }, KEEP_ALIVE * 1000);
 }
 
 /**
@@ -69,24 +83,37 @@ function init() {
         data.toString().split("\r\n").forEach(function(line) {
             if (line !== '') {
                 if (line === '@UNDEFINED') {
+                    errorState = '{"type":"undefinedCmd", "cmd": "' + lastCmd + '"}';
+                    YamahaAvr.emit('error', errorState);
                     console.warn('Invalid Command: ' + lastCmd);
                 } else if (line === '@RESTRICTED') {
+                    errorState = '{"type":"restrictedCmd", "cmd": "' + lastCmd + '"}';
+                    YamahaAvr.emit('error', errorState);
                     console.warn('Restricted Command: ' + lastCmd);
                 } else {
+                    if (errorState) {
+                        errorState = null;
+                        YamahaAvr.emit('error', null);
+                    }
+
                     parsed = /^@([A-Z]+):([A-Z0-9_]+)=(.+)$/.exec(line);
                     if (parsed) {
                         if (lastCmd) {
                             lastAnswer = line;
                         }
-                        YamahaAvr.emit('getValue', parsed[1], parsed[2], parsed[3]);
+                        YamahaAvr.emit('lastUpdate');
+                        if (lastMsgKeepALive) {
+                            lastMsgKeepALive = false;
+                            clearTimeout(reachableTimeout);
+                        } else {
+                            YamahaAvr.emit('getValue', parsed[1], parsed[2], parsed[3]);
+                        }
                     } else {
                         console.warn('not parsed', data.toString())
                     }
                 }
                 lastCmd = null;
             }
-
-
         });
     });
 
@@ -100,6 +127,7 @@ function init() {
         sendCommand('MAIN', 'STRAIGHT');
         sendCommand('MAIN', 'SOUNDPRG');
         sendCommand('MAIN', 'AVAIL');
+        YamahaAvr.emit('lastUpdate');
         keepAliveInterval = setInterval(function () {
             keepAlive();
         }, KEEP_ALIVE * 1000);
@@ -108,6 +136,7 @@ function init() {
     client.on('error', function (err) {
         client.removeAllListeners('connect');
         client.setTimeout(5000, init);
+        YamahaAvr.emit('lastUpdate', err);
     });
 }
 
