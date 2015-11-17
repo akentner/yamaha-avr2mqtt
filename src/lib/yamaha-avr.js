@@ -24,8 +24,12 @@ var YamahaAvr = assign({}, EventEmitter.prototype, {
         address = addr;
         init();
     },
-    "command": function (section, key, value) {
-        sendCommand(section, key, value);
+    "command": function (func, section, key, value) {
+        if (func === 'set') {
+            sendCommand(section, key, value);
+        } else {
+            sendCommand(section, key);
+        }
     }
 });
 
@@ -106,7 +110,7 @@ function init() {
                             lastMsgKeepALive = false;
                             clearTimeout(reachableTimeout);
                         } else {
-                            YamahaAvr.emit('getValue', parsed[1], parsed[2], parsed[3]);
+                            YamahaAvr.emit('statusValue', parsed[1], parsed[2], parsed[3]);
                         }
                     } else {
                         console.warn('not parsed', data.toString())
@@ -118,15 +122,15 @@ function init() {
     });
 
     client.on('connect', function () {
-        sendCommand('SYS', 'MODELNAME');
-        sendCommand('SYS', 'VERSION');
-        sendCommand('SYS', 'INPNAME');
-        sendCommand('MAIN', 'PWR');
-        sendCommand('MAIN', 'VOL');
-        sendCommand('MAIN', 'MUTE');
-        sendCommand('MAIN', 'STRAIGHT');
-        sendCommand('MAIN', 'SOUNDPRG');
-        sendCommand('MAIN', 'AVAIL');
+        //sendCommand('SYS', 'MODELNAME');
+        //sendCommand('SYS', 'VERSION');
+        //sendCommand('SYS', 'INPNAME');
+        //sendCommand('MAIN', 'PWR');
+        //sendCommand('MAIN', 'VOL');
+        //sendCommand('MAIN', 'MUTE');
+        //sendCommand('MAIN', 'STRAIGHT');
+        //sendCommand('MAIN', 'SOUNDPRG');
+        //sendCommand('MAIN', 'AVAIL');
         YamahaAvr.emit('lastUpdate');
         keepAliveInterval = setInterval(function () {
             keepAlive();

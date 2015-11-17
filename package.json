@@ -1,6 +1,6 @@
 {
   "name": "yamaha-avr2mqtt",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Yamaha AVR to MQTT",
   "main": "src/app.js",
   "scripts": {

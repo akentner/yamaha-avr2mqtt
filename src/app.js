@@ -57,10 +57,11 @@ mqttConnection.on('connect', function () {
             qos: qos
         });
         mqttConnection.subscribe(topicPrefix + '/set/+/+', {qos: qos});
+        mqttConnection.subscribe(topicPrefix + '/get/+/+', {qos: qos});
     });
 
-    YamahaAvr.on('getValue', function(section, key, value) {
-        mqttConnection.publish(topicPrefix + '/get/' + section + '/' + key, value, {retain: retain, qos: qos});
+    YamahaAvr.on('statusValue', function (section, key, value) {
+        mqttConnection.publish(topicPrefix + '/status/' + section + '/' + key, value, {retain: retain, qos: qos});
     });
 
     YamahaAvr.on('error', function (error) {
@@ -71,7 +72,7 @@ mqttConnection.on('connect', function () {
         var now = Math.floor(Date.now() / 1000).toString();
         if (lastUpdate !== now) {
             lastUpdate = now;
-            mqttConnection.publish(topicPrefix + '/lastUpdate', lastUpdate, {retain: retain, qos: qos});
+            //mqttConnection.publish(topicPrefix + '/lastUpdate', lastUpdate, {retain: retain, qos: qos});
         }
     });
 
@@ -88,9 +89,9 @@ mqttConnection.on('message', function (topic, message) {
     var parsed;
     var regEx;
 
-    regEx = new RegExp('^' + topicPrefix + '\/set\/([A-Z]+)\/([A-Z0-9_]+)$');
+    regEx = new RegExp('^' + topicPrefix + '\/(get|set)\/([A-Z]+)\/([A-Z0-9_]+)$');
     parsed = regEx.exec(topic);
     if (parsed) {
-        YamahaAvr.command(parsed[1], parsed[2], message.toString());
+        YamahaAvr.command(parsed[1], parsed[2], parsed[3], message.toString());
     }
 });
