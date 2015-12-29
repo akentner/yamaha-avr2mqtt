@@ -23,6 +23,8 @@
     "moment-timezone": "^0.4.0",
     "mqtt": "^1.4.0",
     "net": "^1.0.2",
-    "object-assign": "^4.0.1"
+    "object-assign": "^4.0.1",
+    "yargs": "^3.31.0"
   }
 }
+s
