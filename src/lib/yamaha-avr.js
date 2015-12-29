@@ -122,15 +122,15 @@ function init() {
     });
 
     client.on('connect', function () {
-        //sendCommand('SYS', 'MODELNAME');
-        //sendCommand('SYS', 'VERSION');
-        //sendCommand('SYS', 'INPNAME');
-        //sendCommand('MAIN', 'PWR');
-        //sendCommand('MAIN', 'VOL');
-        //sendCommand('MAIN', 'MUTE');
-        //sendCommand('MAIN', 'STRAIGHT');
-        //sendCommand('MAIN', 'SOUNDPRG');
-        //sendCommand('MAIN', 'AVAIL');
+        sendCommand('SYS', 'MODELNAME');
+        sendCommand('SYS', 'VERSION');
+        sendCommand('SYS', 'INPNAME');
+        sendCommand('MAIN', 'PWR');
+        sendCommand('MAIN', 'VOL');
+        sendCommand('MAIN', 'MUTE');
+        sendCommand('MAIN', 'STRAIGHT');
+        sendCommand('MAIN', 'SOUNDPRG');
+        sendCommand('MAIN', 'AVAIL');
         YamahaAvr.emit('lastUpdate');
         keepAliveInterval = setInterval(function () {
             keepAlive();
