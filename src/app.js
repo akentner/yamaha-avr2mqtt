@@ -73,7 +73,7 @@ mqttConnection.on('connect', function () {
         var now = Math.floor(Date.now() / 1000).toString();
         if (lastUpdate !== now) {
             lastUpdate = now;
-            mqttConnection.publish(topicPrefix + '/lastUpdate', lastUpdate, {retain: retain, qos: qos});
+            //mqttConnection.publish(topicPrefix + '/lastUpdate', lastUpdate, {retain: retain, qos: qos});
         }
     });
 
